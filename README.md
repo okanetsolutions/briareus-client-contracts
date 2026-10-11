@@ -76,16 +76,24 @@ static func statusColor(_ s: String?) -> Color { color(BriareusStatusRole(status
 static let body = Font.system(size: BriareusType.body.size, weight: weight(BriareusType.body.weight))  // 400 → .regular, 500 → .medium, 600 → .semibold
 ```
 
-**Quest.** Always dark, with the headset type:
+**Quest.** Light or dark as the system says, with the headset type:
 
 ```kotlin
-val p = BriareusPalette.Dark
-val scheme = darkColorScheme(primary = p.accent, onPrimary = p.onAccent, background = p.canvas, /* … */)
+val dark = isSystemInDarkTheme()
+val p = if (dark) BriareusPalette.Dark else BriareusPalette.Light
+val scheme = if (dark) darkColorScheme(primary = p.accent, background = p.canvas, /* … */)
+             else lightColorScheme(primary = p.accent, background = p.canvas, /* … */)
 val type = Typography(bodyLarge = BriareusHeadsetType.bodyLarge, /* … */)
 StatusDot(color = p.statusColor(session.status))
 ```
 
-## Where the clients stand
+## The rules
+
+- Every client draws with these colours, and only these: no client keeps a palette of its own.
+- Every client supports light and dark, following the system's setting.
+- A status takes the same colour everywhere.
+
+## Where the clients stood
 
 The tokens start from the palette Windows, the Mac app and Quest already share: the old web dashboard's `@theme` block, copied by hand into each (`app/theme.c`, `Mac/App/Theme.swift`, `ui/Theme.kt`). Adopting the tokens there changes nothing on screen. The iPhone and iPad app is the one that drifted:
 
@@ -100,7 +108,7 @@ The tokens start from the palette Windows, the Mac app and Quest already share: 
 | `idle` | ok (green) | secondary grey |
 | `cancelled` | warn | danger |
 
-Moving the iPhone app onto the tokens brings it in line with the Mac app it shares a core with, and changes how it looks: running sessions turn clay instead of green, finished ones green instead of grey.
+The iPhone app moves onto the shared palette, in line with the Mac app it shares a core with: running sessions turn clay instead of green, finished ones green instead of grey. Quest, which was dark only, gains the light theme.
 
 Text sizes match between Windows and the Mac (15px body, 13px chrome, 12/11px metadata). Quest keeps its larger headset scale, which is in the tokens as `headset.type`. Corner radii vary most: the scale here (3, 4, 5, 6, 8, 10, 12, 16, full) covers what the desktop clients use; Quest's 14 is the one value outside it.
 
