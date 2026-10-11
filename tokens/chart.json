@@ -1,0 +1,43 @@
+{
+  "chart": {
+    "series": {
+      "$type": "color",
+      "$description": "The categorical series (the usage dashboard's breakdown rings and bars): the first four rows that spent take a slot each, every other row is summed into `other`. The only place a hue means which one. The same in both modes; each reads at 3:1 on a raised card in either.",
+      "1": { "$value": "#3987E5" },
+      "2": { "$value": "#D95926" },
+      "3": { "$value": "#199E70" },
+      "4": { "$value": "#C98500" },
+      "other": { "$value": "#807B71" }
+    },
+    "context": {
+      "$description": "The context-usage bar, keyed on the category names Claude's /context report uses (matched case-insensitively). `match` says how a category name picks the colour; a name that matches nothing takes `unknown`.",
+      "dark": {
+        "$type": "color",
+        "messages": { "$value": "#6D9EF7", "$extensions": { "briareus": { "equals": ["messages", "context"] } } },
+        "systemPrompt": { "$value": "#E06C75", "$extensions": { "briareus": { "equals": ["system prompt"] } } },
+        "systemTools": { "$value": "#D98A3F", "$extensions": { "briareus": { "equals": ["system tools"] } } },
+        "mcpTools": { "$value": "#4FAE72", "$extensions": { "briareus": { "equals": ["mcp tools"] } } },
+        "skills": { "$value": "#C96F9E", "$extensions": { "briareus": { "equals": ["skills"] } } },
+        "memoryFiles": { "$value": "#5FAE5F", "$extensions": { "briareus": { "equals": ["memory files"] } } },
+        "customAgents": { "$value": "#8F7EE8", "$extensions": { "briareus": { "equals": ["custom agents"] } } },
+        "deferred": { "$value": "{theme.dark.lineStrong}", "$description": "Reserved but not used yet: a dim step above free space.", "$extensions": { "briareus": { "contains": ["deferred", "autocompact"] } } },
+        "free": { "$value": "{theme.dark.line}", "$description": "Free space: the track itself.", "$extensions": { "briareus": { "equals": ["free space"] } } },
+        "unknown": { "$value": "#8A867C" }
+      },
+      "light": {
+        "$type": "color",
+        "$description": "The dark hues with their lightness lowered until each reads at 3:1 on every light surface.",
+        "messages": { "$value": "#4483F5", "$extensions": { "briareus": { "equals": ["messages", "context"] } } },
+        "systemPrompt": { "$value": "#DC5B65", "$extensions": { "briareus": { "equals": ["system prompt"] } } },
+        "systemTools": { "$value": "#C37327", "$extensions": { "briareus": { "equals": ["system tools"] } } },
+        "mcpTools": { "$value": "#449562", "$extensions": { "briareus": { "equals": ["mcp tools"] } } },
+        "skills": { "$value": "#C66698", "$extensions": { "briareus": { "equals": ["skills"] } } },
+        "memoryFiles": { "$value": "#4C964C", "$extensions": { "briareus": { "equals": ["memory files"] } } },
+        "customAgents": { "$value": "#8775E6", "$extensions": { "briareus": { "equals": ["custom agents"] } } },
+        "deferred": { "$value": "{theme.light.lineStrong}", "$extensions": { "briareus": { "contains": ["deferred", "autocompact"] } } },
+        "free": { "$value": "{theme.light.line}", "$extensions": { "briareus": { "equals": ["free space"] } } },
+        "unknown": { "$value": "#8A867C" }
+      }
+    }
+  }
+}

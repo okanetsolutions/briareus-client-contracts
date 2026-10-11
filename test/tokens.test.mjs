@@ -56,3 +56,31 @@ test('no server status maps to two roles', () => {
     }
   }
 });
+
+// Charts are graphics, not text: WCAG 1.4.11 asks 3:1 against what they sit on.
+test('the chart series read at 3:1 on a raised card in both modes', () => {
+  for (const mode of ['dark', 'light']) {
+    for (const [slot, color] of Object.entries(tokens.chart.series)) {
+      const ratio = contrast(color, tokens.theme[mode].raise);
+      assert.ok(ratio >= 3, `${mode} series ${slot} on raise: ${ratio.toFixed(2)}`);
+    }
+  }
+});
+
+for (const mode of ['dark', 'light']) {
+  test(`${mode}: every context category reads at 3:1 on the canvas, sidebar and raise`, () => {
+    const t = tokens.theme[mode];
+    for (const [name, color] of Object.entries(tokens.chart.context[mode])) {
+      if (name === 'deferred' || name === 'free') continue;   // deliberately dim: the track and the step above it
+      for (const surface of ['canvas', 'sidebar', 'raise']) {
+        const ratio = contrast(color, t[surface]);
+        assert.ok(ratio >= 3, `${name} on ${surface}: ${ratio.toFixed(2)}`);
+      }
+    }
+  });
+
+  test(`${mode}: deferred context stands apart from free space`, () => {
+    const c = tokens.chart.context[mode];
+    assert.ok(contrast(c.deferred, c.free) >= 1.3, `deferred vs free: ${contrast(c.deferred, c.free).toFixed(2)}`);
+  });
+}

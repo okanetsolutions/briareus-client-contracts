@@ -24,6 +24,21 @@
   --br-status-attention: var(--br-warn);
   --br-status-failed: var(--br-danger);
   --br-status-inactive: var(--br-dot);
+  --br-chart-series-1: #3987E5;
+  --br-chart-series-2: #D95926;
+  --br-chart-series-3: #199E70;
+  --br-chart-series-4: #C98500;
+  --br-chart-series-other: #807B71;
+  --br-chart-context-messages: #4483F5;
+  --br-chart-context-system-prompt: #DC5B65;
+  --br-chart-context-system-tools: #C37327;
+  --br-chart-context-mcp-tools: #449562;
+  --br-chart-context-skills: #C66698;
+  --br-chart-context-memory-files: #4C964C;
+  --br-chart-context-custom-agents: #8775E6;
+  --br-chart-context-deferred: #C4C0B4;
+  --br-chart-context-free: #E0DDD3;
+  --br-chart-context-unknown: #8A867C;
   --br-font-sans: "Segoe UI", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
   --br-font-mono: "Cascadia Code", "SF Mono", ui-monospace, Menlo, Consolas, monospace;
   --br-font-tiny: 10px;
@@ -76,6 +91,16 @@
     --br-danger: #E06C75;
     --br-dot: #6B6862;
     --br-thumb: #3C3B38;
+    --br-chart-context-messages: #6D9EF7;
+    --br-chart-context-system-prompt: #E06C75;
+    --br-chart-context-system-tools: #D98A3F;
+    --br-chart-context-mcp-tools: #4FAE72;
+    --br-chart-context-skills: #C96F9E;
+    --br-chart-context-memory-files: #5FAE5F;
+    --br-chart-context-custom-agents: #8F7EE8;
+    --br-chart-context-deferred: #5A5850;
+    --br-chart-context-free: #3E3E3A;
+    --br-chart-context-unknown: #8A867C;
   }
 }
 
@@ -98,6 +123,16 @@
   --br-danger: #E06C75;
   --br-dot: #6B6862;
   --br-thumb: #3C3B38;
+  --br-chart-context-messages: #6D9EF7;
+  --br-chart-context-system-prompt: #E06C75;
+  --br-chart-context-system-tools: #D98A3F;
+  --br-chart-context-mcp-tools: #4FAE72;
+  --br-chart-context-skills: #C96F9E;
+  --br-chart-context-memory-files: #5FAE5F;
+  --br-chart-context-custom-agents: #8F7EE8;
+  --br-chart-context-deferred: #5A5850;
+  --br-chart-context-free: #3E3E3A;
+  --br-chart-context-unknown: #8A867C;
 }
 
 :root[data-theme="light"] {

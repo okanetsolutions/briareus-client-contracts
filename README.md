@@ -23,6 +23,7 @@ tokens/
   semantic/status.json    status.*      — status role → theme colour, and the server statuses in each
   typography.json         font sizes, weights and families; type.* text styles by the Windows/Mac names
   platform/headset.json   headset.type.* — Quest's larger type, by Material 3 role
+  chart.json              chart.series.* (usage rings and bars) and chart.context.{dark,light}.* (the context bar)
   size.json               radius.*, layout.*, motion.*
   content.json            working.* — the working indicator's glyphs and verbs
 build.mjs                 Style Dictionary config and the five formats (Compose, Swift, C, CSS, JSON)
@@ -45,7 +46,7 @@ Edit the JSON under `tokens/`, then:
 npm run check
 ```
 
-That builds `dist/`, checks contrast (ink on every surface ≥ 4.5:1, muted on canvas and sidebar ≥ 4.5:1, accent and status colours on canvas ≥ 3:1, both modes), and fails if the committed `dist/` differs from what the tokens build. Commit `tokens/` and `dist/` together.
+That builds `dist/`, checks contrast (ink on every surface ≥ 4.5:1, muted on canvas and sidebar ≥ 4.5:1, accent and status colours on canvas ≥ 3:1, chart colours ≥ 3:1 on the surfaces they sit on, both modes), and fails if the committed `dist/` differs from what the tokens build. Commit `tokens/` and `dist/` together.
 
 Then bring the clients up to date. With them checked out beside this repo:
 
@@ -109,6 +110,8 @@ The tokens start from the palette Windows, the Mac app and Quest already share: 
 | `cancelled` | warn | danger |
 
 The iPhone app moves onto the shared palette, in line with the Mac app it shares a core with: running sessions turn clay instead of green, finished ones green instead of grey. Quest, which was dark only, gains the light theme.
+
+Charts: the usage dashboard's series colours were already shared by Windows, the Mac and iPhone, and read in both modes. The context bar's colours were tuned for dark only, at about 2.5:1 on a light surface; `chart.context.light` keeps their hues at 3:1. Each client looks a category up with `contextColor`/`briareus_context_color`, so the names Claude's /context report uses live here too.
 
 Text sizes match between Windows and the Mac (15px body, 13px chrome, 12/11px metadata). Quest keeps its larger headset scale, which is in the tokens as `headset.type`. Corner radii vary most: the scale here (3, 4, 5, 6, 8, 10, 12, 16, full) covers what the desktop clients use; Quest's 14 is the one value outside it.
 

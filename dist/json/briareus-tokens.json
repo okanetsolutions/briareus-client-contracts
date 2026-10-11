@@ -1,4 +1,39 @@
 {
+  "chart": {
+    "series": {
+      "1": "#3987E5",
+      "2": "#D95926",
+      "3": "#199E70",
+      "4": "#C98500",
+      "other": "#807B71"
+    },
+    "context": {
+      "dark": {
+        "messages": "#6D9EF7",
+        "systemPrompt": "#E06C75",
+        "systemTools": "#D98A3F",
+        "mcpTools": "#4FAE72",
+        "skills": "#C96F9E",
+        "memoryFiles": "#5FAE5F",
+        "customAgents": "#8F7EE8",
+        "deferred": "#5A5850",
+        "free": "#3E3E3A",
+        "unknown": "#8A867C"
+      },
+      "light": {
+        "messages": "#4483F5",
+        "systemPrompt": "#DC5B65",
+        "systemTools": "#C37327",
+        "mcpTools": "#449562",
+        "skills": "#C66698",
+        "memoryFiles": "#4C964C",
+        "customAgents": "#8775E6",
+        "deferred": "#C4C0B4",
+        "free": "#E0DDD3",
+        "unknown": "#8A867C"
+      }
+    }
+  },
   "palette": {
     "neutral": {
       "0": "#FFFFFF",

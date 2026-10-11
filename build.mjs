@@ -56,6 +56,26 @@ const content = (dictionary) => ({
   pulseMs: ms(value(under(dictionary, 'motion', 'pulse')[0])),
 });
 
+/// The chart colours: the series (one set for both modes) and the context bar's categories per mode, with how a
+/// category name picks each.
+function chart(dictionary) {
+  const series = under(dictionary, 'chart', 'series');
+  const dark = under(dictionary, 'chart', 'context', 'dark');
+  const light = new Map(under(dictionary, 'chart', 'context', 'light').map((t) => [leaf(t), t]));
+  const context = dark.map((t) => {
+    const l = light.get(leaf(t));
+    if (!l) throw new Error(`chart.context.light has no ${leaf(t)}`);
+    const rule = t.$extensions?.briareus ?? {};
+    return { name: leaf(t), dark: hex(value(t)), light: hex(value(l)), equals: rule.equals ?? [], contains: rule.contains ?? [], description: t.$description };
+  });
+  if (!context.some((c) => c.name === 'unknown')) throw new Error('chart.context needs an unknown colour');
+  return {
+    series: series.filter((t) => leaf(t) !== 'other').map((t) => hex(value(t))),
+    other: hex(value(series.find((t) => leaf(t) === 'other'))),
+    context,
+  };
+}
+
 const upperSnake = (s) => s.replace(/([a-z0-9])([A-Z])/g, '$1_$2').toUpperCase();
 const lowerSnake = (s) => upperSnake(s).toLowerCase();
 const quote = (s) => JSON.stringify(s);
@@ -68,6 +88,7 @@ StyleDictionary.registerFormat({
     const roles = themes(dictionary);
     const status = statuses(dictionary);
     const c = content(dictionary);
+    const ch = chart(dictionary);
     const palette = (mode) => roles.map((r) => `${r.role} = Color(0xFF${r[mode]})`).join(', ');
     const style = (s) => {
       const args = [`fontSize = ${s.size}.sp`];
@@ -142,6 +163,35 @@ object BriareusLayout {
 ${dims('layout')}
 }
 
+/** The usage charts' categorical series: four slots, then the tail's grey. The same in both modes. */
+object BriareusChart {
+    val series = listOf(${ch.series.map((h) => `Color(0xFF${h})`).join(', ')})
+    val other = Color(0xFF${ch.other})
+    val slots: Int get() = series.size
+    fun seriesColor(slot: Int): Color = if (slot in series.indices) series[slot] else other
+}
+
+/** The context-usage bar's colours, by the category names Claude's /context report uses. */
+@Immutable
+data class BriareusContextPalette(
+${ch.context.map((c) => `    val ${c.name}: Color,`).join('\n')}
+) {
+    companion object {
+        val Dark = BriareusContextPalette(${ch.context.map((c) => `${c.name} = Color(0xFF${c.dark})`).join(', ')})
+        val Light = BriareusContextPalette(${ch.context.map((c) => `${c.name} = Color(0xFF${c.light})`).join(', ')})
+    }
+
+    /** A category's colour; the name is matched without regard to case. */
+    fun color(category: String?): Color {
+        val n = category.orEmpty().lowercase()
+        return when {
+${ch.context.filter((c) => c.contains.length).map((c) => `            ${c.contains.map((x) => `${quote(x)} in n`).join(' || ')} -> ${c.name}`).join('\n')}
+${ch.context.filter((c) => c.equals.length).map((c) => `            ${c.equals.map((x) => `n == ${quote(x)}`).join(' || ')} -> ${c.name}`).join('\n')}
+            else -> unknown
+        }
+    }
+}
+
 object BriareusMotion {
     const val PULSE_MILLIS = ${c.pulseMs}
 }
@@ -165,6 +215,7 @@ StyleDictionary.registerFormat({
     const roles = themes(dictionary);
     const status = statuses(dictionary);
     const c = content(dictionary);
+    const ch = chart(dictionary);
     const palette = (mode) => roles.map((r) => `${r.role}: 0x${r[mode]}`).join(', ');
     const style = (s) =>
       `    public static let ${s.name} = BriareusTextStyle(size: ${s.size}, weight: ${s.weight}${s.italic ? ', italic: true' : ''}${s.mono ? ', monospaced: true' : ''}${s.lineHeight ? `, lineHeight: ${s.lineHeight}` : ''})`;
@@ -227,6 +278,32 @@ public enum BriareusLayout {
 ${dims('layout')}
 }
 
+/// The usage charts' categorical series as 0xRRGGBB: four slots, then the tail's grey. The same in both modes.
+public enum BriareusChart {
+    public static let series: [UInt32] = [${ch.series.map((h) => `0x${h}`).join(', ')}]
+    public static let other: UInt32 = 0x${ch.other}
+    public static var slots: Int { series.count }
+    public static func seriesColor(_ slot: Int) -> UInt32 { series.indices.contains(slot) ? series[slot] : other }
+}
+
+/// The context-usage bar's colours as 0xRRGGBB, by the category names Claude's /context report uses.
+public struct BriareusContextPalette: Sendable, Equatable {
+${ch.context.map((c) => `${c.description ? `    /// ${c.description}\n` : ''}    public let ${c.name}: UInt32`).join('\n')}
+
+    public static let dark = BriareusContextPalette(${ch.context.map((c) => `${c.name}: 0x${c.dark}`).join(', ')})
+    public static let light = BriareusContextPalette(${ch.context.map((c) => `${c.name}: 0x${c.light}`).join(', ')})
+
+    /// A category's colour; the name is matched without regard to case.
+    public func color(category: String?) -> UInt32 {
+        let n = (category ?? "").lowercased()
+${ch.context.filter((c) => c.contains.length).map((c) => `        if ${c.contains.map((x) => `n.contains(${quote(x)})`).join(' || ')} { return ${c.name} }`).join('\n')}
+        switch n {
+${ch.context.filter((c) => c.equals.length).map((c) => `        case ${c.equals.map(quote).join(', ')}: return ${c.name}`).join('\n')}
+        default: return unknown
+        }
+    }
+}
+
 public enum BriareusMotion {
     /// A running status dot's ring, in seconds.
     public static let pulse: Double = ${c.pulseMs / 1000}
@@ -251,6 +328,7 @@ StyleDictionary.registerFormat({
     const roles = themes(dictionary);
     const status = statuses(dictionary);
     const c = content(dictionary);
+    const ch = chart(dictionary);
     const families = under(dictionary, 'font', 'family', 'windows');
     const palette = (mode) => roles.map((r) => `    .${lowerSnake(r.role)} = 0x${r[mode]},`).join('\n');
     const style = (s) => `static const BriareusTextStyle BRIAREUS_TYPE_${upperSnake(s.name)} = { ${s.size}, ${s.weight}, ${s.italic}, ${s.mono} };`;
@@ -315,6 +393,50 @@ ${dims('radius')}
 
 ${dims('layout')}
 
+// The usage charts' categorical series: BRIAREUS_CHART_SLOTS slots, then the tail's grey. The same in both modes.
+#define BRIAREUS_CHART_SLOTS ${ch.series.length}
+static const unsigned int BRIAREUS_CHART_SERIES[] = { ${ch.series.map((h) => `0x${h}`).join(', ')} };
+#define BRIAREUS_CHART_OTHER 0x${ch.other}
+static inline unsigned int briareus_chart_series_color(int slot) {
+    return slot >= 0 && slot < BRIAREUS_CHART_SLOTS ? BRIAREUS_CHART_SERIES[slot] : BRIAREUS_CHART_OTHER;
+}
+
+// The context-usage bar's colours, by the category names Claude's /context report uses.
+typedef struct {
+${ch.context.map((c) => `    unsigned int ${lowerSnake(c.name)};`).join('\n')}
+} BriareusContextPalette;
+
+static const BriareusContextPalette BRIAREUS_CONTEXT_DARK = {
+${ch.context.map((c) => `    .${lowerSnake(c.name)} = 0x${c.dark},`).join('\n')}
+};
+
+static const BriareusContextPalette BRIAREUS_CONTEXT_LIGHT = {
+${ch.context.map((c) => `    .${lowerSnake(c.name)} = 0x${c.light},`).join('\n')}
+};
+
+/// ASCII case-insensitive equality and substring, so the lookup needs no locale.
+static inline int briareus_ascii_lower(int c) { return c >= 'A' && c <= 'Z' ? c + 32 : c; }
+static inline bool briareus_iequals(const char *a, const char *b) {
+    for (; *a && *b; a++, b++) if (briareus_ascii_lower((unsigned char)*a) != briareus_ascii_lower((unsigned char)*b)) return false;
+    return *a == *b;
+}
+static inline bool briareus_icontains(const char *haystack, const char *needle) {
+    for (; *haystack; haystack++) {
+        const char *h = haystack, *n = needle;
+        while (*h && *n && briareus_ascii_lower((unsigned char)*h) == briareus_ascii_lower((unsigned char)*n)) { h++; n++; }
+        if (!*n) return true;
+    }
+    return !*needle;
+}
+
+/// A category's colour; the name is matched without regard to case, and NULL is unknown.
+static inline unsigned int briareus_context_color(const BriareusContextPalette *palette, const char *category) {
+    if (!category) return palette->unknown;
+${ch.context.filter((c) => c.contains.length).map((c) => `    if (${c.contains.map((x) => `briareus_icontains(category, ${quote(x)})`).join(' || ')}) return palette->${lowerSnake(c.name)};`).join('\n')}
+${ch.context.filter((c) => c.equals.length).map((c) => `    if (${c.equals.map((x) => `briareus_iequals(category, ${quote(x)})`).join(' || ')}) return palette->${lowerSnake(c.name)};`).join('\n')}
+    return palette->unknown;
+}
+
 #define BRIAREUS_MOTION_PULSE_MS ${c.pulseMs}
 
 #define BRIAREUS_WORKING_VERB_TICKS ${c.verbTicks}
@@ -342,12 +464,17 @@ StyleDictionary.registerFormat({
     const sizes = under(dictionary, 'font', 'size').map((t) => `  --br-font-${kebab(leaf(t))}: ${px(value(t))}px;`).join('\n');
     const family = (name) => value(under(dictionary, 'font', 'family', 'web', name)[0]).map((f) => (f.includes(' ') ? `"${f}"` : f)).join(', ');
     const status = statuses(dictionary).map((s) => `  --br-status-${s.name}: var(--br-${kebab(s.role)});`).join('\n');
+    const ch = chart(dictionary);
+    const chartVars = [...ch.series.map((h, i) => `  --br-chart-series-${i + 1}: #${h};`), `  --br-chart-series-other: #${ch.other};`].join('\n');
+    const contextColors = (mode, indent) => ch.context.map((c) => `${indent}--br-chart-context-${kebab(c.name)}: #${c[mode]};`).join('\n');
     return `/* ${HEADER} */
 /* Light unless the system prefers dark; data-theme="light" or "dark" on <html> overrides either way. */
 :root {
   color-scheme: light dark;
 ${colors('light', '  ')}
 ${status}
+${chartVars}
+${contextColors('light', '  ')}
   --br-font-sans: ${family('sans')};
   --br-font-mono: ${family('mono')};
 ${sizes}
@@ -359,12 +486,14 @@ ${dims('layout')}
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
 ${colors('dark', '    ')}
+${contextColors('dark', '    ')}
   }
 }
 
 :root[data-theme="dark"] {
   color-scheme: dark;
 ${colors('dark', '  ')}
+${contextColors('dark', '  ')}
 }
 
 :root[data-theme="light"] {
