@@ -1,0 +1,1759 @@
+{
+  "$description": "What each Briareus client offers, feature by feature, against the server API (/api/v1). Support is full, partial, none, or n/a (the platform cannot, not merely does not). Audited from each client's code on 2026-10-11; update it in the same pull request that adds or removes a feature in a client.",
+  "audited": "2026-10-11",
+  "clients": [
+    "windows",
+    "mac",
+    "ios",
+    "quest"
+  ],
+  "areas": [
+    {
+      "id": "connection",
+      "title": "Connection & pairing",
+      "features": [
+        {
+          "id": "pair-device-token",
+          "title": "Pair with a device token",
+          "description": "Connect to an HTTPS server with a per-device token kept in the OS secure store.",
+          "api": [
+            "GET /",
+            "GET /openapi.json"
+          ],
+          "support": {
+            "windows": "full",
+            "mac": "full",
+            "ios": "full",
+            "quest": "full"
+          },
+          "notes": {
+            "ios": "CarPlay cannot pair; the phone does."
+          }
+        },
+        {
+          "id": "catalog-adaptive-ui",
+          "title": "Adapt to server and token",
+          "description": "Controls the server lacks, or the token may not call, are hidden or disabled (Read-only tokens can't write).",
+          "api": [
+            "GET /openapi.json"
+          ],
+          "support": {
+            "windows": "full",
+            "mac": "full",
+            "ios": "full",
+            "quest": "full"
+          },
+          "notes": {}
+        },
+        {
+          "id": "revoke-token",
+          "title": "Revoke token from the app",
+          "description": "Revoke this device's token on the server, not just forget it locally.",
+          "api": [
+            "DELETE /token"
+          ],
+          "support": {
+            "windows": "none",
+            "mac": "none",
+            "ios": "full",
+            "quest": "full"
+          },
+          "notes": {
+            "windows": "Sign-out forgets the token locally without revoking it on the server.",
+            "mac": "Sign-out (Store.forget) is local only; revoke_token is in the core table but unused by the Mac UI."
+          }
+        },
+        {
+          "id": "offline-cache",
+          "title": "Saved state and incremental resume",
+          "description": "Screens open on cached projects, conversations and transcripts, then fetch only what changed.",
+          "api": [
+            "GET /sessions/{id}"
+          ],
+          "support": {
+            "windows": "full",
+            "mac": "full",
+            "ios": "full",
+            "quest": "full"
+          },
+          "notes": {
+            "quest": "Encrypted on the headset."
+          }
+        },
+        {
+          "id": "live-updates",
+          "title": "Live session updates",
+          "description": "Session lists and transcripts update in real time over server-sent events.",
+          "api": [
+            "GET /events",
+            "GET /sessions/{id}/events"
+          ],
+          "support": {
+            "windows": "partial",
+            "mac": "full",
+            "ios": "partial",
+            "quest": "full"
+          },
+          "notes": {
+            "windows": "Polls with backoff; never opens /events or /sessions/{id}/events.",
+            "ios": "Polls GET /sessions/{id}; no SSE except the shared browser stream."
+          }
+        },
+        {
+          "id": "self-update",
+          "title": "Self-update",
+          "description": "Checks GitHub releases, verifies and installs updates.",
+          "api": [],
+          "support": {
+            "windows": "full",
+            "mac": "full",
+            "ios": "n/a",
+            "quest": "none"
+          },
+          "notes": {
+            "ios": "Distributed via App Store/TestFlight.",
+            "quest": "Sideloaded APK with no updater; Android could install updates."
+          }
+        }
+      ]
+    },
+    {
+      "id": "projects",
+      "title": "Projects & conversation list",
+      "features": [
+        {
+          "id": "project-conversation-list",
+          "title": "Projects and conversations",
+          "description": "Browse the token's projects and their conversations with state, provider, branch and age.",
+          "api": [
+            "GET /projects",
+            "GET /sessions"
+          ],
+          "support": {
+            "windows": "full",
+            "mac": "full",
+            "ios": "full",
+            "quest": "full"
+          },
+          "notes": {
+            "quest": "Also nests orchestrator workers and counts what waits per project."
+          }
+        },
+        {
+          "id": "bulk-select",
+          "title": "Bulk close/delete",
+          "description": "Tick several conversations and close or delete them at once.",
+          "api": [
+            "POST /sessions/{id}/close",
+            "DELETE /sessions/{id}"
+          ],
+          "support": {
+            "windows": "full",
+            "mac": "full",
+            "ios": "full",
+            "quest": "none"
+          },
+          "notes": {}
+        },
+        {
+          "id": "new-session",
+          "title": "Start a conversation",
+          "description": "Start a session on a chosen branch, provider, model and effort, or the project default, optionally with the review loop.",
+          "api": [
+            "GET /branches",
+            "GET /runtimes",
+            "POST /sessions"
+          ],
+          "support": {
+            "windows": "full",
+            "mac": "full",
+            "ios": "full",
+            "quest": "full"
+          },
+          "notes": {}
+        },
+        {
+          "id": "workspace-modes",
+          "title": "Worktree / Local / Orchestrator",
+          "description": "Choose the workspace mode, including a local checkout or an orchestrator that runs workers.",
+          "api": [
+            "POST /sessions"
+          ],
+          "support": {
+            "windows": "full",
+            "mac": "full",
+            "ios": "none",
+            "quest": "none"
+          },
+          "notes": {
+            "ios": "No workspace picker; README says epics/orchestrators are started from the Mac."
+          }
+        }
+      ]
+    },
+    {
+      "id": "transcript",
+      "title": "Transcript & markdown",
+      "features": [
+        {
+          "id": "transcript-view",
+          "title": "Incremental transcript",
+          "description": "Read the transcript with message times, agent questions and queued messages, appended incrementally.",
+          "api": [
+            "GET /sessions/{id}",
+            "GET /sessions/{id}/events"
+          ],
+          "support": {
+            "windows": "full",
+            "mac": "full",
+            "ios": "full",
+            "quest": "full"
+          },
+          "notes": {}
+        },
+        {
+          "id": "markdown-render",
+          "title": "Markdown replies",
+          "description": "Agent replies render as Markdown (headings, lists, tables, code with copy, links); text is selectable.",
+          "api": [],
+          "support": {
+            "windows": "full",
+            "mac": "full",
+            "ios": "full",
+            "quest": "full"
+          },
+          "notes": {
+            "ios": "Tables also copy whole as Markdown.",
+            "mac": "Tables also copy whole as Markdown."
+          }
+        },
+        {
+          "id": "tool-clusters",
+          "title": "Collapsible tool activity",
+          "description": "Tool calls, commands and git steps fold into expandable clusters between messages.",
+          "api": [],
+          "support": {
+            "windows": "full",
+            "mac": "full",
+            "ios": "full",
+            "quest": "full"
+          },
+          "notes": {}
+        },
+        {
+          "id": "session-panel",
+          "title": "Session details panel",
+          "description": "See the conversation's pull request, checks, reviews, findings and context use beside it.",
+          "api": [
+            "GET /sessions/{id}",
+            "GET /pulls/{number}"
+          ],
+          "support": {
+            "windows": "full",
+            "mac": "full",
+            "ios": "full",
+            "quest": "partial"
+          },
+          "notes": {
+            "ios": "As a sheet rather than a side panel.",
+            "quest": "Opens the PR in a browser panel; no details side panel."
+          }
+        },
+        {
+          "id": "task-history",
+          "title": "Task cost history",
+          "description": "Open a task's history: every session filed under it and their combined cost.",
+          "api": [
+            "GET /tasks/{id}"
+          ],
+          "support": {
+            "windows": "none",
+            "mac": "full",
+            "ios": "none",
+            "quest": "none"
+          },
+          "notes": {}
+        }
+      ]
+    },
+    {
+      "id": "composer",
+      "title": "Composer",
+      "features": [
+        {
+          "id": "follow-ups",
+          "title": "Send follow-ups",
+          "description": "Send a message into the running turn or the queue.",
+          "api": [
+            "POST /sessions/{id}/messages"
+          ],
+          "support": {
+            "windows": "full",
+            "mac": "full",
+            "ios": "full",
+            "quest": "full"
+          },
+          "notes": {}
+        },
+        {
+          "id": "attachments",
+          "title": "Attach files",
+          "description": "Paste, drop or pick files/images that upload and go with the message.",
+          "api": [
+            "POST /uploads"
+          ],
+          "support": {
+            "windows": "full",
+            "mac": "full",
+            "ios": "full",
+            "quest": "full"
+          },
+          "notes": {
+            "quest": "System file picker only."
+          }
+        },
+        {
+          "id": "voice-notes",
+          "title": "Voice notes",
+          "description": "Record audio and have the server transcribe it into the message box.",
+          "api": [
+            "POST /transcribe",
+            "GET /transcribe"
+          ],
+          "support": {
+            "windows": "full",
+            "mac": "full",
+            "ios": "full",
+            "quest": "full"
+          },
+          "notes": {
+            "quest": "Primary input (no keyboard); read-only text area to check before sending."
+          }
+        },
+        {
+          "id": "queue-manage",
+          "title": "Take back queued messages",
+          "description": "Remove a queued message before the agent receives it.",
+          "api": [
+            "DELETE /sessions/{id}/queue/{index}"
+          ],
+          "support": {
+            "windows": "full",
+            "mac": "full",
+            "ios": "full",
+            "quest": "full"
+          },
+          "notes": {}
+        },
+        {
+          "id": "agent-question-answers",
+          "title": "Answer agent questions",
+          "description": "Answer an agent's question with one of its offered options.",
+          "api": [
+            "POST /sessions/{id}/messages"
+          ],
+          "support": {
+            "windows": "full",
+            "mac": "full",
+            "ios": "full",
+            "quest": "full"
+          },
+          "notes": {
+            "quest": "Also from notifications and the status panel."
+          }
+        },
+        {
+          "id": "saved-prompts",
+          "title": "Saved prompt library",
+          "description": "Insert, save and delete prompts from the project's prompt library.",
+          "api": [
+            "GET /prompts",
+            "POST /prompts",
+            "PUT /prompts/{id}",
+            "DELETE /prompts/{id}"
+          ],
+          "support": {
+            "windows": "none",
+            "mac": "partial",
+            "ios": "none",
+            "quest": "none"
+          },
+          "notes": {
+            "mac": "List, create and delete; PUT /prompts/{id} (edit) is never called."
+          }
+        },
+        {
+          "id": "btw-side-question",
+          "title": "Side question (/btw)",
+          "description": "Ask a side question about a session the agent never sees.",
+          "api": [
+            "POST /sessions/{id}/btw"
+          ],
+          "support": {
+            "windows": "none",
+            "mac": "none",
+            "ios": "none",
+            "quest": "none"
+          },
+          "notes": {}
+        }
+      ]
+    },
+    {
+      "id": "session-controls",
+      "title": "Session controls",
+      "features": [
+        {
+          "id": "stop-turn",
+          "title": "Stop a turn",
+          "description": "Cancel the running turn.",
+          "api": [
+            "POST /sessions/{id}/cancel"
+          ],
+          "support": {
+            "windows": "full",
+            "mac": "full",
+            "ios": "full",
+            "quest": "full"
+          },
+          "notes": {}
+        },
+        {
+          "id": "close-reopen-delete",
+          "title": "Close, reopen, delete",
+          "description": "Close a session, reopen it later, or delete it.",
+          "api": [
+            "POST /sessions/{id}/close",
+            "POST /sessions/{id}/reopen",
+            "DELETE /sessions/{id}"
+          ],
+          "support": {
+            "windows": "full",
+            "mac": "full",
+            "ios": "full",
+            "quest": "full"
+          },
+          "notes": {}
+        },
+        {
+          "id": "rename-session",
+          "title": "Rename",
+          "description": "Rename a session.",
+          "api": [
+            "PATCH /sessions/{id}"
+          ],
+          "support": {
+            "windows": "full",
+            "mac": "full",
+            "ios": "full",
+            "quest": "none"
+          },
+          "notes": {
+            "quest": "No PATCH /sessions route in the client."
+          }
+        },
+        {
+          "id": "compact-clear",
+          "title": "Compact and clear",
+          "description": "Compact a session's context or clear its transcript.",
+          "api": [
+            "POST /sessions/{id}/compact",
+            "POST /sessions/{id}/clear"
+          ],
+          "support": {
+            "windows": "full",
+            "mac": "full",
+            "ios": "full",
+            "quest": "none"
+          },
+          "notes": {}
+        },
+        {
+          "id": "review-loop",
+          "title": "Review loop toggle",
+          "description": "Arm or disarm the automatic review loop on a session.",
+          "api": [
+            "POST /sessions/{id}/review-loop"
+          ],
+          "support": {
+            "windows": "full",
+            "mac": "full",
+            "ios": "full",
+            "quest": "full"
+          },
+          "notes": {}
+        },
+        {
+          "id": "qa-loop",
+          "title": "QA loop toggle",
+          "description": "Arm automatic QA after the review loop passes.",
+          "api": [
+            "POST /sessions/{id}/qa-loop"
+          ],
+          "support": {
+            "windows": "none",
+            "mac": "none",
+            "ios": "none",
+            "quest": "none"
+          },
+          "notes": {
+            "windows": "Route is in core/api.c's table but no screen calls it."
+          }
+        },
+        {
+          "id": "link-pr",
+          "title": "Link a pull request",
+          "description": "Attach a PR to a session after the server checks the branch.",
+          "api": [
+            "POST /sessions/{id}/link-pr"
+          ],
+          "support": {
+            "windows": "none",
+            "mac": "none",
+            "ios": "none",
+            "quest": "none"
+          },
+          "notes": {
+            "windows": "Route is in the table but unused by the UI."
+          }
+        },
+        {
+          "id": "recovery-resume",
+          "title": "Recover interrupted session",
+          "description": "Inspect what an interrupted session left in its workspace and resume from it.",
+          "api": [
+            "GET /sessions/{id}/recovery",
+            "POST /sessions/{id}/recovery"
+          ],
+          "support": {
+            "windows": "none",
+            "mac": "full",
+            "ios": "none",
+            "quest": "none"
+          },
+          "notes": {}
+        },
+        {
+          "id": "session-webhook",
+          "title": "Session webhook",
+          "description": "Arm a session's webhook, set caps, copy URLs/keys and rotate keys (Admin).",
+          "api": [
+            "GET /sessions/{id}/webhook",
+            "PUT /sessions/{id}/webhook",
+            "POST /sessions/{id}/webhook/rotate"
+          ],
+          "support": {
+            "windows": "full",
+            "mac": "full",
+            "ios": "full",
+            "quest": "none"
+          },
+          "notes": {}
+        }
+      ]
+    },
+    {
+      "id": "pull-requests",
+      "title": "Pull requests",
+      "features": [
+        {
+          "id": "pr-list",
+          "title": "Pull request list",
+          "description": "List open PRs with checks, conflicts, labels, people, linked issues and stack, filtered by author/reviewer/label.",
+          "api": [
+            "GET /pulls"
+          ],
+          "support": {
+            "windows": "full",
+            "mac": "full",
+            "ios": "full",
+            "quest": "full"
+          },
+          "notes": {
+            "quest": "Filters by author or label only."
+          }
+        },
+        {
+          "id": "pr-overview",
+          "title": "PR overview",
+          "description": "Open a PR on its description, checks, reviews, commits, linked issues and prior conversations.",
+          "api": [
+            "GET /pulls/{number}",
+            "GET /pulls/{number}/description"
+          ],
+          "support": {
+            "windows": "full",
+            "mac": "full",
+            "ios": "full",
+            "quest": "full"
+          },
+          "notes": {}
+        },
+        {
+          "id": "pr-files-diff",
+          "title": "Files changed and diffs",
+          "description": "Browse a PR's changed files with diffs.",
+          "api": [
+            "GET /pulls/{number}/files"
+          ],
+          "support": {
+            "windows": "full",
+            "mac": "full",
+            "ios": "full",
+            "quest": "none"
+          },
+          "notes": {
+            "quest": "pull_files is only used by the voice assistant to summarize changes; no diff UI."
+          }
+        },
+        {
+          "id": "pr-conversation",
+          "title": "PR comments and review threads",
+          "description": "Read the PR's comments, reviews and inline review comments as a timeline.",
+          "api": [
+            "GET /pulls/{number}/comments",
+            "GET /pulls/{number}/reviews",
+            "GET /pulls/{number}/review-comments"
+          ],
+          "support": {
+            "windows": "full",
+            "mac": "full",
+            "ios": "partial",
+            "quest": "partial"
+          },
+          "notes": {
+            "ios": "Only the review summary from the PR overview; the comment feeds (ConvFeed) are Mac-only.",
+            "quest": "Review summary from the overview only."
+          }
+        },
+        {
+          "id": "pr-run-preview",
+          "title": "Run preview",
+          "description": "Serve a PR's branch and view the running app in an embedded browser, with Cloudflare Access handled.",
+          "api": [
+            "POST /pulls/{number}/serve",
+            "GET /preview/access",
+            "GET /sessions/{id}/preview"
+          ],
+          "support": {
+            "windows": "full",
+            "mac": "full",
+            "ios": "full",
+            "quest": "full"
+          },
+          "notes": {
+            "quest": "Preview opens in its own panel."
+          }
+        },
+        {
+          "id": "branch-run",
+          "title": "Run default branch",
+          "description": "Serve the project's default branch (with a run profile) from the project screen.",
+          "api": [
+            "POST /branches/serve"
+          ],
+          "support": {
+            "windows": "full",
+            "mac": "full",
+            "ios": "full",
+            "quest": "none"
+          },
+          "notes": {}
+        },
+        {
+          "id": "preview-feedback",
+          "title": "Annotated preview feedback",
+          "description": "Mark a point on a preview screenshot and send it to the agent as feedback.",
+          "api": [
+            "POST /sessions/{id}/preview/feedback",
+            "POST /uploads"
+          ],
+          "support": {
+            "windows": "none",
+            "mac": "full",
+            "ios": "none",
+            "quest": "none"
+          },
+          "notes": {}
+        },
+        {
+          "id": "pr-errands",
+          "title": "Errands",
+          "description": "Start code review, solve conflicts, fix checks, implement feedback, test sheet, record QA and other errands; the suggested one is highlighted.",
+          "api": [
+            "GET /actions",
+            "POST /actions",
+            "POST /sessions"
+          ],
+          "support": {
+            "windows": "full",
+            "mac": "full",
+            "ios": "full",
+            "quest": "full"
+          },
+          "notes": {}
+        },
+        {
+          "id": "pr-merge",
+          "title": "Merge",
+          "description": "Merge a PR at the head read, after being told what stands in the way.",
+          "api": [
+            "POST /pulls/{number}/merge"
+          ],
+          "support": {
+            "windows": "full",
+            "mac": "full",
+            "ios": "full",
+            "quest": "full"
+          },
+          "notes": {
+            "ios": "Also by swipe on the list row."
+          }
+        },
+        {
+          "id": "pr-issue-edit",
+          "title": "Edit PR/issue and update branch",
+          "description": "Edit title, Markdown body, labels and assignees (incl. Assign me) on GitHub, and merge the base into a PR (Update branch).",
+          "api": [
+            "PATCH /pulls/{number}",
+            "PATCH /issues/{number}",
+            "POST /pulls/{number}/update-branch"
+          ],
+          "support": {
+            "windows": "full",
+            "mac": "full",
+            "ios": "full",
+            "quest": "none"
+          },
+          "notes": {}
+        },
+        {
+          "id": "review-list",
+          "title": "Review List",
+          "description": "A tab of PRs waiting on your review (required-dev-review / feedback-implemented).",
+          "api": [
+            "GET /pulls"
+          ],
+          "support": {
+            "windows": "full",
+            "mac": "full",
+            "ios": "full",
+            "quest": "none"
+          },
+          "notes": {}
+        },
+        {
+          "id": "qa-videos",
+          "title": "QA recordings",
+          "description": "Play the videos a Record QA run captured.",
+          "api": [
+            "GET /videos/*file"
+          ],
+          "support": {
+            "windows": "none",
+            "mac": "full",
+            "ios": "none",
+            "quest": "none"
+          },
+          "notes": {}
+        }
+      ]
+    },
+    {
+      "id": "findings",
+      "title": "Findings & review triage",
+      "features": [
+        {
+          "id": "findings-queue",
+          "title": "Findings queue",
+          "description": "See every review round awaiting a decision across projects, grouped by PR, with a count.",
+          "api": [
+            "GET /sessions",
+            "GET /pulls/{number}/findings"
+          ],
+          "support": {
+            "windows": "full",
+            "mac": "full",
+            "ios": "full",
+            "quest": "partial"
+          },
+          "notes": {
+            "quest": "No cross-project findings screen; rounds surface as conversation states, notifications and the status panel."
+          }
+        },
+        {
+          "id": "triage-round",
+          "title": "Triage a held round",
+          "description": "Give each finding a verdict and comment, add a note and complete the round into the fix session.",
+          "api": [
+            "POST /sessions/{id}/findings/triage",
+            "POST /sessions/{id}/findings/save"
+          ],
+          "support": {
+            "windows": "full",
+            "mac": "full",
+            "ios": "full",
+            "quest": "full"
+          },
+          "notes": {
+            "quest": "Completes the round (triage) but never saves verdicts to the PR (findings/save)."
+          }
+        },
+        {
+          "id": "foreign-review-actions",
+          "title": "Reply/delete on others' reviews",
+          "description": "On a review of someone else's PR, reply on finding threads or delete findings.",
+          "api": [
+            "POST /sessions/{id}/findings/reply",
+            "POST /sessions/{id}/findings/delete"
+          ],
+          "support": {
+            "windows": "full",
+            "mac": "full",
+            "ios": "full",
+            "quest": "none"
+          },
+          "notes": {}
+        },
+        {
+          "id": "pr-finding-decisions",
+          "title": "Decide findings on a PR page",
+          "description": "Record fix/optional/dismiss on a PR's findings from the PR page and solve them.",
+          "api": [
+            "GET /pulls/{number}/findings",
+            "POST /pulls/{number}/findings/decision"
+          ],
+          "support": {
+            "windows": "full",
+            "mac": "full",
+            "ios": "full",
+            "quest": "partial"
+          },
+          "notes": {
+            "quest": "Findings are listed read-only on the PR page; no decision route."
+          }
+        },
+        {
+          "id": "approvals",
+          "title": "SSH and Slack approvals",
+          "description": "Approve or deny agents' pending SSH commands and Slack posts.",
+          "api": [
+            "GET /attention",
+            "POST /ssh/requests/{id}/decision",
+            "POST /slack/requests/{id}/decision"
+          ],
+          "support": {
+            "windows": "none",
+            "mac": "full",
+            "ios": "none",
+            "quest": "none"
+          },
+          "notes": {
+            "mac": "On the Findings screen, Admin token."
+          }
+        }
+      ]
+    },
+    {
+      "id": "issues",
+      "title": "Issues & boards",
+      "features": [
+        {
+          "id": "issue-list",
+          "title": "Issue list",
+          "description": "List open issues with sub-issues under epics and answering PRs, filtered by author/assignee/label.",
+          "api": [
+            "GET /pulls"
+          ],
+          "support": {
+            "windows": "full",
+            "mac": "full",
+            "ios": "full",
+            "quest": "partial"
+          },
+          "notes": {
+            "quest": "Only via the voice assistant's list_issues tool."
+          }
+        },
+        {
+          "id": "issue-detail",
+          "title": "Issue page",
+          "description": "Open an issue with body, sub-issues, fields, linked PRs and paged timeline.",
+          "api": [
+            "GET /issues/{number}",
+            "GET /issues/{number}/timeline"
+          ],
+          "support": {
+            "windows": "full",
+            "mac": "full",
+            "ios": "full",
+            "quest": "partial"
+          },
+          "notes": {
+            "windows": "Opens in a side panel over the board/PR.",
+            "quest": "Voice reads issues; 'show issue' opens GitHub in the browser."
+          }
+        },
+        {
+          "id": "start-on-issue",
+          "title": "Start a session on an issue",
+          "description": "Start an agent on an issue at a tap.",
+          "api": [
+            "POST /sessions"
+          ],
+          "support": {
+            "windows": "full",
+            "mac": "full",
+            "ios": "full",
+            "quest": "partial"
+          },
+          "notes": {
+            "quest": "Voice only (work_on_issue)."
+          }
+        },
+        {
+          "id": "close-issue",
+          "title": "Close an issue",
+          "description": "Close as completed or not planned, with an optional comment.",
+          "api": [
+            "POST /issues/{number}/close"
+          ],
+          "support": {
+            "windows": "full",
+            "mac": "full",
+            "ios": "full",
+            "quest": "none"
+          },
+          "notes": {}
+        },
+        {
+          "id": "projects-board",
+          "title": "GitHub Projects board",
+          "description": "View the project's GitHub Projects board by column and drag cards between columns.",
+          "api": [
+            "GET /project-board",
+            "POST /project-board/move"
+          ],
+          "support": {
+            "windows": "full",
+            "mac": "full",
+            "ios": "none",
+            "quest": "none"
+          },
+          "notes": {
+            "ios": "README: 'The GitHub Projects board stays on the Mac app.'"
+          }
+        },
+        {
+          "id": "repo-files",
+          "title": "Repository file browser",
+          "description": "Browse the repository tree at a branch and open files with highlighting, via the server's GitHub token.",
+          "api": [
+            "GET /repo/tree",
+            "GET /repo/file",
+            "GET /commits/{sha}",
+            "GET /repo/archive"
+          ],
+          "support": {
+            "windows": "full",
+            "mac": "full",
+            "ios": "none",
+            "quest": "none"
+          },
+          "notes": {
+            "mac": "Also downloads /repo/archive for a local index."
+          }
+        }
+      ]
+    },
+    {
+      "id": "project-ops",
+      "title": "Deploy & project tools",
+      "features": [
+        {
+          "id": "forge-sites",
+          "title": "Laravel Forge sites",
+          "description": "Browse Forge servers/sites for the project and edit deploy script and .env.",
+          "api": [
+            "GET /forge/accounts/{account}/servers",
+            "GET /forge/accounts/{account}/servers/{server}/sites/{site}",
+            "PUT /forge/accounts/{account}/servers/{server}/sites/{site}/env",
+            "PUT /forge/accounts/{account}/servers/{server}/sites/{site}/deployment-script"
+          ],
+          "support": {
+            "windows": "full",
+            "mac": "full",
+            "ios": "full",
+            "quest": "none"
+          },
+          "notes": {}
+        },
+        {
+          "id": "github-deployments",
+          "title": "GitHub deployments",
+          "description": "See deployments per environment and plan/dispatch a deploy.",
+          "api": [
+            "GET /deployments",
+            "POST /deployments/config",
+            "POST /deployments/plan",
+            "POST /deployments/dispatch",
+            "POST /deployments/acknowledge"
+          ],
+          "support": {
+            "windows": "none",
+            "mac": "full",
+            "ios": "none",
+            "quest": "none"
+          },
+          "notes": {
+            "mac": "Never reads GET /deployments/config."
+          }
+        },
+        {
+          "id": "envoyer-deploy",
+          "title": "Envoyer accounts & deployments",
+          "description": "Manage Envoyer accounts, list projects, servers and deployments, and trigger a deploy.",
+          "api": [
+            "GET /settings/envoyer/accounts",
+            "POST /settings/envoyer/accounts",
+            "GET /envoyer/accounts",
+            "GET /envoyer/accounts/{id}/projects",
+            "GET /envoyer/accounts/{id}/projects/{project}/deployments",
+            "POST /envoyer/accounts/{id}/projects/{project}/deployments"
+          ],
+          "support": {
+            "windows": "none",
+            "mac": "full",
+            "ios": "none",
+            "quest": "none"
+          },
+          "notes": {}
+        },
+        {
+          "id": "memories",
+          "title": "Agent memories",
+          "description": "List, edit, add and delete what agents remember; health report to verify/merge (Admin).",
+          "api": [
+            "GET /memories",
+            "POST /memories",
+            "PUT /memories/{id}",
+            "DELETE /memories/{id}",
+            "GET /memories/health",
+            "POST /memories/{id}/policy",
+            "POST /memories/merge"
+          ],
+          "support": {
+            "windows": "none",
+            "mac": "full",
+            "ios": "none",
+            "quest": "none"
+          },
+          "notes": {}
+        }
+      ]
+    },
+    {
+      "id": "usage",
+      "title": "Usage dashboard",
+      "features": [
+        {
+          "id": "usage-dashboard",
+          "title": "Spend dashboard",
+          "description": "See spend over a window by project, activity, provider and model, with costliest sessions and filters.",
+          "api": [
+            "GET /usage",
+            "GET /usage/all"
+          ],
+          "support": {
+            "windows": "full",
+            "mac": "full",
+            "ios": "full",
+            "quest": "none"
+          },
+          "notes": {
+            "windows": "Needs an Admin token (/usage/all only); others are told so.",
+            "ios": "Non-admin tokens see this month's own spend."
+          }
+        },
+        {
+          "id": "provider-quotas",
+          "title": "Provider quotas",
+          "description": "See each provider account's login state and quota windows.",
+          "api": [
+            "GET /providers",
+            "GET /settings/providers/{id}/status"
+          ],
+          "support": {
+            "windows": "partial",
+            "mac": "full",
+            "ios": "partial",
+            "quest": "none"
+          },
+          "notes": {
+            "windows": "Per provider on its Settings Status tab only.",
+            "ios": "Per provider in Settings only."
+          }
+        }
+      ]
+    },
+    {
+      "id": "settings",
+      "title": "Settings",
+      "features": [
+        {
+          "id": "settings-projects",
+          "title": "Projects settings",
+          "description": "Create, edit, clone, delete and reorder projects with all their tabs (Admin).",
+          "api": [
+            "GET /settings/projects",
+            "POST /settings/projects",
+            "PUT /settings/projects/{id}",
+            "DELETE /settings/projects/{id}",
+            "PUT /settings/projects/order"
+          ],
+          "support": {
+            "windows": "full",
+            "mac": "full",
+            "ios": "full",
+            "quest": "none"
+          },
+          "notes": {}
+        },
+        {
+          "id": "settings-providers",
+          "title": "Providers settings",
+          "description": "Manage providers, their models, logins and endpoint tests (Admin).",
+          "api": [
+            "GET /settings/providers",
+            "POST /settings/providers",
+            "PUT /settings/providers/{id}",
+            "POST /settings/providers/test",
+            "POST /settings/providers/{id}/login/start",
+            "POST /settings/providers/{id}/login/finish"
+          ],
+          "support": {
+            "windows": "full",
+            "mac": "full",
+            "ios": "full",
+            "quest": "none"
+          },
+          "notes": {}
+        },
+        {
+          "id": "settings-db-pool",
+          "title": "Database pool",
+          "description": "Manage and test the database servers sessions claim (Admin).",
+          "api": [
+            "GET /settings/db-servers",
+            "POST /settings/db-servers",
+            "PUT /settings/db-servers/{id}",
+            "POST /settings/db-servers/test"
+          ],
+          "support": {
+            "windows": "full",
+            "mac": "full",
+            "ios": "full",
+            "quest": "none"
+          },
+          "notes": {}
+        },
+        {
+          "id": "settings-ssh-servers",
+          "title": "SSH servers",
+          "description": "Manage SSH servers agents may use, with their stored DB login (Admin).",
+          "api": [
+            "GET /settings/ssh/servers",
+            "POST /settings/ssh/servers",
+            "PUT /settings/ssh/servers/{id}",
+            "GET /settings/ssh/servers/{id}/db-credentials"
+          ],
+          "support": {
+            "windows": "full",
+            "mac": "full",
+            "ios": "full",
+            "quest": "none"
+          },
+          "notes": {}
+        },
+        {
+          "id": "settings-forge-accounts",
+          "title": "Forge accounts",
+          "description": "Manage Laravel Forge accounts and their projects (Admin).",
+          "api": [
+            "GET /settings/forge/accounts",
+            "POST /settings/forge/accounts",
+            "PUT /settings/forge/accounts/{id}"
+          ],
+          "support": {
+            "windows": "full",
+            "mac": "full",
+            "ios": "full",
+            "quest": "none"
+          },
+          "notes": {}
+        },
+        {
+          "id": "settings-slack",
+          "title": "Slack workspaces",
+          "description": "Manage Slack workspaces and each project's channels/approval (Admin).",
+          "api": [
+            "GET /settings/slack/workspaces",
+            "POST /settings/slack/workspaces",
+            "PUT /settings/slack/workspaces/{id}"
+          ],
+          "support": {
+            "windows": "none",
+            "mac": "full",
+            "ios": "full",
+            "quest": "none"
+          },
+          "notes": {}
+        },
+        {
+          "id": "settings-mail",
+          "title": "Mail accounts",
+          "description": "Connect, sync, relabel and disconnect mailboxes (Admin).",
+          "api": [
+            "GET /settings/mail/accounts",
+            "POST /settings/mail/accounts/connect",
+            "POST /settings/mail/accounts/connect/finish",
+            "POST /settings/mail/accounts/{id}/sync"
+          ],
+          "support": {
+            "windows": "full",
+            "mac": "full",
+            "ios": "none",
+            "quest": "none"
+          },
+          "notes": {}
+        },
+        {
+          "id": "settings-mcp",
+          "title": "MCP servers",
+          "description": "Manage the operator MCP registry and sign in to servers (Admin).",
+          "api": [
+            "GET /settings/mcp/servers",
+            "POST /settings/mcp/servers",
+            "POST /settings/mcp/servers/{id}/connect",
+            "POST /settings/mcp/servers/{id}/finish-sign-in"
+          ],
+          "support": {
+            "windows": "full",
+            "mac": "full",
+            "ios": "none",
+            "quest": "none"
+          },
+          "notes": {}
+        },
+        {
+          "id": "server-admin",
+          "title": "Server administration",
+          "description": "Drain for maintenance, manage workspace slots, edit prompt templates and update a project's checkout (Admin).",
+          "api": [
+            "GET /maintenance",
+            "POST /maintenance",
+            "GET /settings/workspaces",
+            "POST /settings/workspaces/{slot}/clean",
+            "GET /settings/templates",
+            "PUT /settings/templates",
+            "POST /settings/projects/{id}/update"
+          ],
+          "support": {
+            "windows": "none",
+            "mac": "full",
+            "ios": "none",
+            "quest": "none"
+          },
+          "notes": {}
+        },
+        {
+          "id": "devices-tokens",
+          "title": "Devices & tokens",
+          "description": "List, issue or revoke other devices' tokens.",
+          "api": [],
+          "support": {
+            "windows": "none",
+            "mac": "none",
+            "ios": "none",
+            "quest": "none"
+          },
+          "notes": {
+            "windows": "No /api/v1 route; tokens are issued on the server with npm run create-token.",
+            "mac": "No /api/v1 route.",
+            "ios": "No /api/v1 route.",
+            "quest": "No /api/v1 route."
+          }
+        }
+      ]
+    },
+    {
+      "id": "notifications",
+      "title": "Notifications & attention",
+      "features": [
+        {
+          "id": "system-notifications",
+          "title": "Background notifications",
+          "description": "Get OS notifications when an agent asks, a turn finishes, findings are held or a session fails.",
+          "api": [
+            "GET /events"
+          ],
+          "support": {
+            "windows": "none",
+            "mac": "none",
+            "ios": "none",
+            "quest": "full"
+          },
+          "notes": {
+            "ios": "No push in the API (would need APNs); iOS can't hold /events open in the background.",
+            "quest": "Foreground service keeps /events open."
+          }
+        },
+        {
+          "id": "notification-reply",
+          "title": "Reply from notification",
+          "description": "Answer with one tap on the agent's options or Continue without opening the app.",
+          "api": [
+            "POST /sessions/{id}/messages"
+          ],
+          "support": {
+            "windows": "none",
+            "mac": "none",
+            "ios": "none",
+            "quest": "full"
+          },
+          "notes": {}
+        },
+        {
+          "id": "status-overview",
+          "title": "Waiting/working overview",
+          "description": "See counts of waiting, working and ready sessions and answer waiting ones in place.",
+          "api": [
+            "GET /sessions",
+            "GET /events"
+          ],
+          "support": {
+            "windows": "partial",
+            "mac": "partial",
+            "ios": "partial",
+            "quest": "full"
+          },
+          "notes": {
+            "windows": "Only a findings count in the sidebar.",
+            "mac": "Sidebar badge counts held findings + approvals.",
+            "ios": "Findings tab badge only.",
+            "quest": "Dedicated status panel."
+          }
+        }
+      ]
+    },
+    {
+      "id": "voice",
+      "title": "Voice assistants",
+      "features": [
+        {
+          "id": "voice-assistant",
+          "title": "GPT-Realtime voice assistant",
+          "description": "Hold a spoken conversation that reads and acts on projects, PRs, issues and conversations, with confirmation and cost.",
+          "api": [
+            "GET /sessions",
+            "GET /pulls",
+            "POST /sessions",
+            "POST /sessions/{id}/messages",
+            "POST /pulls/{number}/merge",
+            "POST /actions"
+          ],
+          "support": {
+            "windows": "none",
+            "mac": "none",
+            "ios": "full",
+            "quest": "full"
+          },
+          "notes": {
+            "ios": "Scoped to one project; works with the phone locked.",
+            "quest": "Across all projects, and also drives the panels ('show me this PR')."
+          }
+        },
+        {
+          "id": "voice-conversation-line",
+          "title": "Hands-free conversation line",
+          "description": "Talk to one conversation's agent by voice and hear its replies and questions read aloud.",
+          "api": [
+            "GET /sessions/{id}",
+            "POST /sessions/{id}/messages",
+            "POST /sessions/{id}/findings/triage"
+          ],
+          "support": {
+            "windows": "none",
+            "mac": "none",
+            "ios": "full",
+            "quest": "partial"
+          },
+          "notes": {
+            "quest": "The global assistant can answer an agent, but there is no dedicated per-conversation read-aloud line."
+          }
+        },
+        {
+          "id": "meeting-assistant",
+          "title": "Meeting assistant",
+          "description": "An ElevenLabs agent joins your meeting through a virtual mic and answers project questions with read-only tools.",
+          "api": [
+            "GET /sessions",
+            "GET /pulls",
+            "GET /pulls/{number}/findings",
+            "GET /issues/{number}"
+          ],
+          "support": {
+            "windows": "full",
+            "mac": "full",
+            "ios": "n/a",
+            "quest": "n/a"
+          },
+          "notes": {
+            "ios": "iOS can't capture other apps' audio or provide a virtual microphone.",
+            "quest": "Android can't capture meeting apps' audio or inject a virtual mic."
+          }
+        },
+        {
+          "id": "carplay",
+          "title": "CarPlay",
+          "description": "Drive conversations, PRs and issues by dictation in CarPlay.",
+          "api": [
+            "GET /sessions",
+            "POST /sessions/{id}/messages",
+            "POST /pulls/{number}/merge",
+            "POST /actions"
+          ],
+          "support": {
+            "windows": "n/a",
+            "mac": "n/a",
+            "ios": "full",
+            "quest": "n/a"
+          },
+          "notes": {
+            "windows": "No CarPlay on Windows.",
+            "mac": "No CarPlay on macOS.",
+            "quest": "No CarPlay on Quest."
+          }
+        }
+      ]
+    },
+    {
+      "id": "shared-browser",
+      "title": "Shared browser",
+      "features": [
+        {
+          "id": "shared-browser",
+          "title": "Watch and drive the shared browser",
+          "description": "Switch on the session's headless Chromium, watch it live and click/type on the agent's tabs.",
+          "api": [
+            "GET /sessions/{id}/browser",
+            "POST /sessions/{id}/browser",
+            "DELETE /sessions/{id}/browser",
+            "GET /sessions/{id}/browser/stream",
+            "POST /sessions/{id}/browser/input"
+          ],
+          "support": {
+            "windows": "full",
+            "mac": "full",
+            "ios": "full",
+            "quest": "none"
+          },
+          "notes": {
+            "windows": "Docks beside the conversation, resizes, expands or pops out to its own window.",
+            "mac": "Docks/pops out like Windows; also uses GET /sessions/{id}/browser/screenshot.",
+            "ios": "Full screen only (no docking).",
+            "quest": "Not built."
+          }
+        }
+      ]
+    },
+    {
+      "id": "ssh-sftp",
+      "title": "SSH, SFTP & database",
+      "features": [
+        {
+          "id": "ssh-terminal",
+          "title": "SSH terminal",
+          "description": "Open SSH sessions to a project's servers in a built-in terminal using local ssh and keys.",
+          "api": [
+            "GET /settings/ssh/servers"
+          ],
+          "support": {
+            "windows": "full",
+            "mac": "full",
+            "ios": "none",
+            "quest": "none"
+          },
+          "notes": {
+            "ios": "Excluded (needs the Mac's ssh); possible with an embedded SSH library.",
+            "quest": "Not built; Android could embed an SSH client."
+          }
+        },
+        {
+          "id": "sftp-browser",
+          "title": "SFTP file browser",
+          "description": "Browse, upload, download, rename and delete files over SFTP.",
+          "api": [
+            "GET /settings/ssh/servers"
+          ],
+          "support": {
+            "windows": "full",
+            "mac": "full",
+            "ios": "none",
+            "quest": "none"
+          },
+          "notes": {
+            "ios": "Not built (needs local sftp).",
+            "quest": "Not built."
+          }
+        },
+        {
+          "id": "db-browser",
+          "title": "Database browser",
+          "description": "Browse a server's MySQL databases, tables and rows over SSH with the stored DB login.",
+          "api": [
+            "GET /settings/ssh/servers/{id}/db-credentials"
+          ],
+          "support": {
+            "windows": "full",
+            "mac": "full",
+            "ios": "none",
+            "quest": "none"
+          },
+          "notes": {}
+        }
+      ]
+    },
+    {
+      "id": "inboxes",
+      "title": "Mail, WhatsApp & Slack",
+      "features": [
+        {
+          "id": "mail-inbox",
+          "title": "Mail inbox",
+          "description": "Read synced mail across accounts with filters, search and threads, and delete a message to provider trash.",
+          "api": [
+            "GET /settings/mail/accounts",
+            "GET /mail/messages",
+            "GET /mail/accounts/{account}/messages/{id}",
+            "DELETE /mail/accounts/{account}/messages/{id}"
+          ],
+          "support": {
+            "windows": "full",
+            "mac": "partial",
+            "ios": "none",
+            "quest": "none"
+          },
+          "notes": {
+            "mac": "Read-only: no delete (DELETE route not in the Swift table)."
+          }
+        },
+        {
+          "id": "whatsapp",
+          "title": "WhatsApp",
+          "description": "Read and send WhatsApp chats.",
+          "api": [
+            "GET /whatsapp/accounts",
+            "GET /whatsapp/accounts/{id}/conversations",
+            "POST /whatsapp/accounts/{id}/conversations/{chat}/messages"
+          ],
+          "support": {
+            "windows": "partial",
+            "mac": "partial",
+            "ios": "none",
+            "quest": "none"
+          },
+          "notes": {
+            "windows": "Embeds web.whatsapp.com in WebView2; the server's /whatsapp API is not used.",
+            "mac": "Embeds WhatsApp Web; /whatsapp API not used."
+          }
+        },
+        {
+          "id": "slack-inbox",
+          "title": "Slack inbox",
+          "description": "Read Slack conversations and threads, open DMs and send messages.",
+          "api": [
+            "GET /slack/workspaces/{id}/conversations",
+            "GET /slack/workspaces/{id}/conversations/{channel}/messages",
+            "POST /slack/workspaces/{id}/conversations/{channel}/messages"
+          ],
+          "support": {
+            "windows": "none",
+            "mac": "none",
+            "ios": "none",
+            "quest": "none"
+          },
+          "notes": {}
+        }
+      ]
+    },
+    {
+      "id": "windows-panels",
+      "title": "Multi-window & layout",
+      "features": [
+        {
+          "id": "split-layout",
+          "title": "List beside conversation",
+          "description": "Projects/conversations column beside the chosen conversation, collapsing to one column when narrow.",
+          "api": [],
+          "support": {
+            "windows": "full",
+            "mac": "full",
+            "ios": "full",
+            "quest": "full"
+          },
+          "notes": {
+            "ios": "iPad only; iPhone is single-column."
+          }
+        },
+        {
+          "id": "detached-windows",
+          "title": "Detached windows / panels",
+          "description": "Pop a conversation, findings, dashboard or browser into its own window/panel.",
+          "api": [],
+          "support": {
+            "windows": "full",
+            "mac": "full",
+            "ios": "partial",
+            "quest": "full"
+          },
+          "notes": {
+            "ios": "iPad supports multiple app scenes, but no per-conversation pop-out.",
+            "quest": "Conversations, preview and status as separate panels."
+          }
+        }
+      ]
+    },
+    {
+      "id": "search",
+      "title": "Search & find",
+      "features": [
+        {
+          "id": "conversation-search",
+          "title": "Search conversations",
+          "description": "Filter the conversation list by text.",
+          "api": [
+            "GET /sessions"
+          ],
+          "support": {
+            "windows": "none",
+            "mac": "none",
+            "ios": "full",
+            "quest": "none"
+          },
+          "notes": {
+            "windows": "README claims search, but no list filter exists in code (Ctrl+F only works inside a conversation).",
+            "mac": "No sidebar search field found."
+          }
+        },
+        {
+          "id": "find-in-transcript",
+          "title": "Find in conversation",
+          "description": "Ctrl/⌘+F highlights matches in a transcript and steps through them.",
+          "api": [],
+          "support": {
+            "windows": "full",
+            "mac": "full",
+            "ios": "none",
+            "quest": "none"
+          },
+          "notes": {}
+        },
+        {
+          "id": "code-search",
+          "title": "Code search & navigation",
+          "description": "PhpStorm-style Go to File/Class/Symbol and Find in Files over an indexed repository.",
+          "api": [
+            "GET /repo/tree",
+            "GET /repo/file",
+            "GET /commits/{sha}",
+            "GET /repo/archive"
+          ],
+          "support": {
+            "windows": "full",
+            "mac": "full",
+            "ios": "none",
+            "quest": "none"
+          },
+          "notes": {
+            "mac": "Adds Search Everywhere, Go to Declaration, Find Usages and regex search."
+          }
+        }
+      ]
+    }
+  ],
+  "unused_api": [
+    {
+      "group": "slack (inbox)",
+      "routes": [
+        "GET /slack/workspaces",
+        "GET /slack/workspaces/{id}/conversations",
+        "GET /slack/workspaces/{id}/conversations/{channel}",
+        "GET /slack/workspaces/{id}/people",
+        "POST /slack/workspaces/{id}/direct-messages",
+        "GET /slack/workspaces/{id}/conversations/{channel}/messages",
+        "GET /slack/workspaces/{id}/conversations/{channel}/threads/{ts}",
+        "POST /slack/workspaces/{id}/conversations/{channel}/messages",
+        "POST /slack/workspaces/{id}/conversations/{channel}/read",
+        "GET /slack/workspaces/{id}/events",
+        "GET /slack/requests"
+      ]
+    },
+    {
+      "group": "whatsapp",
+      "routes": [
+        "all 10 /whatsapp/accounts/* routes"
+      ]
+    },
+    {
+      "group": "sessions.btw",
+      "routes": [
+        "POST /sessions/{id}/btw"
+      ]
+    },
+    {
+      "group": "sessions.qaLoop",
+      "routes": [
+        "POST /sessions/{id}/qa-loop"
+      ]
+    },
+    {
+      "group": "sessions.linkPr",
+      "routes": [
+        "POST /sessions/{id}/link-pr"
+      ]
+    },
+    {
+      "group": "pulls.checks / pulls.commits",
+      "routes": [
+        "GET /pulls/{number}/checks",
+        "GET /pulls/{number}/commits"
+      ]
+    },
+    {
+      "group": "ssh.requests",
+      "routes": [
+        "GET /ssh/requests"
+      ]
+    },
+    {
+      "group": "envoyer (single items)",
+      "routes": [
+        "GET /envoyer/accounts/{id}/projects/{project}",
+        "GET /envoyer/accounts/{id}/projects/{project}/deployments/{deployment}"
+      ]
+    },
+    {
+      "group": "deployments.config (read)",
+      "routes": [
+        "GET /deployments/config"
+      ]
+    },
+    {
+      "group": "prompts.update",
+      "routes": [
+        "PUT /prompts/{id}"
+      ]
+    }
+  ]
+}

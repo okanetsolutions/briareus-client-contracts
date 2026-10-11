@@ -26,6 +26,7 @@ tokens/
   chart.json              chart.series.* (usage rings and bars) and chart.context.{dark,light}.* (the context bar)
   size.json               radius.*, layout.*, motion.*
   content.json            working.* — the working indicator's glyphs and verbs
+features/features.json    what each client offers, feature by feature (FEATURES.md is generated from it)
 build.mjs                 Style Dictionary config and the five formats (Compose, Swift, C, CSS, JSON)
 dist/                     generated; committed so clients and reviewers see exactly what changed
 scripts/sync.mjs          copies dist/ into client checkouts, or --check says which are stale
@@ -33,6 +34,10 @@ test/                     WCAG contrast of every text/surface pair, and status s
 ```
 
 Tokens are in the [DTCG format](https://www.designtokens.org/tr/drafts/format/) (`$value`, `$type`, `$description`), with references between tiers: a client reads `theme.dark.accent`, which points at `palette.clay.500`.
+
+## Features
+
+[FEATURES.md](FEATURES.md) shows, for each of the 89 features the clients offer, whether Windows, the Mac, iPhone/iPad and Quest have it in full, in part, not at all, or cannot (n/a). It also lists the server routes no client calls. It is generated from [features/features.json](features/features.json): when a client gains or loses a feature, update the JSON in the same change and run `npm run build`.
 
 ## Changing a token
 

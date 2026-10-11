@@ -7,9 +7,9 @@
   "private": true,
   "engines": { "node": ">=22" },
   "scripts": {
-    "build": "node build.mjs",
+    "build": "node build.mjs && node scripts/features.mjs",
     "test": "node --test test/*.test.mjs",
-    "check": "npm run build && npm test && git diff --exit-code -- dist"
+    "check": "npm run build && npm test && git diff --exit-code -- dist FEATURES.md"
   },
   "devDependencies": {
     "style-dictionary": "5.6.1"
