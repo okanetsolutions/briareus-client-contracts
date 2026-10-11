@@ -1,0 +1,25 @@
+{
+  "theme": {
+    "light": {
+      "$type": "color",
+      "$description": "The same warm palette on paper, with the accents darkened to read on it: what Windows and the Mac draw in light mode.",
+      "canvas": { "$value": "{palette.neutral.25}" },
+      "sidebar": { "$value": "{palette.neutral.75}" },
+      "raise": { "$value": "{palette.neutral.0}" },
+      "field": { "$value": "{palette.neutral.100}" },
+      "sunken": { "$value": "{palette.neutral.50}" },
+      "line": { "$value": "{palette.neutral.150}" },
+      "lineStrong": { "$value": "{palette.neutral.250}" },
+      "ink": { "$value": "{palette.neutral.925}" },
+      "muted": { "$value": "{palette.neutral.625}" },
+      "accent": { "$value": "{palette.clay.600}" },
+      "accentDim": { "$value": "{palette.clay.300}" },
+      "onAccent": { "$value": "{palette.neutral.0}" },
+      "ok": { "$value": "{palette.green.700}" },
+      "warn": { "$value": "{palette.amber.700}" },
+      "danger": { "$value": "{palette.red.700}" },
+      "dot": { "$value": "{palette.neutral.400}" },
+      "thumb": { "$value": "{palette.neutral.200}" }
+    }
+  }
+}

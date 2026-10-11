@@ -1,0 +1,34 @@
+{
+  "status": {
+    "$description": "What colour a session's status dot takes. Each role names a theme colour; `statuses` lists the server's status strings (lib/ in nadinyamaui/briareus) that take it. A status in no list is `inactive`.",
+    "active": {
+      "$value": "accent",
+      "$type": "role",
+      "$description": "Working, or about to.",
+      "$extensions": { "briareus": { "statuses": ["running", "queued", "preparing", "starting"] } }
+    },
+    "idle": {
+      "$value": "ok",
+      "$type": "role",
+      "$description": "Done with its turn and ready for the next message.",
+      "$extensions": { "briareus": { "statuses": ["idle"] } }
+    },
+    "attention": {
+      "$value": "warn",
+      "$type": "role",
+      "$description": "Stopped short: waiting on you, interrupted or cancelled.",
+      "$extensions": { "briareus": { "statuses": ["waiting", "interrupted", "cancelled"] } }
+    },
+    "failed": {
+      "$value": "danger",
+      "$type": "role",
+      "$extensions": { "briareus": { "statuses": ["failed", "error"] } }
+    },
+    "inactive": {
+      "$value": "dot",
+      "$type": "role",
+      "$description": "Closed, or a status this version does not know.",
+      "$extensions": { "briareus": { "statuses": ["closed"] } }
+    }
+  }
+}

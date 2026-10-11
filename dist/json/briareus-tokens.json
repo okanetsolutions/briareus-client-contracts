@@ -1,0 +1,378 @@
+{
+  "palette": {
+    "neutral": {
+      "0": "#FFFFFF",
+      "25": "#FAF9F5",
+      "50": "#F3F1EA",
+      "75": "#F0EEE6",
+      "100": "#E9E6DC",
+      "125": "#E8E6E1",
+      "150": "#E0DDD3",
+      "200": "#CFCBC0",
+      "250": "#C4C0B4",
+      "400": "#A29E93",
+      "600": "#6B6862",
+      "625": "#6B675E",
+      "700": "#5A5850",
+      "800": "#3E3E3A",
+      "810": "#3D3D3A",
+      "820": "#3C3B38",
+      "850": "#30302E",
+      "900": "#262624",
+      "925": "#1F1E1D",
+      "950": "#1C1C1A",
+      "975": "#1B1B19"
+    },
+    "clay": {
+      "300": "#E0A58E",
+      "500": "#D97757",
+      "600": "#C96442",
+      "700": "#B35C3E"
+    },
+    "green": {
+      "400": "#7FBF7F",
+      "700": "#3D8B4A"
+    },
+    "amber": {
+      "400": "#E0AF68",
+      "700": "#A86E12"
+    },
+    "red": {
+      "400": "#E06C75",
+      "700": "#C2404B"
+    }
+  },
+  "working": {
+    "glyphs": [
+      "·",
+      "✢",
+      "✳",
+      "✶",
+      "✻",
+      "✽",
+      "✻",
+      "✶",
+      "✳",
+      "✢"
+    ],
+    "verbs": [
+      "Working",
+      "Thinking",
+      "Reasoning",
+      "Tinkering",
+      "Crafting",
+      "Pondering"
+    ],
+    "verbTicks": 25
+  },
+  "headset": {
+    "type": {
+      "bodyLarge": {
+        "fontSize": "17px",
+        "lineHeight": "26px",
+        "fontWeight": 400
+      },
+      "bodyMedium": {
+        "fontSize": "15px",
+        "lineHeight": "22px",
+        "fontWeight": 400
+      },
+      "bodySmall": {
+        "fontSize": "13px",
+        "lineHeight": "18px",
+        "fontWeight": 400
+      },
+      "titleLarge": {
+        "fontSize": "22px",
+        "fontWeight": 600
+      },
+      "titleMedium": {
+        "fontSize": "17px",
+        "fontWeight": 600
+      },
+      "titleSmall": {
+        "fontSize": "15px",
+        "fontWeight": 600
+      },
+      "labelLarge": {
+        "fontSize": "15px",
+        "fontWeight": 500
+      },
+      "labelMedium": {
+        "fontSize": "13px",
+        "fontWeight": 500
+      },
+      "labelSmall": {
+        "fontSize": "12px",
+        "fontWeight": 500
+      }
+    }
+  },
+  "theme": {
+    "dark": {
+      "canvas": "#262624",
+      "sidebar": "#1F1E1D",
+      "raise": "#30302E",
+      "field": "#3D3D3A",
+      "sunken": "#1C1C1A",
+      "line": "#3E3E3A",
+      "lineStrong": "#5A5850",
+      "ink": "#E8E6E1",
+      "muted": "#A29E93",
+      "accent": "#D97757",
+      "accentDim": "#B35C3E",
+      "onAccent": "#1B1B19",
+      "ok": "#7FBF7F",
+      "warn": "#E0AF68",
+      "danger": "#E06C75",
+      "dot": "#6B6862",
+      "thumb": "#3C3B38"
+    },
+    "light": {
+      "canvas": "#FAF9F5",
+      "sidebar": "#F0EEE6",
+      "raise": "#FFFFFF",
+      "field": "#E9E6DC",
+      "sunken": "#F3F1EA",
+      "line": "#E0DDD3",
+      "lineStrong": "#C4C0B4",
+      "ink": "#1F1E1D",
+      "muted": "#6B675E",
+      "accent": "#C96442",
+      "accentDim": "#E0A58E",
+      "onAccent": "#FFFFFF",
+      "ok": "#3D8B4A",
+      "warn": "#A86E12",
+      "danger": "#C2404B",
+      "dot": "#A29E93",
+      "thumb": "#CFCBC0"
+    }
+  },
+  "status": {
+    "active": {
+      "role": "accent",
+      "statuses": [
+        "running",
+        "queued",
+        "preparing",
+        "starting"
+      ]
+    },
+    "idle": {
+      "role": "ok",
+      "statuses": [
+        "idle"
+      ]
+    },
+    "attention": {
+      "role": "warn",
+      "statuses": [
+        "waiting",
+        "interrupted",
+        "cancelled"
+      ]
+    },
+    "failed": {
+      "role": "danger",
+      "statuses": [
+        "failed",
+        "error"
+      ]
+    },
+    "inactive": {
+      "role": "dot",
+      "statuses": [
+        "closed"
+      ]
+    }
+  },
+  "radius": {
+    "xs": "3px",
+    "sm": "4px",
+    "badge": "5px",
+    "md": "6px",
+    "lg": "8px",
+    "xl": "10px",
+    "xxl": "12px",
+    "xxxl": "16px",
+    "full": "9999px"
+  },
+  "layout": {
+    "sidebarWidth": "268px",
+    "panelWidth": "272px",
+    "narrowWidth": "1024px",
+    "sidebarMargin": "10px",
+    "paneMargin": "18px",
+    "statusDot": "7px"
+  },
+  "motion": {
+    "pulse": "1400ms"
+  },
+  "font": {
+    "weight": {
+      "regular": 400,
+      "medium": 500,
+      "semibold": 600
+    },
+    "size": {
+      "tiny": "10px",
+      "caption2": "11px",
+      "caption": "12px",
+      "footnote": "13px",
+      "callout": "14px",
+      "body": "15px",
+      "title3": "17px",
+      "stat": "22px",
+      "title": "23px",
+      "largeTitle": "26px",
+      "mono": "13px",
+      "monoSmall": "12px",
+      "monoCaption2": "11px"
+    },
+    "family": {
+      "windows": {
+        "sans": [
+          "Segoe UI"
+        ],
+        "mono": [
+          "Cascadia Code",
+          "Cascadia Mono",
+          "Consolas"
+        ],
+        "icons": [
+          "Segoe Fluent Icons",
+          "Segoe MDL2 Assets"
+        ],
+        "emoji": [
+          "Segoe UI Emoji",
+          "Segoe UI Symbol"
+        ]
+      },
+      "web": {
+        "sans": [
+          "Segoe UI",
+          "-apple-system",
+          "BlinkMacSystemFont",
+          "system-ui",
+          "sans-serif"
+        ],
+        "mono": [
+          "Cascadia Code",
+          "SF Mono",
+          "ui-monospace",
+          "Menlo",
+          "Consolas",
+          "monospace"
+        ]
+      }
+    }
+  },
+  "type": {
+    "body": {
+      "fontSize": "15px",
+      "fontWeight": 400
+    },
+    "bodyMedium": {
+      "fontSize": "15px",
+      "fontWeight": 500
+    },
+    "bodySemibold": {
+      "fontSize": "15px",
+      "fontWeight": 600
+    },
+    "bodyItalic": {
+      "fontSize": "15px",
+      "fontWeight": 400,
+      "fontStyle": "italic"
+    },
+    "headline": {
+      "fontSize": "15px",
+      "fontWeight": 600
+    },
+    "subheadline": {
+      "fontSize": "14px",
+      "fontWeight": 400
+    },
+    "subheadlineSemibold": {
+      "fontSize": "14px",
+      "fontWeight": 600
+    },
+    "subheadlineItalic": {
+      "fontSize": "14px",
+      "fontWeight": 400,
+      "fontStyle": "italic"
+    },
+    "callout": {
+      "fontSize": "14px",
+      "fontWeight": 400
+    },
+    "calloutItalic": {
+      "fontSize": "14px",
+      "fontWeight": 400,
+      "fontStyle": "italic"
+    },
+    "footnote": {
+      "fontSize": "13px",
+      "fontWeight": 400
+    },
+    "footnoteSemibold": {
+      "fontSize": "13px",
+      "fontWeight": 600
+    },
+    "caption": {
+      "fontSize": "12px",
+      "fontWeight": 400
+    },
+    "captionMedium": {
+      "fontSize": "12px",
+      "fontWeight": 500
+    },
+    "captionSemibold": {
+      "fontSize": "12px",
+      "fontWeight": 600
+    },
+    "caption2": {
+      "fontSize": "11px",
+      "fontWeight": 400
+    },
+    "tinySemibold": {
+      "fontSize": "10px",
+      "fontWeight": 600
+    },
+    "title3": {
+      "fontSize": "17px",
+      "fontWeight": 600
+    },
+    "title": {
+      "fontSize": "23px",
+      "fontWeight": 600
+    },
+    "stat": {
+      "fontSize": "22px",
+      "fontWeight": 600
+    },
+    "largeTitle": {
+      "fontSize": "26px",
+      "fontWeight": 600
+    },
+    "monogram": {
+      "fontSize": "17px",
+      "fontWeight": 600
+    },
+    "mono": {
+      "fontSize": "13px",
+      "fontWeight": 400,
+      "fontFamily": "mono"
+    },
+    "monoSmall": {
+      "fontSize": "12px",
+      "fontWeight": 400,
+      "fontFamily": "mono"
+    },
+    "monoCaption2": {
+      "fontSize": "11px",
+      "fontWeight": 400,
+      "fontFamily": "mono"
+    }
+  }
+}

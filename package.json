@@ -1,0 +1,17 @@
+{
+  "name": "@okanetsolutions/briareus-tokens",
+  "version": "1.0.0",
+  "description": "Design tokens shared by the Briareus clients: one source, generated for Compose, SwiftUI, Win32 C and CSS.",
+  "license": "MIT",
+  "type": "module",
+  "private": true,
+  "engines": { "node": ">=22" },
+  "scripts": {
+    "build": "node build.mjs",
+    "test": "node --test test/*.test.mjs",
+    "check": "npm run build && npm test && git diff --exit-code -- dist"
+  },
+  "devDependencies": {
+    "style-dictionary": "5.6.1"
+  }
+}

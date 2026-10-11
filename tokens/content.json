@@ -1,0 +1,8 @@
+{
+  "working": {
+    "$description": "The Claude-style working indicator: a glyph per tick, a verb every 25 ticks.",
+    "glyphs": { "$type": "list", "$value": ["·", "✢", "✳", "✶", "✻", "✽", "✻", "✶", "✳", "✢"] },
+    "verbs": { "$type": "list", "$value": ["Working", "Thinking", "Reasoning", "Tinkering", "Crafting", "Pondering"] },
+    "verbTicks": { "$type": "number", "$value": 25 }
+  }
+}

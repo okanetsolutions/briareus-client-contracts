@@ -1,0 +1,31 @@
+{
+  "radius": {
+    "$type": "dimension",
+    "$description": "Corner radii, from the ones the clients draw with most.",
+    "xs": { "$value": "3px" },
+    "sm": { "$value": "4px" },
+    "badge": { "$value": "5px", "$description": "A status or severity tag." },
+    "md": { "$value": "6px", "$description": "Buttons, fields and rows." },
+    "lg": { "$value": "8px", "$description": "Cards and menus." },
+    "xl": { "$value": "10px" },
+    "xxl": { "$value": "12px", "$description": "Code blocks and sheets." },
+    "xxxl": { "$value": "16px" },
+    "full": { "$value": "9999px", "$description": "Pills and chips." }
+  },
+  "layout": {
+    "$type": "dimension",
+    "sidebarWidth": { "$value": "268px" },
+    "panelWidth": { "$value": "272px", "$description": "The pull request panel beside a conversation." },
+    "narrowWidth": { "$value": "1024px", "$description": "Below this the columns show one at a time." },
+    "sidebarMargin": { "$value": "10px" },
+    "paneMargin": { "$value": "18px" },
+    "statusDot": { "$value": "7px" }
+  },
+  "motion": {
+    "pulse": {
+      "$type": "duration",
+      "$description": "A running status dot's ring, easing out and repeating.",
+      "$value": "1400ms"
+    }
+  }
+}

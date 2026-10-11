@@ -1,0 +1,25 @@
+{
+  "theme": {
+    "dark": {
+      "$type": "color",
+      "$description": "The dashboard's `@theme` block, verbatim: what Windows, the Mac and Quest already draw in dark mode.",
+      "canvas": { "$value": "{palette.neutral.900}", "$description": "The main pane's background." },
+      "sidebar": { "$value": "{palette.neutral.925}", "$description": "The sidebar and other recessed chrome." },
+      "raise": { "$value": "{palette.neutral.850}", "$description": "Cards, rows, bubbles and menus above the canvas." },
+      "field": { "$value": "{palette.neutral.810}", "$description": "Inputs, pickers and pressed rows." },
+      "sunken": { "$value": "{palette.neutral.950}", "$description": "Code blocks and wells." },
+      "line": { "$value": "{palette.neutral.800}", "$description": "Hairlines and borders." },
+      "lineStrong": { "$value": "{palette.neutral.700}", "$description": "Borders that must read, such as a focused field." },
+      "ink": { "$value": "{palette.neutral.125}", "$description": "Body text." },
+      "muted": { "$value": "{palette.neutral.400}", "$description": "Secondary text and icons." },
+      "accent": { "$value": "{palette.clay.500}", "$description": "Primary actions, links, inline code, work in progress." },
+      "accentDim": { "$value": "{palette.clay.700}", "$description": "The accent pressed, or behind other accent content." },
+      "onAccent": { "$value": "{palette.neutral.975}", "$description": "Text on an accent fill." },
+      "ok": { "$value": "{palette.green.400}" },
+      "warn": { "$value": "{palette.amber.400}" },
+      "danger": { "$value": "{palette.red.400}" },
+      "dot": { "$value": "{palette.neutral.600}", "$description": "A status dot with nothing to say." },
+      "thumb": { "$value": "{palette.neutral.820}", "$description": "A scrollbar's thumb." }
+    }
+  }
+}

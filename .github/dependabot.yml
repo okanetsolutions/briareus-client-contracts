@@ -1,0 +1,11 @@
+# Style Dictionary is the one package; keep it and the workflows' actions current.
+version: 2
+updates:
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: monthly
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: monthly

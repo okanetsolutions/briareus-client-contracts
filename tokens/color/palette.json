@@ -1,0 +1,52 @@
+{
+  "$description": "Primitive colours. Nothing in a client reads these directly; the semantic themes in tokens/semantic do. Neutrals are warm greys, numbered from paper (0) to ink (975); the near-duplicates (800/810/820, 600/625) are kept because the clients draw with each of them today.",
+  "palette": {
+    "neutral": {
+      "$type": "color",
+      "0": { "$value": "#FFFFFF" },
+      "25": { "$value": "#FAF9F5" },
+      "50": { "$value": "#F3F1EA" },
+      "75": { "$value": "#F0EEE6" },
+      "100": { "$value": "#E9E6DC" },
+      "125": { "$value": "#E8E6E1" },
+      "150": { "$value": "#E0DDD3" },
+      "200": { "$value": "#CFCBC0" },
+      "250": { "$value": "#C4C0B4" },
+      "400": { "$value": "#A29E93" },
+      "600": { "$value": "#6B6862" },
+      "625": { "$value": "#6B675E" },
+      "700": { "$value": "#5A5850" },
+      "800": { "$value": "#3E3E3A" },
+      "810": { "$value": "#3D3D3A" },
+      "820": { "$value": "#3C3B38" },
+      "850": { "$value": "#30302E" },
+      "900": { "$value": "#262624" },
+      "925": { "$value": "#1F1E1D" },
+      "950": { "$value": "#1C1C1A" },
+      "975": { "$value": "#1B1B19" }
+    },
+    "clay": {
+      "$type": "color",
+      "$description": "The accent.",
+      "300": { "$value": "#E0A58E" },
+      "500": { "$value": "#D97757" },
+      "600": { "$value": "#C96442" },
+      "700": { "$value": "#B35C3E" }
+    },
+    "green": {
+      "$type": "color",
+      "400": { "$value": "#7FBF7F" },
+      "700": { "$value": "#3D8B4A" }
+    },
+    "amber": {
+      "$type": "color",
+      "400": { "$value": "#E0AF68" },
+      "700": { "$value": "#A86E12" }
+    },
+    "red": {
+      "$type": "color",
+      "400": { "$value": "#E06C75" },
+      "700": { "$value": "#C2404B" }
+    }
+  }
+}

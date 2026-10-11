@@ -1,0 +1,17 @@
+{
+  "headset": {
+    "$description": "Quest's panels sit a metre or more away, so its type is larger than a desktop's. Named after the Material 3 roles Compose's Typography takes.",
+    "type": {
+      "$type": "typography",
+      "bodyLarge": { "$value": { "fontSize": "17px", "lineHeight": "26px", "fontWeight": "{font.weight.regular}" } },
+      "bodyMedium": { "$value": { "fontSize": "15px", "lineHeight": "22px", "fontWeight": "{font.weight.regular}" } },
+      "bodySmall": { "$value": { "fontSize": "13px", "lineHeight": "18px", "fontWeight": "{font.weight.regular}" } },
+      "titleLarge": { "$value": { "fontSize": "22px", "fontWeight": "{font.weight.semibold}" } },
+      "titleMedium": { "$value": { "fontSize": "17px", "fontWeight": "{font.weight.semibold}" } },
+      "titleSmall": { "$value": { "fontSize": "15px", "fontWeight": "{font.weight.semibold}" } },
+      "labelLarge": { "$value": { "fontSize": "15px", "fontWeight": "{font.weight.medium}" } },
+      "labelMedium": { "$value": { "fontSize": "13px", "fontWeight": "{font.weight.medium}" } },
+      "labelSmall": { "$value": { "fontSize": "12px", "fontWeight": "{font.weight.medium}" } }
+    }
+  }
+}

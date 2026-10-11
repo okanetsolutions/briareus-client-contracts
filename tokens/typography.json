@@ -1,0 +1,69 @@
+{
+  "font": {
+    "$description": "Each client draws with its platform's own fonts (Segoe UI and Cascadia Code on Windows, SF and SF Mono on Apple, Roboto and its monospace on Android); the tokens fix the sizes and weights, in px at 96 DPI (pt on Apple, sp on Android).",
+    "weight": {
+      "$type": "fontWeight",
+      "regular": { "$value": 400 },
+      "medium": { "$value": 500 },
+      "semibold": { "$value": 600 }
+    },
+    "size": {
+      "$type": "dimension",
+      "tiny": { "$value": "10px", "$description": "Severity tags and badge counts." },
+      "caption2": { "$value": "11px", "$description": "The smallest metadata." },
+      "caption": { "$value": "12px", "$description": "Metadata." },
+      "footnote": { "$value": "13px", "$description": "The smallest chrome (`text-xs`)." },
+      "callout": { "$value": "14px", "$description": "Sidebar rows." },
+      "body": { "$value": "15px", "$description": "Body text (`text-sm`)." },
+      "title3": { "$value": "17px" },
+      "stat": { "$value": "22px", "$description": "Dashboard tiles." },
+      "title": { "$value": "23px", "$description": "A pull request's title." },
+      "largeTitle": { "$value": "26px" },
+      "mono": { "$value": "13px" },
+      "monoSmall": { "$value": "12px" },
+      "monoCaption2": { "$value": "11px" }
+    },
+    "family": {
+      "$type": "fontFamily",
+      "windows": {
+        "sans": { "$value": ["Segoe UI"] },
+        "mono": { "$value": ["Cascadia Code", "Cascadia Mono", "Consolas"] },
+        "icons": { "$value": ["Segoe Fluent Icons", "Segoe MDL2 Assets"] },
+        "emoji": { "$value": ["Segoe UI Emoji", "Segoe UI Symbol"] }
+      },
+      "web": {
+        "sans": { "$value": ["Segoe UI", "-apple-system", "BlinkMacSystemFont", "system-ui", "sans-serif"] },
+        "mono": { "$value": ["Cascadia Code", "SF Mono", "ui-monospace", "Menlo", "Consolas", "monospace"] }
+      }
+    }
+  },
+  "type": {
+    "$type": "typography",
+    "$description": "The text styles the screens use, by the names the Windows and Mac clients share.",
+    "body": { "$value": { "fontSize": "{font.size.body}", "fontWeight": "{font.weight.regular}" } },
+    "bodyMedium": { "$value": { "fontSize": "{font.size.body}", "fontWeight": "{font.weight.medium}" } },
+    "bodySemibold": { "$value": { "fontSize": "{font.size.body}", "fontWeight": "{font.weight.semibold}" } },
+    "bodyItalic": { "$value": { "fontSize": "{font.size.body}", "fontWeight": "{font.weight.regular}", "fontStyle": "italic" } },
+    "headline": { "$value": { "fontSize": "{font.size.body}", "fontWeight": "{font.weight.semibold}" } },
+    "subheadline": { "$value": { "fontSize": "{font.size.callout}", "fontWeight": "{font.weight.regular}" } },
+    "subheadlineSemibold": { "$value": { "fontSize": "{font.size.callout}", "fontWeight": "{font.weight.semibold}" } },
+    "subheadlineItalic": { "$value": { "fontSize": "{font.size.callout}", "fontWeight": "{font.weight.regular}", "fontStyle": "italic" } },
+    "callout": { "$value": { "fontSize": "{font.size.callout}", "fontWeight": "{font.weight.regular}" } },
+    "calloutItalic": { "$value": { "fontSize": "{font.size.callout}", "fontWeight": "{font.weight.regular}", "fontStyle": "italic" } },
+    "footnote": { "$value": { "fontSize": "{font.size.footnote}", "fontWeight": "{font.weight.regular}" } },
+    "footnoteSemibold": { "$value": { "fontSize": "{font.size.footnote}", "fontWeight": "{font.weight.semibold}" } },
+    "caption": { "$value": { "fontSize": "{font.size.caption}", "fontWeight": "{font.weight.regular}" } },
+    "captionMedium": { "$value": { "fontSize": "{font.size.caption}", "fontWeight": "{font.weight.medium}" } },
+    "captionSemibold": { "$value": { "fontSize": "{font.size.caption}", "fontWeight": "{font.weight.semibold}" } },
+    "caption2": { "$value": { "fontSize": "{font.size.caption2}", "fontWeight": "{font.weight.regular}" } },
+    "tinySemibold": { "$value": { "fontSize": "{font.size.tiny}", "fontWeight": "{font.weight.semibold}" } },
+    "title3": { "$value": { "fontSize": "{font.size.title3}", "fontWeight": "{font.weight.semibold}" } },
+    "title": { "$value": { "fontSize": "{font.size.title}", "fontWeight": "{font.weight.semibold}" } },
+    "stat": { "$value": { "fontSize": "{font.size.stat}", "fontWeight": "{font.weight.semibold}" } },
+    "largeTitle": { "$value": { "fontSize": "{font.size.largeTitle}", "fontWeight": "{font.weight.semibold}" } },
+    "monogram": { "$value": { "fontSize": "{font.size.title3}", "fontWeight": "{font.weight.semibold}" } },
+    "mono": { "$value": { "fontSize": "{font.size.mono}", "fontWeight": "{font.weight.regular}", "fontFamily": "mono" } },
+    "monoSmall": { "$value": { "fontSize": "{font.size.monoSmall}", "fontWeight": "{font.weight.regular}", "fontFamily": "mono" } },
+    "monoCaption2": { "$value": { "fontSize": "{font.size.monoCaption2}", "fontWeight": "{font.weight.regular}", "fontFamily": "mono" } }
+  }
+}
