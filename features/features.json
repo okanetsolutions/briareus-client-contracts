@@ -1858,7 +1858,7 @@
         {
           "id": "find-in-transcript",
           "title": "Find in conversation",
-          "description": "Ctrl/⌘+F highlights matches in a transcript and steps through them.",
+          "description": "Ctrl/\u2318+F highlights matches in a transcript and steps through them.",
           "api": [],
           "support": {
             "windows": "full",
@@ -1892,6 +1892,115 @@
           },
           "wireframes": [
             "project-files"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "home-assistant",
+      "title": "Home Assistant (proposed client screens)",
+      "features": [
+        {
+          "id": "home-assistant-connection",
+          "title": "Home Assistant connection",
+          "description": "Check the server-configured bridge with an admin token; proposed UI, no client implementation.",
+          "api": [
+            "GET /home-assistant"
+          ],
+          "support": {
+            "windows": "none",
+            "mac": "none",
+            "ios": "none",
+            "quest": "none"
+          },
+          "notes": {},
+          "wireframes": [
+            "home-assistant-connection"
+          ]
+        },
+        {
+          "id": "home-assistant-entities",
+          "title": "Home Assistant entities",
+          "description": "Browse and filter entities, inspect their states and attributes, and poll while visible; proposed UI.",
+          "api": [
+            "GET /home-assistant/entities",
+            "GET /home-assistant/entities/{id}"
+          ],
+          "support": {
+            "windows": "none",
+            "mac": "none",
+            "ios": "none",
+            "quest": "none"
+          },
+          "notes": {},
+          "wireframes": [
+            "home-assistant"
+          ]
+        },
+        {
+          "id": "home-assistant-actions",
+          "title": "Home Assistant actions",
+          "description": "Discover services, send service data, and inspect receipts without automatic retries; proposed UI.",
+          "api": [
+            "GET /home-assistant/services",
+            "POST /home-assistant/services/{domain}/{service}"
+          ],
+          "support": {
+            "windows": "none",
+            "mac": "none",
+            "ios": "none",
+            "quest": "none"
+          },
+          "notes": {},
+          "wireframes": [
+            "home-assistant-action",
+            "home-assistant"
+          ]
+        },
+        {
+          "id": "home-assistant-events",
+          "title": "Home Assistant events",
+          "description": "Send an event to an existing Home Assistant automation; proposed UI, no event subscription.",
+          "api": [
+            "POST /home-assistant/events/{type}"
+          ],
+          "support": {
+            "windows": "none",
+            "mac": "none",
+            "ios": "none",
+            "quest": "none"
+          },
+          "notes": {},
+          "wireframes": [
+            "home-assistant-event"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "device-status",
+      "title": "Local device status (proposed client widget)",
+      "features": [
+        {
+          "id": "menu-device-status",
+          "title": "Menu device status",
+          "description": "Proposed collapsible menu block for local CPU, memory, and battery readings; telemetry is not implemented by this change.",
+          "api": [],
+          "support": {
+            "windows": "none",
+            "mac": "none",
+            "ios": "none",
+            "quest": "none"
+          },
+          "notes": {
+            "windows": "Proposed This computer block with available CPU, memory, and battery readings.",
+            "mac": "Same proposed desktop layout as Windows.",
+            "ios": "Proposed This device block, battery first; omit metrics the OS cannot supply.",
+            "quest": "Proposed This device block with headset.type sizing; omit unsupported metrics."
+          },
+          "wireframes": [
+            "menu-status",
+            "home-assistant"
           ]
         }
       ]
@@ -1969,6 +2078,18 @@
       "routes": [
         "PUT /prompts/{id}"
       ]
+    },
+    {
+      "group": "home-assistant",
+      "routes": [
+        "GET /home-assistant",
+        "GET /home-assistant/entities",
+        "GET /home-assistant/entities/{id}",
+        "GET /home-assistant/services",
+        "POST /home-assistant/services/{domain}/{service}",
+        "POST /home-assistant/events/{type}"
+      ],
+      "note": "Admin-only bridge merged in Core #147; proposed client wireframes, support checked on 2026-10-12."
     }
   ]
 }

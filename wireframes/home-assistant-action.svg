@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1900" height="1440" viewBox="0 0 1900 1440" role="img" aria-labelledby="title"><title id="title">home-assistant-action: proposed wide and narrow wireframes</title><rect width="100%" height="100%" fill="white"/><text x="40" y="16" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="22" fill="#303030"><tspan x="40" dy="22">Service actions / proposed client screen</tspan></text>
+<text x="40" y="64" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="14" fill="#303030"><tspan x="40" dy="14">Wide / at least layout.narrowWidth (1024px)</tspan></text>
+<rect x="40" y="90" width="1400" height="820" fill="#ffffff" stroke="#303030"/>
+<rect x="40" y="90" width="268" height="820" fill="#eeeeee" stroke="#303030"/>
+<text x="54" y="108" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="16" fill="#303030"><tspan x="54" dy="16">+ New session</tspan></text>
+<text x="54" y="145" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="13" fill="#303030"><tspan x="54" dy="13">WhatsApp  Mail  📊  ⚑</tspan></text>
+<text x="54" y="201" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="16" fill="#303030"><tspan x="54" dy="16">Projects</tspan></text>
+<text x="64" y="239" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="16" fill="#303030"><tspan x="64" dy="16">briareus</tspan></text>
+<text x="64" y="275" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="16" fill="#303030"><tspan x="64" dy="16">briareus-contracts</tspan></text>
+<rect x="50" y="335" width="248" height="55" fill="#dddddd" stroke="#303030"/>
+<text x="64" y="350" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="16" fill="#303030"><tspan x="64" dy="16">Home Assistant</tspan></text>
+<text x="54" y="408" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="13" fill="#303030"><tspan x="54" dy="13">Proposed global entry</tspan></text>
+<rect x="50" y="594" width="248" height="144" fill="#f5f5f5" stroke="#303030"/>
+<text x="62" y="606" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="14" fill="#303030"><tspan x="62" dy="14">This computer          v</tspan></text>
+<text x="62" y="640" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="14" fill="#303030"><tspan x="62" dy="14">CPU                 18%</tspan></text>
+<text x="62" y="668" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="14" fill="#303030"><tspan x="62" dy="14">Memory     12.4 / 32 GB</tspan></text>
+<text x="62" y="696" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="14" fill="#303030"><tspan x="62" dy="14">Battery   72% charging</tspan></text>
+<text x="54" y="771" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="13" fill="#303030"><tspan x="54" dy="13">Media player when active</tspan></text>
+<text x="54" y="824" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="13" fill="#303030"><tspan x="54" dy="13">Select  Settings  Sign out</tspan></text>
+<text x="54" y="868" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="13" fill="#303030"><tspan x="54" dy="13">theme.sidebar / 268px</tspan></text>
+<text x="326" y="112" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="24" fill="#303030"><tspan x="326" dy="24">Home Assistant</tspan></text>
+<text x="326" y="153" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="14" fill="#303030"><tspan x="326" dy="14">Connected to Home Assistant</tspan></text>
+<text x="326" y="194" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="16" fill="#303030"><tspan x="326" dy="16">Entities   [Actions]   Events   Connection</tspan></text>
+<text x="326" y="872" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="13" fill="#303030"><tspan x="326" dy="13">theme.canvas / layout.paneMargin = 18px</tspan></text>
+<text x="326" y="245" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="14" fill="#303030"><tspan x="326" dy="14">Domain / from available services</tspan></text>
+<rect x="326" y="270" width="520" height="42" fill="#f5f5f5" stroke="#303030"/>
+<text x="338" y="281" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="14" fill="#303030"><tspan x="338" dy="14">light</tspan></text>
+<text x="874" y="245" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="14" fill="#303030"><tspan x="874" dy="14">Action / from available services</tspan></text>
+<rect x="874" y="270" width="548" height="42" fill="#f5f5f5" stroke="#303030"/>
+<text x="886" y="281" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="14" fill="#303030"><tspan x="886" dy="14">turn_on</tspan></text>
+<text x="326" y="345" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="14" fill="#303030"><tspan x="326" dy="14">Service data / editable JSON object</tspan></text>
+<rect x="326" y="370" width="1096" height="76" fill="#f5f5f5" stroke="#303030"/>
+<text x="338" y="381" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="14" fill="#303030"><tspan x="338" dy="14">{ &quot;entity_id&quot;: &quot;light.kitchen&quot;, &quot;brightness&quot;: 128 }</tspan></text>
+<text x="326" y="473" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="16" fill="#303030"><tspan x="326" dy="16">Available fields and descriptions come from Home Assistant.</tspan></text>
+<text x="326" y="512" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="16" fill="#303030"><tspan x="326" dy="16">[ ] Request response data / only when supported; required for some actions</tspan></text>
+<rect x="326" y="557" width="150" height="36" fill="#eeeeee" stroke="#303030"/>
+<text x="338" y="565" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="14" fill="#303030"><tspan x="338" dy="14">Run action</tspan></text>
+<rect x="326" y="625" width="530" height="125" fill="#f5f5f5" stroke="#303030"/>
+<text x="340" y="638" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="16" fill="#303030"><tspan x="340" dy="16">Action confirmed</tspan></text>
+<text x="340" y="667" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="14" fill="#303030"><tspan x="340" dy="14">Changed states: light.kitchen = on</tspan><tspan x="340" dy="17.5">Response data: none</tspan><tspan x="340" dy="17.5">The physical action may still be in progress.</tspan></text>
+<rect x="878" y="625" width="544" height="125" fill="#f5f5f5" stroke="#303030"/>
+<text x="892" y="638" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="16" fill="#303030"><tspan x="892" dy="16">Action not confirmed</tspan></text>
+<text x="892" y="667" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="14" fill="#303030"><tspan x="892" dy="14">It may have run. Read the entity state before retrying.</tspan><tspan x="892" dy="17.5">Do not resend automatically.</tspan></text>
+<rect x="896" y="770" width="210" height="36" fill="#eeeeee" stroke="#303030"/>
+<text x="908" y="778" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="14" fill="#303030"><tspan x="908" dy="14">Read entity state</tspan></text>
+<text x="1480" y="64" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="14" fill="#303030"><tspan x="1480" dy="14">Narrow / one column below 1024px</tspan></text>
+<rect x="1480" y="90" width="390" height="1000" fill="#ffffff" stroke="#303030"/>
+<text x="1498" y="110" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="14" fill="#303030"><tspan x="1498" dy="14">&lt; Back to sessions</tspan></text>
+<text x="1498" y="150" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="22" fill="#303030"><tspan x="1498" dy="22">Home Assistant</tspan></text>
+<text x="1498" y="191" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="16" fill="#303030"><tspan x="1498" dy="16">[Actions v]</tspan></text>
+<text x="1498" y="245" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="14" fill="#303030"><tspan x="1498" dy="14">Domain</tspan></text>
+<rect x="1498" y="270" width="354" height="42" fill="#f5f5f5" stroke="#303030"/>
+<text x="1510" y="281" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="14" fill="#303030"><tspan x="1510" dy="14">light</tspan></text>
+<text x="1498" y="342" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="14" fill="#303030"><tspan x="1498" dy="14">Action</tspan></text>
+<rect x="1498" y="367" width="354" height="42" fill="#f5f5f5" stroke="#303030"/>
+<text x="1510" y="378" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="14" fill="#303030"><tspan x="1510" dy="14">turn_on</tspan></text>
+<text x="1498" y="439" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="14" fill="#303030"><tspan x="1498" dy="14">Service data / JSON object</tspan></text>
+<rect x="1498" y="464" width="354" height="112" fill="#f5f5f5" stroke="#303030"/>
+<text x="1510" y="475" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="14" fill="#303030"><tspan x="1510" dy="14">{</tspan><tspan x="1510" dy="17.5">  &quot;entity_id&quot;: &quot;light.kitchen&quot;,</tspan><tspan x="1510" dy="17.5">  &quot;brightness&quot;: 128</tspan><tspan x="1510" dy="17.5">}</tspan></text>
+<text x="1498" y="605" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="14" fill="#303030"><tspan x="1498" dy="14">[ ] Request response data</tspan></text>
+<rect x="1498" y="648" width="150" height="36" fill="#eeeeee" stroke="#303030"/>
+<text x="1510" y="656" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="14" fill="#303030"><tspan x="1510" dy="14">Run action</tspan></text>
+<rect x="1498" y="728" width="354" height="110" fill="#f5f5f5" stroke="#303030"/>
+<text x="1512" y="741" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="16" fill="#303030"><tspan x="1512" dy="16">Action not confirmed</tspan></text>
+<text x="1512" y="770" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="14" fill="#303030"><tspan x="1512" dy="14">It may have run. Read the</tspan><tspan x="1512" dy="17.5">entity state before retrying.</tspan></text>
+<rect x="1498" y="866" width="210" height="36" fill="#eeeeee" stroke="#303030"/>
+<text x="1510" y="874" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="14" fill="#303030"><tspan x="1510" dy="14">Read entity state</tspan></text>
+<text x="40" y="1130" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="20" fill="#303030"><tspan x="40" dy="20">Behavior and platform notes</tspan></text>
+<text x="40" y="1173" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="15" fill="#303030"><tspan x="40" dy="15">GET /services populates domain, action, descriptions, and field hints. Examples are not a hardcoded action catalog.</tspan></text>
+<text x="40" y="1202" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="15" fill="#303030"><tspan x="40" dy="15">POST /services/{domain}/{service} sends the JSON object directly, without an extra data wrapper.</tspan></text>
+<text x="40" y="1231" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="15" fill="#303030"><tspan x="40" dy="15">Use returnResponse=1 when required or requested and supported; otherwise omit it. Render entities and response.</tspan></text>
+<text x="40" y="1260" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="15" fill="#303030"><tspan x="40" dy="15">Validate JSON objects before sending. Disable Run while pending; no automatic POST retries after timeout or invalid receipt.</tspan></text>
+<text x="40" y="1289" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="15" fill="#303030"><tspan x="40" dy="15">400: preserve data and show the error. 404: reload services. 429: show rate limit. 502: action may be unconfirmed.</tspan></text>
+<text x="40" y="1318" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="15" fill="#303030"><tspan x="40" dy="15">Choose action pre-fills entity_id from details. Refresh state after success. Platform layouts follow the entities screen.</tspan></text>
+<text x="40" y="1390" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="14" fill="#303030"><tspan x="40" dy="14">Proposal based on Core #147. API and source revisions: home-assistant.md. Example entities and values only.</tspan></text></svg>

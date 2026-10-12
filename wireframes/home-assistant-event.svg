@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1900" height="1440" viewBox="0 0 1900 1440" role="img" aria-labelledby="title"><title id="title">home-assistant-event: proposed wide and narrow wireframes</title><rect width="100%" height="100%" fill="white"/><text x="40" y="16" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="22" fill="#303030"><tspan x="40" dy="22">Send an event / proposed client screen</tspan></text>
+<text x="40" y="64" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="14" fill="#303030"><tspan x="40" dy="14">Wide / at least layout.narrowWidth (1024px)</tspan></text>
+<rect x="40" y="90" width="1400" height="820" fill="#ffffff" stroke="#303030"/>
+<rect x="40" y="90" width="268" height="820" fill="#eeeeee" stroke="#303030"/>
+<text x="54" y="108" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="16" fill="#303030"><tspan x="54" dy="16">+ New session</tspan></text>
+<text x="54" y="145" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="13" fill="#303030"><tspan x="54" dy="13">WhatsApp  Mail  📊  ⚑</tspan></text>
+<text x="54" y="201" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="16" fill="#303030"><tspan x="54" dy="16">Projects</tspan></text>
+<text x="64" y="239" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="16" fill="#303030"><tspan x="64" dy="16">briareus</tspan></text>
+<text x="64" y="275" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="16" fill="#303030"><tspan x="64" dy="16">briareus-contracts</tspan></text>
+<rect x="50" y="335" width="248" height="55" fill="#dddddd" stroke="#303030"/>
+<text x="64" y="350" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="16" fill="#303030"><tspan x="64" dy="16">Home Assistant</tspan></text>
+<text x="54" y="408" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="13" fill="#303030"><tspan x="54" dy="13">Proposed global entry</tspan></text>
+<rect x="50" y="594" width="248" height="144" fill="#f5f5f5" stroke="#303030"/>
+<text x="62" y="606" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="14" fill="#303030"><tspan x="62" dy="14">This computer          v</tspan></text>
+<text x="62" y="640" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="14" fill="#303030"><tspan x="62" dy="14">CPU                 18%</tspan></text>
+<text x="62" y="668" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="14" fill="#303030"><tspan x="62" dy="14">Memory     12.4 / 32 GB</tspan></text>
+<text x="62" y="696" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="14" fill="#303030"><tspan x="62" dy="14">Battery   72% charging</tspan></text>
+<text x="54" y="771" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="13" fill="#303030"><tspan x="54" dy="13">Media player when active</tspan></text>
+<text x="54" y="824" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="13" fill="#303030"><tspan x="54" dy="13">Select  Settings  Sign out</tspan></text>
+<text x="54" y="868" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="13" fill="#303030"><tspan x="54" dy="13">theme.sidebar / 268px</tspan></text>
+<text x="326" y="112" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="24" fill="#303030"><tspan x="326" dy="24">Home Assistant</tspan></text>
+<text x="326" y="153" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="14" fill="#303030"><tspan x="326" dy="14">Connected to Home Assistant</tspan></text>
+<text x="326" y="194" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="16" fill="#303030"><tspan x="326" dy="16">Entities   Actions   [Events]   Connection</tspan></text>
+<text x="326" y="872" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="13" fill="#303030"><tspan x="326" dy="13">theme.canvas / layout.paneMargin = 18px</tspan></text>
+<text x="326" y="247" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="18" fill="#303030"><tspan x="326" dy="18">Send data to an existing Home Assistant automation.</tspan></text>
+<text x="326" y="296" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="14" fill="#303030"><tspan x="326" dy="14">Event type</tspan></text>
+<rect x="326" y="321" width="1096" height="42" fill="#f5f5f5" stroke="#303030"/>
+<text x="338" y="332" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="14" fill="#303030"><tspan x="338" dy="14">briareus_command</tspan></text>
+<text x="326" y="394" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="14" fill="#303030"><tspan x="326" dy="14">Event data / editable JSON object</tspan></text>
+<rect x="326" y="419" width="1096" height="95" fill="#f5f5f5" stroke="#303030"/>
+<text x="338" y="430" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="14" fill="#303030"><tspan x="338" dy="14">{ &quot;source&quot;: &quot;briareus&quot;, &quot;command&quot;: &quot;arriving_home&quot; }</tspan></text>
+<text x="326" y="551" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="16" fill="#303030"><tspan x="326" dy="16">Configure the listening automation in Home Assistant.</tspan></text>
+<rect x="326" y="599" width="150" height="36" fill="#eeeeee" stroke="#303030"/>
+<text x="338" y="607" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="14" fill="#303030"><tspan x="338" dy="14">Send event</tspan></text>
+<rect x="326" y="679" width="530" height="110" fill="#f5f5f5" stroke="#303030"/>
+<text x="340" y="692" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="16" fill="#303030"><tspan x="340" dy="16">Event accepted</tspan></text>
+<text x="340" y="721" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="14" fill="#303030"><tspan x="340" dy="14">Home Assistant accepted the event.</tspan><tspan x="340" dy="17.5">This does not confirm an automation finished.</tspan></text>
+<rect x="878" y="679" width="544" height="110" fill="#f5f5f5" stroke="#303030"/>
+<text x="892" y="692" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="16" fill="#303030"><tspan x="892" dy="16">Event not confirmed</tspan></text>
+<text x="892" y="721" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="14" fill="#303030"><tspan x="892" dy="14">It may have been sent. Check Home Assistant</tspan><tspan x="892" dy="17.5">before sending again.</tspan></text>
+<text x="1480" y="64" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="14" fill="#303030"><tspan x="1480" dy="14">Narrow / one column below 1024px</tspan></text>
+<rect x="1480" y="90" width="390" height="1000" fill="#ffffff" stroke="#303030"/>
+<text x="1498" y="110" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="14" fill="#303030"><tspan x="1498" dy="14">&lt; Back to sessions</tspan></text>
+<text x="1498" y="150" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="22" fill="#303030"><tspan x="1498" dy="22">Home Assistant</tspan></text>
+<text x="1498" y="191" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="16" fill="#303030"><tspan x="1498" dy="16">[Events v]</tspan></text>
+<text x="1498" y="245" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="14" fill="#303030"><tspan x="1498" dy="14">Send to an existing automation.</tspan></text>
+<text x="1498" y="293" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="14" fill="#303030"><tspan x="1498" dy="14">Event type</tspan></text>
+<rect x="1498" y="318" width="354" height="42" fill="#f5f5f5" stroke="#303030"/>
+<text x="1510" y="329" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="14" fill="#303030"><tspan x="1510" dy="14">briareus_command</tspan></text>
+<text x="1498" y="391" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="14" fill="#303030"><tspan x="1498" dy="14">Event data / JSON object</tspan></text>
+<rect x="1498" y="416" width="354" height="112" fill="#f5f5f5" stroke="#303030"/>
+<text x="1510" y="427" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="14" fill="#303030"><tspan x="1510" dy="14">{</tspan><tspan x="1510" dy="17.5">  &quot;source&quot;: &quot;briareus&quot;,</tspan><tspan x="1510" dy="17.5">  &quot;command&quot;: &quot;arriving_home&quot;</tspan><tspan x="1510" dy="17.5">}</tspan></text>
+<text x="1498" y="562" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="14" fill="#303030"><tspan x="1498" dy="14">Set up the listening automation</tspan><tspan x="1498" dy="17.5">in Home Assistant.</tspan></text>
+<rect x="1498" y="631" width="150" height="36" fill="#eeeeee" stroke="#303030"/>
+<text x="1510" y="639" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="14" fill="#303030"><tspan x="1510" dy="14">Send event</tspan></text>
+<rect x="1498" y="711" width="354" height="110" fill="#f5f5f5" stroke="#303030"/>
+<text x="1512" y="724" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="16" fill="#303030"><tspan x="1512" dy="16">Event accepted</tspan></text>
+<text x="1512" y="753" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="14" fill="#303030"><tspan x="1512" dy="14">The automation may still</tspan><tspan x="1512" dy="17.5">be running.</tspan></text>
+<rect x="1498" y="858" width="354" height="110" fill="#f5f5f5" stroke="#303030"/>
+<text x="1512" y="871" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="16" fill="#303030"><tspan x="1512" dy="16">Event not confirmed</tspan></text>
+<text x="1512" y="900" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="14" fill="#303030"><tspan x="1512" dy="14">Check Home Assistant before</tspan><tspan x="1512" dy="17.5">sending again.</tspan></text>
+<text x="40" y="1130" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="20" fill="#303030"><tspan x="40" dy="20">Behavior and platform notes</tspan></text>
+<text x="40" y="1173" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="15" fill="#303030"><tspan x="40" dy="15">POST /api/v1/home-assistant/events/{type} sends the JSON object directly; encode the nonempty event type as a path segment.</tspan></text>
+<text x="40" y="1202" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="15" fill="#303030"><tspan x="40" dy="15">This sends an event. It is not an event feed, automation editor, or subscription. No event history is available.</tspan></text>
+<text x="40" y="1231" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="15" fill="#303030"><tspan x="40" dy="15">Require a nonempty type and a JSON object. Disable Send while pending. Keep the entered data if the call fails.</tspan></text>
+<text x="40" y="1260" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="15" fill="#303030"><tspan x="40" dy="15">Show {ok:true} as accepted, not completed. On an ambiguous failure, do not automatically resend the event.</tspan></text>
+<text x="40" y="1289" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="15" fill="#303030"><tspan x="40" dy="15">The event type and data shown are examples; they only have an effect if Home Assistant has a matching listener.</tspan></text>
+<text x="40" y="1318" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="15" fill="#303030"><tspan x="40" dy="15">Windows/Mac keep the sidebar. iPhone/narrow iPad show one pane with Back; Quest uses headset.type and scrolling.</tspan></text>
+<text x="40" y="1390" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="14" fill="#303030"><tspan x="40" dy="14">Proposal based on Core #147. API and source revisions: home-assistant.md. Example entities and values only.</tspan></text></svg>

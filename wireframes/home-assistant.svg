@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1900" height="1440" viewBox="0 0 1900 1440" role="img" aria-labelledby="title"><title id="title">home-assistant: proposed wide and narrow wireframes</title><rect width="100%" height="100%" fill="white"/><text x="40" y="16" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="22" fill="#303030"><tspan x="40" dy="22">Entities and details / proposed client screen</tspan></text>
+<text x="40" y="64" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="14" fill="#303030"><tspan x="40" dy="14">Wide / at least layout.narrowWidth (1024px)</tspan></text>
+<rect x="40" y="90" width="1400" height="820" fill="#ffffff" stroke="#303030"/>
+<rect x="40" y="90" width="268" height="820" fill="#eeeeee" stroke="#303030"/>
+<text x="54" y="108" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="16" fill="#303030"><tspan x="54" dy="16">+ New session</tspan></text>
+<text x="54" y="145" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="13" fill="#303030"><tspan x="54" dy="13">WhatsApp  Mail  📊  ⚑</tspan></text>
+<text x="54" y="201" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="16" fill="#303030"><tspan x="54" dy="16">Projects</tspan></text>
+<text x="64" y="239" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="16" fill="#303030"><tspan x="64" dy="16">briareus</tspan></text>
+<text x="64" y="275" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="16" fill="#303030"><tspan x="64" dy="16">briareus-contracts</tspan></text>
+<rect x="50" y="335" width="248" height="55" fill="#dddddd" stroke="#303030"/>
+<text x="64" y="350" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="16" fill="#303030"><tspan x="64" dy="16">Home Assistant</tspan></text>
+<text x="54" y="408" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="13" fill="#303030"><tspan x="54" dy="13">Proposed global entry</tspan></text>
+<rect x="50" y="594" width="248" height="144" fill="#f5f5f5" stroke="#303030"/>
+<text x="62" y="606" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="14" fill="#303030"><tspan x="62" dy="14">This computer          v</tspan></text>
+<text x="62" y="640" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="14" fill="#303030"><tspan x="62" dy="14">CPU                 18%</tspan></text>
+<text x="62" y="668" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="14" fill="#303030"><tspan x="62" dy="14">Memory     12.4 / 32 GB</tspan></text>
+<text x="62" y="696" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="14" fill="#303030"><tspan x="62" dy="14">Battery   72% charging</tspan></text>
+<text x="54" y="771" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="13" fill="#303030"><tspan x="54" dy="13">Media player when active</tspan></text>
+<text x="54" y="824" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="13" fill="#303030"><tspan x="54" dy="13">Select  Settings  Sign out</tspan></text>
+<text x="54" y="868" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="13" fill="#303030"><tspan x="54" dy="13">theme.sidebar / 268px</tspan></text>
+<text x="326" y="112" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="24" fill="#303030"><tspan x="326" dy="24">Home Assistant</tspan></text>
+<text x="326" y="153" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="14" fill="#303030"><tspan x="326" dy="14">Connected to Home Assistant</tspan></text>
+<text x="326" y="194" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="16" fill="#303030"><tspan x="326" dy="16">[Entities]   Actions   Events   Connection</tspan></text>
+<text x="326" y="872" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="13" fill="#303030"><tspan x="326" dy="13">theme.canvas / layout.paneMargin = 18px</tspan></text>
+<text x="326" y="245" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="14" fill="#303030"><tspan x="326" dy="14">Domain filter</tspan></text>
+<rect x="326" y="270" width="400" height="42" fill="#f5f5f5" stroke="#303030"/>
+<text x="338" y="281" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="14" fill="#303030"><tspan x="338" dy="14">All domains                  v</tspan></text>
+<rect x="744" y="270" width="125" height="36" fill="#eeeeee" stroke="#303030"/>
+<text x="756" y="278" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="14" fill="#303030"><tspan x="756" dy="14">Refresh</tspan></text>
+<text x="326" y="337" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="16" fill="#303030"><tspan x="326" dy="16">Entities / select to inspect</tspan></text>
+<rect x="326" y="373" width="418" height="84" fill="#f5f5f5" stroke="#303030"/>
+<text x="340" y="386" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="16" fill="#303030"><tspan x="340" dy="16">Kitchen light</tspan></text>
+<text x="340" y="415" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="14" fill="#303030"><tspan x="340" dy="14">light.kitchen                 on</tspan></text>
+<rect x="326" y="473" width="418" height="84" fill="#f5f5f5" stroke="#303030"/>
+<text x="340" y="486" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="16" fill="#303030"><tspan x="340" dy="16">MOVA vacuum</tspan></text>
+<text x="340" y="515" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="14" fill="#303030"><tspan x="340" dy="14">vacuum.mova               docked</tspan></text>
+<rect x="326" y="573" width="418" height="84" fill="#f5f5f5" stroke="#303030"/>
+<text x="340" y="586" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="16" fill="#303030"><tspan x="340" dy="16">Temperature</tspan></text>
+<text x="340" y="615" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="14" fill="#303030"><tspan x="340" dy="14">sensor.temperature         21.5 C</tspan></text>
+<rect x="326" y="673" width="418" height="84" fill="#f5f5f5" stroke="#303030"/>
+<text x="340" y="686" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="16" fill="#303030"><tspan x="340" dy="16">Hall sensor</tspan></text>
+<text x="340" y="715" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="14" fill="#303030"><tspan x="340" dy="14">sensor.hall          unavailable</tspan></text>
+<rect x="766" y="373" width="656" height="175" fill="#f5f5f5" stroke="#303030"/>
+<text x="780" y="386" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="16" fill="#303030"><tspan x="780" dy="16">Kitchen light</tspan></text>
+<text x="780" y="415" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="14" fill="#303030"><tspan x="780" dy="14">light.kitchen</tspan><tspan x="780" dy="17.5">State: on</tspan><tspan x="780" dy="17.5">Last changed: 12 Oct, 09:41</tspan><tspan x="780" dy="17.5">Last updated: 12 Oct, 09:42</tspan></text>
+<text x="784" y="576" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="14" fill="#303030"><tspan x="784" dy="14">Attributes / read-only</tspan></text>
+<rect x="784" y="601" width="620" height="72" fill="#f5f5f5" stroke="#303030"/>
+<text x="796" y="612" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="14" fill="#303030"><tspan x="796" dy="14">{ &quot;friendly_name&quot;: &quot;Kitchen light&quot;, &quot;brightness&quot;: 128 }</tspan></text>
+<rect x="784" y="702" width="175" height="36" fill="#eeeeee" stroke="#303030"/>
+<text x="796" y="710" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="14" fill="#303030"><tspan x="796" dy="14">Choose action</tspan></text>
+<text x="784" y="766" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="14" fill="#303030"><tspan x="784" dy="14">Last refreshed 09:42 / polling while visible</tspan></text>
+<text x="1480" y="64" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="14" fill="#303030"><tspan x="1480" dy="14">Narrow / one column below 1024px</tspan></text>
+<rect x="1480" y="90" width="390" height="1000" fill="#ffffff" stroke="#303030"/>
+<text x="1498" y="110" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="14" fill="#303030"><tspan x="1498" dy="14">&lt; Back to sessions</tspan></text>
+<text x="1498" y="150" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="22" fill="#303030"><tspan x="1498" dy="22">Home Assistant</tspan></text>
+<text x="1498" y="191" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="16" fill="#303030"><tspan x="1498" dy="16">[Entities v]</tspan></text>
+<text x="1498" y="237" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="14" fill="#303030"><tspan x="1498" dy="14">Domain filter</tspan></text>
+<rect x="1498" y="262" width="354" height="42" fill="#f5f5f5" stroke="#303030"/>
+<text x="1510" y="273" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="14" fill="#303030"><tspan x="1510" dy="14">All domains               v</tspan></text>
+<rect x="1498" y="333" width="354" height="80" fill="#f5f5f5" stroke="#303030"/>
+<text x="1512" y="346" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="16" fill="#303030"><tspan x="1512" dy="16">Kitchen light</tspan></text>
+<text x="1512" y="375" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="14" fill="#303030"><tspan x="1512" dy="14">light.kitchen / on</tspan></text>
+<rect x="1498" y="430" width="354" height="80" fill="#f5f5f5" stroke="#303030"/>
+<text x="1512" y="443" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="16" fill="#303030"><tspan x="1512" dy="16">MOVA vacuum</tspan></text>
+<text x="1512" y="472" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="14" fill="#303030"><tspan x="1512" dy="14">vacuum.mova / docked</tspan></text>
+<text x="1498" y="543" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="14" fill="#303030"><tspan x="1498" dy="14">Select a row to open details.</tspan></text>
+<rect x="1498" y="591" width="354" height="468" fill="#f5f5f5" stroke="#303030"/>
+<text x="1512" y="608" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="14" fill="#303030"><tspan x="1512" dy="14">Next pane / &lt; Back to entities</tspan></text>
+<text x="1512" y="648" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="20" fill="#303030"><tspan x="1512" dy="20">Kitchen light</tspan></text>
+<text x="1512" y="688" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="14" fill="#303030"><tspan x="1512" dy="14">light.kitchen</tspan><tspan x="1512" dy="17.5">State: on</tspan><tspan x="1512" dy="17.5">Changed: 12 Oct, 09:41</tspan><tspan x="1512" dy="17.5">Updated: 12 Oct, 09:42</tspan></text>
+<text x="1512" y="791" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="14" fill="#303030"><tspan x="1512" dy="14">Attributes</tspan><tspan x="1512" dy="17.5">brightness: 128</tspan><tspan x="1512" dy="17.5">friendly_name: Kitchen light</tspan></text>
+<rect x="1512" y="903" width="175" height="36" fill="#eeeeee" stroke="#303030"/>
+<text x="1524" y="911" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="14" fill="#303030"><tspan x="1524" dy="14">Choose action</tspan></text>
+<text x="40" y="1130" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="20" fill="#303030"><tspan x="40" dy="20">Behavior and platform notes</tspan></text>
+<text x="40" y="1173" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="15" fill="#303030"><tspan x="40" dy="15">GET /api/v1/home-assistant/entities supports only the domain query filter; no device or area registry exists.</tspan></text>
+<text x="40" y="1202" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="15" fill="#303030"><tspan x="40" dy="15">Select a row to GET /entities/{id}. Use name, id, state, attributes, lastChanged, and lastUpdated from Core.</tspan></text>
+<text x="40" y="1231" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="15" fill="#303030"><tspan x="40" dy="15">Loading: show a progress label. Empty: &quot;No entities in this domain&quot; with &quot;All domains&quot;. A missing entity returns 404.</tspan></text>
+<text x="40" y="1260" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="15" fill="#303030"><tspan x="40" dy="15">Read failure: retain the last values marked stale with Retry. Display unknown and unavailable states as returned.</tspan></text>
+<text x="40" y="1289" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="15" fill="#303030"><tspan x="40" dy="15">Poll only while visible. The bridge has no subscription; timestamps above are examples, not device completion times.</tspan></text>
+<text x="40" y="1318" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="15" fill="#303030"><tspan x="40" dy="15">Windows/Mac use list and detail. iPhone/narrow iPad use consecutive panes; Quest uses headset.type and scrolling.</tspan></text>
+<text x="40" y="1390" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="14" fill="#303030"><tspan x="40" dy="14">Proposal based on Core #147. API and source revisions: home-assistant.md. Example entities and values only.</tspan></text></svg>

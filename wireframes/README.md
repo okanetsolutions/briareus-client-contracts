@@ -32,7 +32,24 @@ One wireframe per screen, not one per platform, for every screen of the Windows 
 | Settings · Database pool, SSH servers, Forge accounts | [`settings-servers.excalidraw`](settings-servers.excalidraw) · [preview](settings-servers.svg) | Database pool, SSH servers, Forge accounts |
 | Settings · This computer, Mail, MCP servers | [`settings.excalidraw`](settings.excalidraw) · [preview](settings.svg) | Mail accounts, MCP servers, Meeting assistant |
 
+## Home Assistant proposals
+
+Core's Home Assistant bridge is merged, but no client implements it yet. These proposed screens use the Windows shell and the bridge's existing API. See [behavior and source revisions](home-assistant.md).
+
+| Screen | File | Features |
+| --- | --- | --- |
+| Home Assistant · Connection | [scene](home-assistant-connection.excalidraw) · [preview](home-assistant-connection.svg) | Connection, setup guidance, admin access, connection errors |
+| Home Assistant · Entities | [scene](home-assistant.excalidraw) · [preview](home-assistant.svg) | Domain filter, entity details, state and attributes |
+| Home Assistant · Actions | [scene](home-assistant-action.excalidraw) · [preview](home-assistant-action.svg) | Service discovery, inputs, response data, unconfirmed actions |
+| Home Assistant · Events | [scene](home-assistant-event.excalidraw) · [preview](home-assistant-event.svg) | Event type and data, accepted and unconfirmed receipts |
+
+These four scenes, the menu status proposal, and their previews can be regenerated together with `node scripts/home-assistant-wireframes.mjs`.
+
 Not drawn, because Windows does not offer them (23): Revoke token from the app, Task cost history, Saved prompt library, Side question (/btw), QA loop toggle, Link a pull request, Recover interrupted session, Annotated preview feedback, QA recordings, SSH and Slack approvals, GitHub deployments, Envoyer accounts & deployments, Agent memories, Slack workspaces, Server administration, Devices & tokens, Background notifications, Reply from notification, GPT-Realtime voice assistant, Hands-free conversation line, CarPlay, Slack inbox, Search conversations. When one is built, draw it from the client that has it.
+
+## Menu status proposal
+
+The [menu status preview](menu-status.svg) and [editable scene](menu-status.excalidraw) show a collapsible block for local CPU, memory, and battery readings, also included in the Home Assistant proposals. See [scope and platform behavior](menu-status.md). These are example readings; telemetry is not implemented by this change.
 
 ## Editing
 

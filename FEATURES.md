@@ -9,7 +9,7 @@ What each Briareus client offers, feature by feature, against the server API (/a
 | --- | --- | --- | --- | --- |
 | ● full | 62 | 73 | 53 | 30 |
 | ◐ partial | 4 | 4 | 5 | 8 |
-| · none | 22 | 11 | 29 | 49 |
+| · none | 27 | 16 | 34 | 54 |
 | – n/a | 1 | 1 | 2 | 2 |
 
 ## Connection & pairing
@@ -191,6 +191,21 @@ What each Briareus client offers, feature by feature, against the server API (/a
 | **Find in conversation**<br>Ctrl/⌘+F highlights matches in a transcript and steps through them. Wireframe: [conversation](wireframes/conversation.svg) | ● | ● | · | · |  |
 | **Code search & navigation**<br>PhpStorm-style Go to File/Class/Symbol and Find in Files over an indexed repository. Wireframe: [project-files](wireframes/project-files.svg) | ● | ● | · | · | **Mac:** Adds Search Everywhere, Go to Declaration, Find Usages and regex search. |
 
+## Home Assistant (proposed client screens)
+
+| Feature | Windows | Mac | iPhone/iPad | Quest | Notes |
+| --- | :---: | :---: | :---: | :---: | --- |
+| **Home Assistant connection**<br>Check the server-configured bridge with an admin token; proposed UI, no client implementation. Wireframe: [home-assistant-connection](wireframes/home-assistant-connection.svg) | · | · | · | · |  |
+| **Home Assistant entities**<br>Browse and filter entities, inspect their states and attributes, and poll while visible; proposed UI. Wireframe: [home-assistant](wireframes/home-assistant.svg) | · | · | · | · |  |
+| **Home Assistant actions**<br>Discover services, send service data, and inspect receipts without automatic retries; proposed UI. Wireframe: [home-assistant-action](wireframes/home-assistant-action.svg), [home-assistant](wireframes/home-assistant.svg) | · | · | · | · |  |
+| **Home Assistant events**<br>Send an event to an existing Home Assistant automation; proposed UI, no event subscription. Wireframe: [home-assistant-event](wireframes/home-assistant-event.svg) | · | · | · | · |  |
+
+## Local device status (proposed client widget)
+
+| Feature | Windows | Mac | iPhone/iPad | Quest | Notes |
+| --- | :---: | :---: | :---: | :---: | --- |
+| **Menu device status**<br>Proposed collapsible menu block for local CPU, memory, and battery readings; telemetry is not implemented by this change. Wireframe: [menu-status](wireframes/menu-status.svg), [home-assistant](wireframes/home-assistant.svg) | · | · | · | · | **Windows:** Proposed This computer block with available CPU, memory, and battery readings. **Mac:** Same proposed desktop layout as Windows. **iPhone/iPad:** Proposed This device block, battery first; omit metrics the OS cannot supply. **Quest:** Proposed This device block with headset.type sizing; omit unsupported metrics. |
+
 ## Server routes no client calls
 
 - **slack (inbox):** `GET /slack/workspaces`, `GET /slack/workspaces/{id}/conversations`, `GET /slack/workspaces/{id}/conversations/{channel}`, `GET /slack/workspaces/{id}/people`, `POST /slack/workspaces/{id}/direct-messages`, `GET /slack/workspaces/{id}/conversations/{channel}/messages`, `GET /slack/workspaces/{id}/conversations/{channel}/threads/{ts}`, `POST /slack/workspaces/{id}/conversations/{channel}/messages`, `POST /slack/workspaces/{id}/conversations/{channel}/read`, `GET /slack/workspaces/{id}/events`, `GET /slack/requests`
@@ -203,3 +218,4 @@ What each Briareus client offers, feature by feature, against the server API (/a
 - **envoyer (single items):** `GET /envoyer/accounts/{id}/projects/{project}`, `GET /envoyer/accounts/{id}/projects/{project}/deployments/{deployment}`
 - **deployments.config (read):** `GET /deployments/config`
 - **prompts.update:** `PUT /prompts/{id}`
+- **home-assistant:** `GET /home-assistant`, `GET /home-assistant/entities`, `GET /home-assistant/entities/{id}`, `GET /home-assistant/services`, `POST /home-assistant/services/{domain}/{service}`, `POST /home-assistant/events/{type}` — Admin-only bridge merged in Core #147; proposed client wireframes, support checked on 2026-10-12.
