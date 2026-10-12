@@ -2,6 +2,8 @@
 
 One wireframe per screen, not one per platform: Windows, the Mac, iPhone and iPad, and Quest all build the same structure. They set what sits where. Colour, type and spacing come from the tokens in [`tokens/`](../tokens), so the wireframes are drawn in greys on purpose.
 
+[briareus-windows](https://github.com/okanetsolutions/briareus-windows) is the reference for how a screen looks: each wireframe is drawn from its layout code (`app/main.c`, `app/screen_*.c`), and the other clients match that structure, differing only where the platform notes say.
+
 | Screen | File | Features |
 | --- | --- | --- |
 | Conversation | [`conversation.excalidraw`](conversation.excalidraw) · [preview](conversation.svg) | list beside conversation, transcript, composer, stop, session details panel |
