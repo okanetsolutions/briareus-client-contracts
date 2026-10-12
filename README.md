@@ -29,7 +29,6 @@ tokens/
 features/features.json    what each client offers, feature by feature (FEATURES.md is generated from it)
 build.mjs                 Style Dictionary config and the five formats (Compose, Swift, C, CSS, JSON)
 dist/                     generated; committed so clients and reviewers see exactly what changed
-scripts/sync.mjs          copies dist/ into client checkouts, or --check says which are stale
 test/                     WCAG contrast of every text/surface pair, and status sanity
 ```
 
@@ -53,13 +52,7 @@ npm run check
 
 That builds `dist/`, checks contrast (ink on every surface ≥ 4.5:1, muted on canvas and sidebar ≥ 4.5:1, accent and status colours on canvas ≥ 3:1, chart colours ≥ 3:1 on the surfaces they sit on, both modes), and fails if the committed `dist/` differs from what the tokens build. Commit `tokens/` and `dist/` together.
 
-Then bring the clients up to date. With them checked out beside this repo:
-
-```bash
-node scripts/sync.mjs
-```
-
-and open a pull request in each client with the copied file. `node scripts/sync.mjs --check` exits 1 when a client's copy is stale, for a client's CI to run against a checkout of this repo.
+Each client then copies its file from `dist/` to the path in the table above.
 
 ## Using the tokens
 
