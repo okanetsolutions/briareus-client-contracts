@@ -16,41 +16,41 @@ What each Briareus client offers, feature by feature, against the server API (/a
 
 | Feature | Windows | Mac | iPhone/iPad | Quest | Notes |
 | --- | :---: | :---: | :---: | :---: | --- |
-| **Pair with a device token**<br>Connect to an HTTPS server with a per-device token kept in the OS secure store. | ● | ● | ● | ● | **iPhone/iPad:** CarPlay cannot pair; the phone does. |
-| **Adapt to server and token**<br>Controls the server lacks, or the token may not call, are hidden or disabled (Read-only tokens can't write). | ● | ● | ● | ● |  |
+| **Pair with a device token**<br>Connect to an HTTPS server with a per-device token kept in the OS secure store. Wireframe: [pairing](wireframes/pairing.svg) | ● | ● | ● | ● | **iPhone/iPad:** CarPlay cannot pair; the phone does. |
+| **Adapt to server and token**<br>Controls the server lacks, or the token may not call, are hidden or disabled (Read-only tokens can't write). Wireframe: [pairing](wireframes/pairing.svg), [project-pulls](wireframes/project-pulls.svg), [settings-projects](wireframes/settings-projects.svg) | ● | ● | ● | ● |  |
 | **Revoke token from the app**<br>Revoke this device's token on the server, not just forget it locally. | · | · | ● | ● | **Windows:** Sign-out forgets the token locally without revoking it on the server. **Mac:** Sign-out (Store.forget) is local only; revoke_token is in the core table but unused by the Mac UI. |
-| **Saved state and incremental resume**<br>Screens open on cached projects, conversations and transcripts, then fetch only what changed. | ● | ● | ● | ● | **Quest:** Encrypted on the headset. |
-| **Live session updates**<br>Session lists and transcripts update in real time over server-sent events. | ◐ | ● | ◐ | ● | **Windows:** Polls with backoff; never opens /events or /sessions/{id}/events. **iPhone/iPad:** Polls GET /sessions/{id}; no SSE except the shared browser stream. |
-| **Self-update**<br>Checks GitHub releases, verifies and installs updates. | ● | ● | – | · | **iPhone/iPad:** Distributed via App Store/TestFlight. **Quest:** Sideloaded APK with no updater; Android could install updates. |
+| **Saved state and incremental resume**<br>Screens open on cached projects, conversations and transcripts, then fetch only what changed. Wireframe: [project-pulls](wireframes/project-pulls.svg) | ● | ● | ● | ● | **Quest:** Encrypted on the headset. |
+| **Live session updates**<br>Session lists and transcripts update in real time over server-sent events. Wireframe: [project-pulls](wireframes/project-pulls.svg) | ◐ | ● | ◐ | ● | **Windows:** Polls with backoff; never opens /events or /sessions/{id}/events. **iPhone/iPad:** Polls GET /sessions/{id}; no SSE except the shared browser stream. |
+| **Self-update**<br>Checks GitHub releases, verifies and installs updates. Wireframe: [conversation](wireframes/conversation.svg) | ● | ● | – | · | **iPhone/iPad:** Distributed via App Store/TestFlight. **Quest:** Sideloaded APK with no updater; Android could install updates. |
 
 ## Projects & conversation list
 
 | Feature | Windows | Mac | iPhone/iPad | Quest | Notes |
 | --- | :---: | :---: | :---: | :---: | --- |
-| **Projects and conversations**<br>Browse the token's projects and their conversations with state, provider, branch and age. | ● | ● | ● | ● | **Quest:** Also nests orchestrator workers and counts what waits per project. |
-| **Bulk close/delete**<br>Tick several conversations and close or delete them at once. | ● | ● | ● | · |  |
-| **Start a conversation**<br>Start a session on a chosen branch, provider, model and effort, or the project default, optionally with the review loop. | ● | ● | ● | ● |  |
-| **Worktree / Local / Orchestrator**<br>Choose the workspace mode, including a local checkout or an orchestrator that runs workers. | ● | ● | · | · | **iPhone/iPad:** No workspace picker; README says epics/orchestrators are started from the Mac. |
+| **Projects and conversations**<br>Browse the token's projects and their conversations with state, provider, branch and age. Wireframe: [conversation](wireframes/conversation.svg) | ● | ● | ● | ● | **Quest:** Also nests orchestrator workers and counts what waits per project. |
+| **Bulk close/delete**<br>Tick several conversations and close or delete them at once. Wireframe: [conversation](wireframes/conversation.svg) | ● | ● | ● | · |  |
+| **Start a conversation**<br>Start a session on a chosen branch, provider, model and effort, or the project default, optionally with the review loop. Wireframe: [conversation](wireframes/conversation.svg) | ● | ● | ● | ● |  |
+| **Worktree / Local / Orchestrator**<br>Choose the workspace mode, including a local checkout or an orchestrator that runs workers. Wireframe: [conversation](wireframes/conversation.svg) | ● | ● | · | · | **iPhone/iPad:** No workspace picker; README says epics/orchestrators are started from the Mac. |
 
 ## Transcript & markdown
 
 | Feature | Windows | Mac | iPhone/iPad | Quest | Notes |
 | --- | :---: | :---: | :---: | :---: | --- |
-| **Incremental transcript**<br>Read the transcript with message times, agent questions and queued messages, appended incrementally. | ● | ● | ● | ● |  |
-| **Markdown replies**<br>Agent replies render as Markdown (headings, lists, tables, code with copy, links); text is selectable. | ● | ● | ● | ● | **iPhone/iPad:** Tables also copy whole as Markdown. **Mac:** Tables also copy whole as Markdown. |
-| **Collapsible tool activity**<br>Tool calls, commands and git steps fold into expandable clusters between messages. | ● | ● | ● | ● |  |
-| **Session details panel**<br>See the conversation's pull request, checks, reviews, findings and context use beside it. | ● | ● | ● | ◐ | **iPhone/iPad:** As a sheet rather than a side panel. **Quest:** Opens the PR in a browser panel; no details side panel. |
+| **Incremental transcript**<br>Read the transcript with message times, agent questions and queued messages, appended incrementally. Wireframe: [conversation](wireframes/conversation.svg) | ● | ● | ● | ● |  |
+| **Markdown replies**<br>Agent replies render as Markdown (headings, lists, tables, code with copy, links); text is selectable. Wireframe: [conversation](wireframes/conversation.svg) | ● | ● | ● | ● | **iPhone/iPad:** Tables also copy whole as Markdown. **Mac:** Tables also copy whole as Markdown. |
+| **Collapsible tool activity**<br>Tool calls, commands and git steps fold into expandable clusters between messages. Wireframe: [conversation](wireframes/conversation.svg) | ● | ● | ● | ● |  |
+| **Session details panel**<br>See the conversation's pull request, checks, reviews, findings and context use beside it. Wireframe: [conversation](wireframes/conversation.svg) | ● | ● | ● | ◐ | **iPhone/iPad:** As a sheet rather than a side panel. **Quest:** Opens the PR in a browser panel; no details side panel. |
 | **Task cost history**<br>Open a task's history: every session filed under it and their combined cost. | · | ● | · | · |  |
 
 ## Composer
 
 | Feature | Windows | Mac | iPhone/iPad | Quest | Notes |
 | --- | :---: | :---: | :---: | :---: | --- |
-| **Send follow-ups**<br>Send a message into the running turn or the queue. | ● | ● | ● | ● |  |
-| **Attach files**<br>Paste, drop or pick files/images that upload and go with the message. | ● | ● | ● | ● | **Quest:** System file picker only. |
-| **Voice notes**<br>Record audio and have the server transcribe it into the message box. | ● | ● | ● | ● | **Quest:** Primary input (no keyboard); read-only text area to check before sending. |
-| **Take back queued messages**<br>Remove a queued message before the agent receives it. | ● | ● | ● | ● |  |
-| **Answer agent questions**<br>Answer an agent's question with one of its offered options. | ● | ● | ● | ● | **Quest:** Also from notifications and the status panel. |
+| **Send follow-ups**<br>Send a message into the running turn or the queue. Wireframe: [conversation](wireframes/conversation.svg) | ● | ● | ● | ● |  |
+| **Attach files**<br>Paste, drop or pick files/images that upload and go with the message. Wireframe: [conversation](wireframes/conversation.svg) | ● | ● | ● | ● | **Quest:** System file picker only. |
+| **Voice notes**<br>Record audio and have the server transcribe it into the message box. Wireframe: [conversation](wireframes/conversation.svg) | ● | ● | ● | ● | **Quest:** Primary input (no keyboard); read-only text area to check before sending. |
+| **Take back queued messages**<br>Remove a queued message before the agent receives it. Wireframe: [conversation](wireframes/conversation.svg) | ● | ● | ● | ● |  |
+| **Answer agent questions**<br>Answer an agent's question with one of its offered options. Wireframe: [conversation](wireframes/conversation.svg) | ● | ● | ● | ● | **Quest:** Also from notifications and the status panel. |
 | **Saved prompt library**<br>Insert, save and delete prompts from the project's prompt library. | · | ◐ | · | · | **Mac:** List, create and delete; PUT /prompts/{id} (edit) is never called. |
 | **Side question (/btw)**<br>Ask a side question about a session the agent never sees. | · | · | · | · |  |
 
@@ -58,59 +58,59 @@ What each Briareus client offers, feature by feature, against the server API (/a
 
 | Feature | Windows | Mac | iPhone/iPad | Quest | Notes |
 | --- | :---: | :---: | :---: | :---: | --- |
-| **Stop a turn**<br>Cancel the running turn. | ● | ● | ● | ● |  |
-| **Close, reopen, delete**<br>Close a session, reopen it later, or delete it. | ● | ● | ● | ● |  |
-| **Rename**<br>Rename a session. | ● | ● | ● | · | **Quest:** No PATCH /sessions route in the client. |
-| **Compact and clear**<br>Compact a session's context or clear its transcript. | ● | ● | ● | · |  |
-| **Review loop toggle**<br>Arm or disarm the automatic review loop on a session. | ● | ● | ● | ● |  |
+| **Stop a turn**<br>Cancel the running turn. Wireframe: [conversation](wireframes/conversation.svg) | ● | ● | ● | ● |  |
+| **Close, reopen, delete**<br>Close a session, reopen it later, or delete it. Wireframe: [conversation](wireframes/conversation.svg) | ● | ● | ● | ● |  |
+| **Rename**<br>Rename a session. Wireframe: [conversation](wireframes/conversation.svg) | ● | ● | ● | · | **Quest:** No PATCH /sessions route in the client. |
+| **Compact and clear**<br>Compact a session's context or clear its transcript. Wireframe: [conversation](wireframes/conversation.svg) | ● | ● | ● | · |  |
+| **Review loop toggle**<br>Arm or disarm the automatic review loop on a session. Wireframe: [conversation](wireframes/conversation.svg) | ● | ● | ● | ● |  |
 | **QA loop toggle**<br>Arm automatic QA after the review loop passes. | · | · | · | · | **Windows:** Route is in core/api.c's table but no screen calls it. |
 | **Link a pull request**<br>Attach a PR to a session after the server checks the branch. | · | · | · | · | **Windows:** Route is in the table but unused by the UI. |
 | **Recover interrupted session**<br>Inspect what an interrupted session left in its workspace and resume from it. | · | ● | · | · |  |
-| **Session webhook**<br>Arm a session's webhook, set caps, copy URLs/keys and rotate keys (Admin). | ● | ● | ● | · |  |
+| **Session webhook**<br>Arm a session's webhook, set caps, copy URLs/keys and rotate keys (Admin). Wireframe: [webhook](wireframes/webhook.svg) | ● | ● | ● | · |  |
 
 ## Pull requests
 
 | Feature | Windows | Mac | iPhone/iPad | Quest | Notes |
 | --- | :---: | :---: | :---: | :---: | --- |
-| **Pull request list**<br>List open PRs with checks, conflicts, labels, people, linked issues and stack, filtered by author/reviewer/label. | ● | ● | ● | ● | **Quest:** Filters by author or label only. |
-| **PR overview**<br>Open a PR on its description, checks, reviews, commits, linked issues and prior conversations. | ● | ● | ● | ● |  |
-| **Files changed and diffs**<br>Browse a PR's changed files with diffs. | ● | ● | ● | · | **Quest:** pull_files is only used by the voice assistant to summarize changes; no diff UI. |
-| **PR comments and review threads**<br>Read the PR's comments, reviews and inline review comments as a timeline. | ● | ● | ◐ | ◐ | **iPhone/iPad:** Only the review summary from the PR overview; the comment feeds (ConvFeed) are Mac-only. **Quest:** Review summary from the overview only. |
-| **Run preview**<br>Serve a PR's branch and view the running app in an embedded browser, with Cloudflare Access handled. | ● | ● | ● | ● | **Quest:** Preview opens in its own panel. |
-| **Run default branch**<br>Serve the project's default branch (with a run profile) from the project screen. | ● | ● | ● | · |  |
+| **Pull request list**<br>List open PRs with checks, conflicts, labels, people, linked issues and stack, filtered by author/reviewer/label. Wireframe: [project-pulls](wireframes/project-pulls.svg) | ● | ● | ● | ● | **Quest:** Filters by author or label only. |
+| **PR overview**<br>Open a PR on its description, checks, reviews, commits, linked issues and prior conversations. Wireframe: [pull-request](wireframes/pull-request.svg) | ● | ● | ● | ● |  |
+| **Files changed and diffs**<br>Browse a PR's changed files with diffs. Wireframe: [pull-request](wireframes/pull-request.svg) | ● | ● | ● | · | **Quest:** pull_files is only used by the voice assistant to summarize changes; no diff UI. |
+| **PR comments and review threads**<br>Read the PR's comments, reviews and inline review comments as a timeline. Wireframe: [pull-request](wireframes/pull-request.svg) | ● | ● | ◐ | ◐ | **iPhone/iPad:** Only the review summary from the PR overview; the comment feeds (ConvFeed) are Mac-only. **Quest:** Review summary from the overview only. |
+| **Run preview**<br>Serve a PR's branch and view the running app in an embedded browser, with Cloudflare Access handled. Wireframe: [pull-request](wireframes/pull-request.svg), [project-pulls](wireframes/project-pulls.svg) | ● | ● | ● | ● | **Quest:** Preview opens in its own panel. |
+| **Run default branch**<br>Serve the project's default branch (with a run profile) from the project screen. Wireframe: [project-run](wireframes/project-run.svg) | ● | ● | ● | · |  |
 | **Annotated preview feedback**<br>Mark a point on a preview screenshot and send it to the agent as feedback. | · | ● | · | · |  |
-| **Errands**<br>Start code review, solve conflicts, fix checks, implement feedback, test sheet, record QA and other errands; the suggested one is highlighted. | ● | ● | ● | ● |  |
-| **Merge**<br>Merge a PR at the head read, after being told what stands in the way. | ● | ● | ● | ● | **iPhone/iPad:** Also by swipe on the list row. |
-| **Edit PR/issue and update branch**<br>Edit title, Markdown body, labels and assignees (incl. Assign me) on GitHub, and merge the base into a PR (Update branch). | ● | ● | ● | · |  |
-| **Review List**<br>A tab of PRs waiting on your review (required-dev-review / feedback-implemented). | ● | ● | ● | · |  |
+| **Errands**<br>Start code review, solve conflicts, fix checks, implement feedback, test sheet, record QA and other errands; the suggested one is highlighted. Wireframe: [pull-request](wireframes/pull-request.svg), [project-pulls](wireframes/project-pulls.svg), [project-review-list](wireframes/project-review-list.svg) | ● | ● | ● | ● |  |
+| **Merge**<br>Merge a PR at the head read, after being told what stands in the way. Wireframe: [pull-request](wireframes/pull-request.svg), [project-pulls](wireframes/project-pulls.svg), [project-review-list](wireframes/project-review-list.svg) | ● | ● | ● | ● | **iPhone/iPad:** Also by swipe on the list row. |
+| **Edit PR/issue and update branch**<br>Edit title, Markdown body, labels and assignees (incl. Assign me) on GitHub, and merge the base into a PR (Update branch). Wireframe: [issue](wireframes/issue.svg), [pull-request](wireframes/pull-request.svg) | ● | ● | ● | · |  |
+| **Review List**<br>A tab of PRs waiting on your review (required-dev-review / feedback-implemented). Wireframe: [project-review-list](wireframes/project-review-list.svg) | ● | ● | ● | · |  |
 | **QA recordings**<br>Play the videos a Record QA run captured. | · | ● | · | · |  |
 
 ## Findings & review triage
 
 | Feature | Windows | Mac | iPhone/iPad | Quest | Notes |
 | --- | :---: | :---: | :---: | :---: | --- |
-| **Findings queue**<br>See every review round awaiting a decision across projects, grouped by PR, with a count. | ● | ● | ● | ◐ | **Quest:** No cross-project findings screen; rounds surface as conversation states, notifications and the status panel. |
-| **Triage a held round**<br>Give each finding a verdict and comment, add a note and complete the round into the fix session. | ● | ● | ● | ● | **Quest:** Completes the round (triage) but never saves verdicts to the PR (findings/save). |
-| **Reply/delete on others' reviews**<br>On a review of someone else's PR, reply on finding threads or delete findings. | ● | ● | ● | · |  |
-| **Decide findings on a PR page**<br>Record fix/optional/dismiss on a PR's findings from the PR page and solve them. | ● | ● | ● | ◐ | **Quest:** Findings are listed read-only on the PR page; no decision route. |
+| **Findings queue**<br>See every review round awaiting a decision across projects, grouped by PR, with a count. Wireframe: [findings](wireframes/findings.svg) | ● | ● | ● | ◐ | **Quest:** No cross-project findings screen; rounds surface as conversation states, notifications and the status panel. |
+| **Triage a held round**<br>Give each finding a verdict and comment, add a note and complete the round into the fix session. Wireframe: [findings](wireframes/findings.svg) | ● | ● | ● | ● | **Quest:** Completes the round (triage) but never saves verdicts to the PR (findings/save). |
+| **Reply/delete on others' reviews**<br>On a review of someone else's PR, reply on finding threads or delete findings. Wireframe: [findings](wireframes/findings.svg) | ● | ● | ● | · |  |
+| **Decide findings on a PR page**<br>Record fix/optional/dismiss on a PR's findings from the PR page and solve them. Wireframe: [pull-request](wireframes/pull-request.svg) | ● | ● | ● | ◐ | **Quest:** Findings are listed read-only on the PR page; no decision route. |
 | **SSH and Slack approvals**<br>Approve or deny agents' pending SSH commands and Slack posts. | · | ● | · | · | **Mac:** On the Findings screen, Admin token. |
 
 ## Issues & boards
 
 | Feature | Windows | Mac | iPhone/iPad | Quest | Notes |
 | --- | :---: | :---: | :---: | :---: | --- |
-| **Issue list**<br>List open issues with sub-issues under epics and answering PRs, filtered by author/assignee/label. | ● | ● | ● | ◐ | **Quest:** Only via the voice assistant's list_issues tool. |
-| **Issue page**<br>Open an issue with body, sub-issues, fields, linked PRs and paged timeline. | ● | ● | ● | ◐ | **Windows:** Opens in a side panel over the board/PR. **Quest:** Voice reads issues; 'show issue' opens GitHub in the browser. |
-| **Start a session on an issue**<br>Start an agent on an issue at a tap. | ● | ● | ● | ◐ | **Quest:** Voice only (work_on_issue). |
-| **Close an issue**<br>Close as completed or not planned, with an optional comment. | ● | ● | ● | · |  |
-| **GitHub Projects board**<br>View the project's GitHub Projects board by column and drag cards between columns. | ● | ● | · | · | **iPhone/iPad:** README: 'The GitHub Projects board stays on the Mac app.' |
-| **Repository file browser**<br>Browse the repository tree at a branch and open files with highlighting, via the server's GitHub token. | ● | ● | · | · | **Mac:** Also downloads /repo/archive for a local index. |
+| **Issue list**<br>List open issues with sub-issues under epics and answering PRs, filtered by author/assignee/label. Wireframe: [project-issues](wireframes/project-issues.svg) | ● | ● | ● | ◐ | **Quest:** Only via the voice assistant's list_issues tool. |
+| **Issue page**<br>Open an issue with body, sub-issues, fields, linked PRs and paged timeline. Wireframe: [issue](wireframes/issue.svg), [project-board](wireframes/project-board.svg) | ● | ● | ● | ◐ | **Windows:** Opens in a side panel over the board/PR. **Quest:** Voice reads issues; 'show issue' opens GitHub in the browser. |
+| **Start a session on an issue**<br>Start an agent on an issue at a tap. Wireframe: [issue](wireframes/issue.svg) | ● | ● | ● | ◐ | **Quest:** Voice only (work_on_issue). |
+| **Close an issue**<br>Close as completed or not planned, with an optional comment. Wireframe: [issue](wireframes/issue.svg) | ● | ● | ● | · |  |
+| **GitHub Projects board**<br>View the project's GitHub Projects board by column and drag cards between columns. Wireframe: [project-board](wireframes/project-board.svg) | ● | ● | · | · | **iPhone/iPad:** README: 'The GitHub Projects board stays on the Mac app.' |
+| **Repository file browser**<br>Browse the repository tree at a branch and open files with highlighting, via the server's GitHub token. Wireframe: [project-files](wireframes/project-files.svg) | ● | ● | · | · | **Mac:** Also downloads /repo/archive for a local index. |
 
 ## Deploy & project tools
 
 | Feature | Windows | Mac | iPhone/iPad | Quest | Notes |
 | --- | :---: | :---: | :---: | :---: | --- |
-| **Laravel Forge sites**<br>Browse Forge servers/sites for the project and edit deploy script and .env. | ● | ● | ● | · |  |
+| **Laravel Forge sites**<br>Browse Forge servers/sites for the project and edit deploy script and .env. Wireframe: [project-deploy](wireframes/project-deploy.svg) | ● | ● | ● | · |  |
 | **GitHub deployments**<br>See deployments per environment and plan/dispatch a deploy. | · | ● | · | · | **Mac:** Never reads GET /deployments/config. |
 | **Envoyer accounts & deployments**<br>Manage Envoyer accounts, list projects, servers and deployments, and trigger a deploy. | · | ● | · | · |  |
 | **Agent memories**<br>List, edit, add and delete what agents remember; health report to verify/merge (Admin). | · | ● | · | · |  |
@@ -119,21 +119,21 @@ What each Briareus client offers, feature by feature, against the server API (/a
 
 | Feature | Windows | Mac | iPhone/iPad | Quest | Notes |
 | --- | :---: | :---: | :---: | :---: | --- |
-| **Spend dashboard**<br>See spend over a window by project, activity, provider and model, with costliest sessions and filters. | ● | ● | ● | · | **Windows:** Needs an Admin token (/usage/all only); others are told so. **iPhone/iPad:** Non-admin tokens see this month's own spend. |
-| **Provider quotas**<br>See each provider account's login state and quota windows. | ◐ | ● | ◐ | · | **Windows:** Per provider on its Settings Status tab only. **iPhone/iPad:** Per provider in Settings only. |
+| **Spend dashboard**<br>See spend over a window by project, activity, provider and model, with costliest sessions and filters. Wireframe: [dashboard](wireframes/dashboard.svg) | ● | ● | ● | · | **Windows:** Needs an Admin token (/usage/all only); others are told so. **iPhone/iPad:** Non-admin tokens see this month's own spend. |
+| **Provider quotas**<br>See each provider account's login state and quota windows. Wireframe: [settings-providers](wireframes/settings-providers.svg) | ◐ | ● | ◐ | · | **Windows:** Per provider on its Settings Status tab only. **iPhone/iPad:** Per provider in Settings only. |
 
 ## Settings
 
 | Feature | Windows | Mac | iPhone/iPad | Quest | Notes |
 | --- | :---: | :---: | :---: | :---: | --- |
-| **Projects settings**<br>Create, edit, clone, delete and reorder projects with all their tabs (Admin). | ● | ● | ● | · |  |
-| **Providers settings**<br>Manage providers, their models, logins and endpoint tests (Admin). | ● | ● | ● | · |  |
-| **Database pool**<br>Manage and test the database servers sessions claim (Admin). | ● | ● | ● | · |  |
-| **SSH servers**<br>Manage SSH servers agents may use, with their stored DB login (Admin). | ● | ● | ● | · |  |
-| **Forge accounts**<br>Manage Laravel Forge accounts and their projects (Admin). | ● | ● | ● | · |  |
+| **Projects settings**<br>Create, edit, clone, delete and reorder projects with all their tabs (Admin). Wireframe: [settings-projects](wireframes/settings-projects.svg) | ● | ● | ● | · |  |
+| **Providers settings**<br>Manage providers, their models, logins and endpoint tests (Admin). Wireframe: [settings-providers](wireframes/settings-providers.svg) | ● | ● | ● | · |  |
+| **Database pool**<br>Manage and test the database servers sessions claim (Admin). Wireframe: [settings-servers](wireframes/settings-servers.svg) | ● | ● | ● | · |  |
+| **SSH servers**<br>Manage SSH servers agents may use, with their stored DB login (Admin). Wireframe: [settings-servers](wireframes/settings-servers.svg) | ● | ● | ● | · |  |
+| **Forge accounts**<br>Manage Laravel Forge accounts and their projects (Admin). Wireframe: [settings-servers](wireframes/settings-servers.svg) | ● | ● | ● | · |  |
 | **Slack workspaces**<br>Manage Slack workspaces and each project's channels/approval (Admin). | · | ● | ● | · |  |
-| **Mail accounts**<br>Connect, sync, relabel and disconnect mailboxes (Admin). | ● | ● | · | · |  |
-| **MCP servers**<br>Manage the operator MCP registry and sign in to servers (Admin). | ● | ● | · | · |  |
+| **Mail accounts**<br>Connect, sync, relabel and disconnect mailboxes (Admin). Wireframe: [settings](wireframes/settings.svg) | ● | ● | · | · |  |
+| **MCP servers**<br>Manage the operator MCP registry and sign in to servers (Admin). Wireframe: [settings](wireframes/settings.svg) | ● | ● | · | · |  |
 | **Server administration**<br>Drain for maintenance, manage workspace slots, edit prompt templates and update a project's checkout (Admin). | · | ● | · | · |  |
 | **Devices & tokens**<br>List, issue or revoke other devices' tokens. | · | · | · | · | **Windows:** No /api/v1 route; tokens are issued on the server with npm run create-token. **Mac:** No /api/v1 route. **iPhone/iPad:** No /api/v1 route. **Quest:** No /api/v1 route. |
 
@@ -143,7 +143,7 @@ What each Briareus client offers, feature by feature, against the server API (/a
 | --- | :---: | :---: | :---: | :---: | --- |
 | **Background notifications**<br>Get OS notifications when an agent asks, a turn finishes, findings are held or a session fails. | · | · | · | ● | **iPhone/iPad:** No push in the API (would need APNs); iOS can't hold /events open in the background. **Quest:** Foreground service keeps /events open. |
 | **Reply from notification**<br>Answer with one tap on the agent's options or Continue without opening the app. | · | · | · | ● |  |
-| **Waiting/working overview**<br>See counts of waiting, working and ready sessions and answer waiting ones in place. | ◐ | ◐ | ◐ | ● | **Windows:** Only a findings count in the sidebar. **Mac:** Sidebar badge counts held findings + approvals. **iPhone/iPad:** Findings tab badge only. **Quest:** Dedicated status panel. |
+| **Waiting/working overview**<br>See counts of waiting, working and ready sessions and answer waiting ones in place. Wireframe: [findings](wireframes/findings.svg) | ◐ | ◐ | ◐ | ● | **Windows:** Only a findings count in the sidebar. **Mac:** Sidebar badge counts held findings + approvals. **iPhone/iPad:** Findings tab badge only. **Quest:** Dedicated status panel. |
 
 ## Voice assistants
 
@@ -151,45 +151,45 @@ What each Briareus client offers, feature by feature, against the server API (/a
 | --- | :---: | :---: | :---: | :---: | --- |
 | **GPT-Realtime voice assistant**<br>Hold a spoken conversation that reads and acts on projects, PRs, issues and conversations, with confirmation and cost. | · | · | ● | ● | **iPhone/iPad:** Scoped to one project; works with the phone locked. **Quest:** Across all projects, and also drives the panels ('show me this PR'). |
 | **Hands-free conversation line**<br>Talk to one conversation's agent by voice and hear its replies and questions read aloud. | · | · | ● | ◐ | **Quest:** The global assistant can answer an agent, but there is no dedicated per-conversation read-aloud line. |
-| **Meeting assistant**<br>An ElevenLabs agent joins your meeting through a virtual mic and answers project questions with read-only tools. | ● | ● | – | – | **iPhone/iPad:** iOS can't capture other apps' audio or provide a virtual microphone. **Quest:** Android can't capture meeting apps' audio or inject a virtual mic. |
+| **Meeting assistant**<br>An ElevenLabs agent joins your meeting through a virtual mic and answers project questions with read-only tools. Wireframe: [meeting](wireframes/meeting.svg), [project-pulls](wireframes/project-pulls.svg), [settings](wireframes/settings.svg) | ● | ● | – | – | **iPhone/iPad:** iOS can't capture other apps' audio or provide a virtual microphone. **Quest:** Android can't capture meeting apps' audio or inject a virtual mic. |
 | **CarPlay**<br>Drive conversations, PRs and issues by dictation in CarPlay. | – | – | ● | – | **Windows:** No CarPlay on Windows. **Mac:** No CarPlay on macOS. **Quest:** No CarPlay on Quest. |
 
 ## Shared browser
 
 | Feature | Windows | Mac | iPhone/iPad | Quest | Notes |
 | --- | :---: | :---: | :---: | :---: | --- |
-| **Watch and drive the shared browser**<br>Switch on the session's headless Chromium, watch it live and click/type on the agent's tabs. | ● | ● | ● | · | **Windows:** Docks beside the conversation, resizes, expands or pops out to its own window. **Mac:** Docks/pops out like Windows; also uses GET /sessions/{id}/browser/screenshot. **iPhone/iPad:** Full screen only (no docking). **Quest:** Not built. |
+| **Watch and drive the shared browser**<br>Switch on the session's headless Chromium, watch it live and click/type on the agent's tabs. Wireframe: [browser](wireframes/browser.svg), [project-run](wireframes/project-run.svg) | ● | ● | ● | · | **Windows:** Docks beside the conversation, resizes, expands or pops out to its own window. **Mac:** Docks/pops out like Windows; also uses GET /sessions/{id}/browser/screenshot. **iPhone/iPad:** Full screen only (no docking). **Quest:** Not built. |
 
 ## SSH, SFTP & database
 
 | Feature | Windows | Mac | iPhone/iPad | Quest | Notes |
 | --- | :---: | :---: | :---: | :---: | --- |
-| **SSH terminal**<br>Open SSH sessions to a project's servers in a built-in terminal using local ssh and keys. | ● | ● | · | · | **iPhone/iPad:** Excluded (needs the Mac's ssh); possible with an embedded SSH library. **Quest:** Not built; Android could embed an SSH client. |
-| **SFTP file browser**<br>Browse, upload, download, rename and delete files over SFTP. | ● | ● | · | · | **iPhone/iPad:** Not built (needs local sftp). **Quest:** Not built. |
-| **Database browser**<br>Browse a server's MySQL databases, tables and rows over SSH with the stored DB login. | ● | ● | · | · |  |
+| **SSH terminal**<br>Open SSH sessions to a project's servers in a built-in terminal using local ssh and keys. Wireframe: [project-ssh](wireframes/project-ssh.svg) | ● | ● | · | · | **iPhone/iPad:** Excluded (needs the Mac's ssh); possible with an embedded SSH library. **Quest:** Not built; Android could embed an SSH client. |
+| **SFTP file browser**<br>Browse, upload, download, rename and delete files over SFTP. Wireframe: [project-sftp](wireframes/project-sftp.svg) | ● | ● | · | · | **iPhone/iPad:** Not built (needs local sftp). **Quest:** Not built. |
+| **Database browser**<br>Browse a server's MySQL databases, tables and rows over SSH with the stored DB login. Wireframe: [project-db](wireframes/project-db.svg) | ● | ● | · | · |  |
 
 ## Mail, WhatsApp & Slack
 
 | Feature | Windows | Mac | iPhone/iPad | Quest | Notes |
 | --- | :---: | :---: | :---: | :---: | --- |
-| **Mail inbox**<br>Read synced mail across accounts with filters, search and threads, and delete a message to provider trash. | ● | ◐ | · | · | **Mac:** Read-only: no delete (DELETE route not in the Swift table). |
-| **WhatsApp**<br>Read and send WhatsApp chats. | ◐ | ◐ | · | · | **Windows:** Embeds web.whatsapp.com in WebView2; the server's /whatsapp API is not used. **Mac:** Embeds WhatsApp Web; /whatsapp API not used. |
+| **Mail inbox**<br>Read synced mail across accounts with filters, search and threads, and delete a message to provider trash. Wireframe: [mail](wireframes/mail.svg) | ● | ◐ | · | · | **Mac:** Read-only: no delete (DELETE route not in the Swift table). |
+| **WhatsApp**<br>Read and send WhatsApp chats. Wireframe: [whatsapp](wireframes/whatsapp.svg) | ◐ | ◐ | · | · | **Windows:** Embeds web.whatsapp.com in WebView2; the server's /whatsapp API is not used. **Mac:** Embeds WhatsApp Web; /whatsapp API not used. |
 | **Slack inbox**<br>Read Slack conversations and threads, open DMs and send messages. | · | · | · | · |  |
 
 ## Multi-window & layout
 
 | Feature | Windows | Mac | iPhone/iPad | Quest | Notes |
 | --- | :---: | :---: | :---: | :---: | --- |
-| **List beside conversation**<br>Projects/conversations column beside the chosen conversation, collapsing to one column when narrow. | ● | ● | ● | ● | **iPhone/iPad:** iPad only; iPhone is single-column. |
-| **Detached windows / panels**<br>Pop a conversation, findings, dashboard or browser into its own window/panel. | ● | ● | ◐ | ● | **iPhone/iPad:** iPad supports multiple app scenes, but no per-conversation pop-out. **Quest:** Conversations, preview and status as separate panels. |
+| **List beside conversation**<br>Projects/conversations column beside the chosen conversation, collapsing to one column when narrow. Wireframe: [conversation](wireframes/conversation.svg) | ● | ● | ● | ● | **iPhone/iPad:** iPad only; iPhone is single-column. |
+| **Detached windows / panels**<br>Pop a conversation, findings, dashboard or browser into its own window/panel. Wireframe: [conversation](wireframes/conversation.svg), [browser](wireframes/browser.svg), [dashboard](wireframes/dashboard.svg), [findings](wireframes/findings.svg), [pull-request](wireframes/pull-request.svg), [whatsapp](wireframes/whatsapp.svg) | ● | ● | ◐ | ● | **iPhone/iPad:** iPad supports multiple app scenes, but no per-conversation pop-out. **Quest:** Conversations, preview and status as separate panels. |
 
 ## Search & find
 
 | Feature | Windows | Mac | iPhone/iPad | Quest | Notes |
 | --- | :---: | :---: | :---: | :---: | --- |
 | **Search conversations**<br>Filter the conversation list by text. | · | · | ● | · | **Windows:** README claims search, but no list filter exists in code (Ctrl+F only works inside a conversation). **Mac:** No sidebar search field found. |
-| **Find in conversation**<br>Ctrl/⌘+F highlights matches in a transcript and steps through them. | ● | ● | · | · |  |
-| **Code search & navigation**<br>PhpStorm-style Go to File/Class/Symbol and Find in Files over an indexed repository. | ● | ● | · | · | **Mac:** Adds Search Everywhere, Go to Declaration, Find Usages and regex search. |
+| **Find in conversation**<br>Ctrl/⌘+F highlights matches in a transcript and steps through them. Wireframe: [conversation](wireframes/conversation.svg) | ● | ● | · | · |  |
+| **Code search & navigation**<br>PhpStorm-style Go to File/Class/Symbol and Find in Files over an indexed repository. Wireframe: [project-files](wireframes/project-files.svg) | ● | ● | · | · | **Mac:** Adds Search Everywhere, Go to Declaration, Find Usages and regex search. |
 
 ## Server routes no client calls
 

@@ -27,7 +27,8 @@ for (const area of data.areas) {
   md += `## ${area.title}\n\n| Feature | ${data.clients.map((c) => NAMES[c]).join(' | ')} | Notes |\n| --- | ${data.clients.map(() => ':---:').join(' | ')} | --- |\n`;
   for (const f of area.features) {
     const notes = Object.entries(f.notes ?? {}).map(([c, n]) => `**${NAMES[c]}:** ${cell(n)}`).join(' ');
-    md += `| **${cell(f.title)}**<br>${cell(f.description)} | ${data.clients.map((c) => MARK[f.support[c]]).join(' | ')} | ${notes} |\n`;
+    const wireframe = f.wireframes ? ` Wireframe: ${f.wireframes.map((w) => `[${w}](wireframes/${w}.svg)`).join(', ')}` : '';
+    md += `| **${cell(f.title)}**<br>${cell(f.description)}${wireframe} | ${data.clients.map((c) => MARK[f.support[c]]).join(' | ')} | ${notes} |\n`;
   }
   md += '\n';
 }

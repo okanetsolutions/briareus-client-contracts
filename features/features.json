@@ -28,7 +28,10 @@
           },
           "notes": {
             "ios": "CarPlay cannot pair; the phone does."
-          }
+          },
+          "wireframes": [
+            "pairing"
+          ]
         },
         {
           "id": "catalog-adaptive-ui",
@@ -43,7 +46,12 @@
             "ios": "full",
             "quest": "full"
           },
-          "notes": {}
+          "notes": {},
+          "wireframes": [
+            "pairing",
+            "project-pulls",
+            "settings-projects"
+          ]
         },
         {
           "id": "revoke-token",
@@ -78,7 +86,10 @@
           },
           "notes": {
             "quest": "Encrypted on the headset."
-          }
+          },
+          "wireframes": [
+            "project-pulls"
+          ]
         },
         {
           "id": "live-updates",
@@ -97,7 +108,10 @@
           "notes": {
             "windows": "Polls with backoff; never opens /events or /sessions/{id}/events.",
             "ios": "Polls GET /sessions/{id}; no SSE except the shared browser stream."
-          }
+          },
+          "wireframes": [
+            "project-pulls"
+          ]
         },
         {
           "id": "self-update",
@@ -113,7 +127,10 @@
           "notes": {
             "ios": "Distributed via App Store/TestFlight.",
             "quest": "Sideloaded APK with no updater; Android could install updates."
-          }
+          },
+          "wireframes": [
+            "conversation"
+          ]
         }
       ]
     },
@@ -137,7 +154,10 @@
           },
           "notes": {
             "quest": "Also nests orchestrator workers and counts what waits per project."
-          }
+          },
+          "wireframes": [
+            "conversation"
+          ]
         },
         {
           "id": "bulk-select",
@@ -153,7 +173,10 @@
             "ios": "full",
             "quest": "none"
           },
-          "notes": {}
+          "notes": {},
+          "wireframes": [
+            "conversation"
+          ]
         },
         {
           "id": "new-session",
@@ -170,7 +193,10 @@
             "ios": "full",
             "quest": "full"
           },
-          "notes": {}
+          "notes": {},
+          "wireframes": [
+            "conversation"
+          ]
         },
         {
           "id": "workspace-modes",
@@ -187,7 +213,10 @@
           },
           "notes": {
             "ios": "No workspace picker; README says epics/orchestrators are started from the Mac."
-          }
+          },
+          "wireframes": [
+            "conversation"
+          ]
         }
       ]
     },
@@ -209,7 +238,10 @@
             "ios": "full",
             "quest": "full"
           },
-          "notes": {}
+          "notes": {},
+          "wireframes": [
+            "conversation"
+          ]
         },
         {
           "id": "markdown-render",
@@ -225,7 +257,10 @@
           "notes": {
             "ios": "Tables also copy whole as Markdown.",
             "mac": "Tables also copy whole as Markdown."
-          }
+          },
+          "wireframes": [
+            "conversation"
+          ]
         },
         {
           "id": "tool-clusters",
@@ -238,7 +273,10 @@
             "ios": "full",
             "quest": "full"
           },
-          "notes": {}
+          "notes": {},
+          "wireframes": [
+            "conversation"
+          ]
         },
         {
           "id": "session-panel",
@@ -257,7 +295,10 @@
           "notes": {
             "ios": "As a sheet rather than a side panel.",
             "quest": "Opens the PR in a browser panel; no details side panel."
-          }
+          },
+          "wireframes": [
+            "conversation"
+          ]
         },
         {
           "id": "task-history",
@@ -293,7 +334,10 @@
             "ios": "full",
             "quest": "full"
           },
-          "notes": {}
+          "notes": {},
+          "wireframes": [
+            "conversation"
+          ]
         },
         {
           "id": "attachments",
@@ -310,7 +354,10 @@
           },
           "notes": {
             "quest": "System file picker only."
-          }
+          },
+          "wireframes": [
+            "conversation"
+          ]
         },
         {
           "id": "voice-notes",
@@ -328,7 +375,10 @@
           },
           "notes": {
             "quest": "Primary input (no keyboard); read-only text area to check before sending."
-          }
+          },
+          "wireframes": [
+            "conversation"
+          ]
         },
         {
           "id": "queue-manage",
@@ -343,7 +393,10 @@
             "ios": "full",
             "quest": "full"
           },
-          "notes": {}
+          "notes": {},
+          "wireframes": [
+            "conversation"
+          ]
         },
         {
           "id": "agent-question-answers",
@@ -360,7 +413,10 @@
           },
           "notes": {
             "quest": "Also from notifications and the status panel."
-          }
+          },
+          "wireframes": [
+            "conversation"
+          ]
         },
         {
           "id": "saved-prompts",
@@ -416,7 +472,10 @@
             "ios": "full",
             "quest": "full"
           },
-          "notes": {}
+          "notes": {},
+          "wireframes": [
+            "conversation"
+          ]
         },
         {
           "id": "close-reopen-delete",
@@ -433,7 +492,10 @@
             "ios": "full",
             "quest": "full"
           },
-          "notes": {}
+          "notes": {},
+          "wireframes": [
+            "conversation"
+          ]
         },
         {
           "id": "rename-session",
@@ -450,7 +512,10 @@
           },
           "notes": {
             "quest": "No PATCH /sessions route in the client."
-          }
+          },
+          "wireframes": [
+            "conversation"
+          ]
         },
         {
           "id": "compact-clear",
@@ -466,7 +531,10 @@
             "ios": "full",
             "quest": "none"
           },
-          "notes": {}
+          "notes": {},
+          "wireframes": [
+            "conversation"
+          ]
         },
         {
           "id": "review-loop",
@@ -481,7 +549,10 @@
             "ios": "full",
             "quest": "full"
           },
-          "notes": {}
+          "notes": {},
+          "wireframes": [
+            "conversation"
+          ]
         },
         {
           "id": "qa-loop",
@@ -548,7 +619,10 @@
             "ios": "full",
             "quest": "none"
           },
-          "notes": {}
+          "notes": {},
+          "wireframes": [
+            "webhook"
+          ]
         }
       ]
     },
@@ -571,7 +645,10 @@
           },
           "notes": {
             "quest": "Filters by author or label only."
-          }
+          },
+          "wireframes": [
+            "project-pulls"
+          ]
         },
         {
           "id": "pr-overview",
@@ -587,7 +664,10 @@
             "ios": "full",
             "quest": "full"
           },
-          "notes": {}
+          "notes": {},
+          "wireframes": [
+            "pull-request"
+          ]
         },
         {
           "id": "pr-files-diff",
@@ -604,7 +684,10 @@
           },
           "notes": {
             "quest": "pull_files is only used by the voice assistant to summarize changes; no diff UI."
-          }
+          },
+          "wireframes": [
+            "pull-request"
+          ]
         },
         {
           "id": "pr-conversation",
@@ -624,7 +707,10 @@
           "notes": {
             "ios": "Only the review summary from the PR overview; the comment feeds (ConvFeed) are Mac-only.",
             "quest": "Review summary from the overview only."
-          }
+          },
+          "wireframes": [
+            "pull-request"
+          ]
         },
         {
           "id": "pr-run-preview",
@@ -643,7 +729,11 @@
           },
           "notes": {
             "quest": "Preview opens in its own panel."
-          }
+          },
+          "wireframes": [
+            "pull-request",
+            "project-pulls"
+          ]
         },
         {
           "id": "branch-run",
@@ -658,7 +748,10 @@
             "ios": "full",
             "quest": "none"
           },
-          "notes": {}
+          "notes": {},
+          "wireframes": [
+            "project-run"
+          ]
         },
         {
           "id": "preview-feedback",
@@ -691,7 +784,12 @@
             "ios": "full",
             "quest": "full"
           },
-          "notes": {}
+          "notes": {},
+          "wireframes": [
+            "pull-request",
+            "project-pulls",
+            "project-review-list"
+          ]
         },
         {
           "id": "pr-merge",
@@ -708,7 +806,12 @@
           },
           "notes": {
             "ios": "Also by swipe on the list row."
-          }
+          },
+          "wireframes": [
+            "pull-request",
+            "project-pulls",
+            "project-review-list"
+          ]
         },
         {
           "id": "pr-issue-edit",
@@ -725,7 +828,11 @@
             "ios": "full",
             "quest": "none"
           },
-          "notes": {}
+          "notes": {},
+          "wireframes": [
+            "issue",
+            "pull-request"
+          ]
         },
         {
           "id": "review-list",
@@ -740,7 +847,10 @@
             "ios": "full",
             "quest": "none"
           },
-          "notes": {}
+          "notes": {},
+          "wireframes": [
+            "project-review-list"
+          ]
         },
         {
           "id": "qa-videos",
@@ -779,7 +889,10 @@
           },
           "notes": {
             "quest": "No cross-project findings screen; rounds surface as conversation states, notifications and the status panel."
-          }
+          },
+          "wireframes": [
+            "findings"
+          ]
         },
         {
           "id": "triage-round",
@@ -797,7 +910,10 @@
           },
           "notes": {
             "quest": "Completes the round (triage) but never saves verdicts to the PR (findings/save)."
-          }
+          },
+          "wireframes": [
+            "findings"
+          ]
         },
         {
           "id": "foreign-review-actions",
@@ -813,7 +929,10 @@
             "ios": "full",
             "quest": "none"
           },
-          "notes": {}
+          "notes": {},
+          "wireframes": [
+            "findings"
+          ]
         },
         {
           "id": "pr-finding-decisions",
@@ -831,7 +950,10 @@
           },
           "notes": {
             "quest": "Findings are listed read-only on the PR page; no decision route."
-          }
+          },
+          "wireframes": [
+            "pull-request"
+          ]
         },
         {
           "id": "approvals",
@@ -873,7 +995,10 @@
           },
           "notes": {
             "quest": "Only via the voice assistant's list_issues tool."
-          }
+          },
+          "wireframes": [
+            "project-issues"
+          ]
         },
         {
           "id": "issue-detail",
@@ -892,7 +1017,11 @@
           "notes": {
             "windows": "Opens in a side panel over the board/PR.",
             "quest": "Voice reads issues; 'show issue' opens GitHub in the browser."
-          }
+          },
+          "wireframes": [
+            "issue",
+            "project-board"
+          ]
         },
         {
           "id": "start-on-issue",
@@ -909,7 +1038,10 @@
           },
           "notes": {
             "quest": "Voice only (work_on_issue)."
-          }
+          },
+          "wireframes": [
+            "issue"
+          ]
         },
         {
           "id": "close-issue",
@@ -924,7 +1056,10 @@
             "ios": "full",
             "quest": "none"
           },
-          "notes": {}
+          "notes": {},
+          "wireframes": [
+            "issue"
+          ]
         },
         {
           "id": "projects-board",
@@ -942,7 +1077,10 @@
           },
           "notes": {
             "ios": "README: 'The GitHub Projects board stays on the Mac app.'"
-          }
+          },
+          "wireframes": [
+            "project-board"
+          ]
         },
         {
           "id": "repo-files",
@@ -962,7 +1100,10 @@
           },
           "notes": {
             "mac": "Also downloads /repo/archive for a local index."
-          }
+          },
+          "wireframes": [
+            "project-files"
+          ]
         }
       ]
     },
@@ -986,7 +1127,10 @@
             "ios": "full",
             "quest": "none"
           },
-          "notes": {}
+          "notes": {},
+          "wireframes": [
+            "project-deploy"
+          ]
         },
         {
           "id": "github-deployments",
@@ -1073,7 +1217,10 @@
           "notes": {
             "windows": "Needs an Admin token (/usage/all only); others are told so.",
             "ios": "Non-admin tokens see this month's own spend."
-          }
+          },
+          "wireframes": [
+            "dashboard"
+          ]
         },
         {
           "id": "provider-quotas",
@@ -1092,7 +1239,10 @@
           "notes": {
             "windows": "Per provider on its Settings Status tab only.",
             "ios": "Per provider in Settings only."
-          }
+          },
+          "wireframes": [
+            "settings-providers"
+          ]
         }
       ]
     },
@@ -1117,7 +1267,10 @@
             "ios": "full",
             "quest": "none"
           },
-          "notes": {}
+          "notes": {},
+          "wireframes": [
+            "settings-projects"
+          ]
         },
         {
           "id": "settings-providers",
@@ -1137,7 +1290,10 @@
             "ios": "full",
             "quest": "none"
           },
-          "notes": {}
+          "notes": {},
+          "wireframes": [
+            "settings-providers"
+          ]
         },
         {
           "id": "settings-db-pool",
@@ -1155,7 +1311,10 @@
             "ios": "full",
             "quest": "none"
           },
-          "notes": {}
+          "notes": {},
+          "wireframes": [
+            "settings-servers"
+          ]
         },
         {
           "id": "settings-ssh-servers",
@@ -1173,7 +1332,10 @@
             "ios": "full",
             "quest": "none"
           },
-          "notes": {}
+          "notes": {},
+          "wireframes": [
+            "settings-servers"
+          ]
         },
         {
           "id": "settings-forge-accounts",
@@ -1190,7 +1352,10 @@
             "ios": "full",
             "quest": "none"
           },
-          "notes": {}
+          "notes": {},
+          "wireframes": [
+            "settings-servers"
+          ]
         },
         {
           "id": "settings-slack",
@@ -1225,7 +1390,10 @@
             "ios": "none",
             "quest": "none"
           },
-          "notes": {}
+          "notes": {},
+          "wireframes": [
+            "settings"
+          ]
         },
         {
           "id": "settings-mcp",
@@ -1243,7 +1411,10 @@
             "ios": "none",
             "quest": "none"
           },
-          "notes": {}
+          "notes": {},
+          "wireframes": [
+            "settings"
+          ]
         },
         {
           "id": "server-admin",
@@ -1342,7 +1513,10 @@
             "mac": "Sidebar badge counts held findings + approvals.",
             "ios": "Findings tab badge only.",
             "quest": "Dedicated status panel."
-          }
+          },
+          "wireframes": [
+            "findings"
+          ]
         }
       ]
     },
@@ -1411,7 +1585,12 @@
           "notes": {
             "ios": "iOS can't capture other apps' audio or provide a virtual microphone.",
             "quest": "Android can't capture meeting apps' audio or inject a virtual mic."
-          }
+          },
+          "wireframes": [
+            "meeting",
+            "project-pulls",
+            "settings"
+          ]
         },
         {
           "id": "carplay",
@@ -1463,7 +1642,11 @@
             "mac": "Docks/pops out like Windows; also uses GET /sessions/{id}/browser/screenshot.",
             "ios": "Full screen only (no docking).",
             "quest": "Not built."
-          }
+          },
+          "wireframes": [
+            "browser",
+            "project-run"
+          ]
         }
       ]
     },
@@ -1487,7 +1670,10 @@
           "notes": {
             "ios": "Excluded (needs the Mac's ssh); possible with an embedded SSH library.",
             "quest": "Not built; Android could embed an SSH client."
-          }
+          },
+          "wireframes": [
+            "project-ssh"
+          ]
         },
         {
           "id": "sftp-browser",
@@ -1505,7 +1691,10 @@
           "notes": {
             "ios": "Not built (needs local sftp).",
             "quest": "Not built."
-          }
+          },
+          "wireframes": [
+            "project-sftp"
+          ]
         },
         {
           "id": "db-browser",
@@ -1520,7 +1709,10 @@
             "ios": "none",
             "quest": "none"
           },
-          "notes": {}
+          "notes": {},
+          "wireframes": [
+            "project-db"
+          ]
         }
       ]
     },
@@ -1546,7 +1738,10 @@
           },
           "notes": {
             "mac": "Read-only: no delete (DELETE route not in the Swift table)."
-          }
+          },
+          "wireframes": [
+            "mail"
+          ]
         },
         {
           "id": "whatsapp",
@@ -1566,7 +1761,10 @@
           "notes": {
             "windows": "Embeds web.whatsapp.com in WebView2; the server's /whatsapp API is not used.",
             "mac": "Embeds WhatsApp Web; /whatsapp API not used."
-          }
+          },
+          "wireframes": [
+            "whatsapp"
+          ]
         },
         {
           "id": "slack-inbox",
@@ -1604,7 +1802,10 @@
           },
           "notes": {
             "ios": "iPad only; iPhone is single-column."
-          }
+          },
+          "wireframes": [
+            "conversation"
+          ]
         },
         {
           "id": "detached-windows",
@@ -1620,7 +1821,15 @@
           "notes": {
             "ios": "iPad supports multiple app scenes, but no per-conversation pop-out.",
             "quest": "Conversations, preview and status as separate panels."
-          }
+          },
+          "wireframes": [
+            "conversation",
+            "browser",
+            "dashboard",
+            "findings",
+            "pull-request",
+            "whatsapp"
+          ]
         }
       ]
     },
@@ -1657,7 +1866,10 @@
             "ios": "none",
             "quest": "none"
           },
-          "notes": {}
+          "notes": {},
+          "wireframes": [
+            "conversation"
+          ]
         },
         {
           "id": "code-search",
@@ -1677,7 +1889,10 @@
           },
           "notes": {
             "mac": "Adds Search Everywhere, Go to Declaration, Find Usages and regex search."
-          }
+          },
+          "wireframes": [
+            "project-files"
+          ]
         }
       ]
     }
