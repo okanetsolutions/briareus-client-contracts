@@ -4,11 +4,13 @@ One wireframe per screen, not one per platform: Windows, the Mac, iPhone and iPa
 
 | Screen | File | Features |
 | --- | --- | --- |
-| Conversation | [`conversation.excalidraw`](conversation.excalidraw) | list beside conversation, transcript, composer, stop, session details panel |
+| Conversation | [`conversation.excalidraw`](conversation.excalidraw) · [preview](conversation.svg) | list beside conversation, transcript, composer, stop, session details panel |
+
+![Conversation wireframe](conversation.svg)
 
 ## Editing
 
-The files are [Excalidraw](https://excalidraw.com) scenes, which are plain JSON, so a change goes through review as a diff like any token. Open one at excalidraw.com (Open, or drag the file in) or with the Excalidraw extension for VS Code, edit it, and save it back over the same file.
+The files are [Excalidraw](https://excalidraw.com) scenes, which are plain JSON, so a change goes through review as a diff like any token. Open one at excalidraw.com (Open, or drag the file in) or with the Excalidraw extension for VS Code, edit it, and save it back over the same file. Then export it as SVG (Export image → SVG) over the `.svg` beside it: that is the preview GitHub shows, and nothing checks that it matches the scene.
 
 ## The rules
 
