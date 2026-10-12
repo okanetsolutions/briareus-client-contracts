@@ -1,6 +1,6 @@
-# Briareus client contracts
+# Briareus contracts
 
-[![CI](https://github.com/okanetsolutions/briareus-client-contracts/actions/workflows/ci.yml/badge.svg)](https://github.com/okanetsolutions/briareus-client-contracts/actions/workflows/ci.yml) [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![CI](https://github.com/okanetsolutions/briareus-contracts/actions/workflows/ci.yml/badge.svg)](https://github.com/okanetsolutions/briareus-contracts/actions/workflows/ci.yml) [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
 The design tokens of the [Briareus](https://github.com/nadinyamaui/briareus) clients in one place: colours for dark and light, what colour each session status takes, text styles, corner radii, layout widths and the working indicator. [Style Dictionary](https://styledictionary.com/info/tokens/) builds them into each client's own idiom, so a change here reaches Windows, the Mac, iPhone and iPad, and Quest as one reviewed diff instead of four hand edits.
 
