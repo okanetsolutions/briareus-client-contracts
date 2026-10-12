@@ -1,5 +1,5 @@
 {
-  "name": "@okanetsolutions/briareus-client-contracts",
+  "name": "@okanetsolutions/briareus-contracts",
   "version": "1.0.0",
   "description": "Design tokens shared by the Briareus clients: one source, generated for Compose, SwiftUI, Win32 C and CSS.",
   "license": "MIT",
