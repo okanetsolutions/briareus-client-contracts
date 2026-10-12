@@ -27,6 +27,7 @@ tokens/
   size.json               radius.*, layout.*, motion.*
   content.json            working.* — the working indicator's glyphs and verbs
 features/features.json    what each client offers, feature by feature (FEATURES.md is generated from it)
+wireframes/               one Excalidraw wireframe per screen, shared by every client (see wireframes/README.md)
 build.mjs                 Style Dictionary config and the five formats (Compose, Swift, C, CSS, JSON)
 dist/                     generated; committed so clients and reviewers see exactly what changed
 scripts/sync.mjs          copies dist/ into client checkouts, or --check says which are stale

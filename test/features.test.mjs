@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { readFileSync } from 'node:fs';
+import { existsSync, readFileSync } from 'node:fs';
 
 const data = JSON.parse(readFileSync(new URL('../features/features.json', import.meta.url)));
 const LEVELS = new Set(['full', 'partial', 'none', 'n/a']);
@@ -26,5 +26,11 @@ test('a partial or n/a mark says why', () => {
     for (const [client, level] of Object.entries(f.support)) {
       if (level === 'partial' || level === 'n/a') assert.ok(f.notes?.[client], `${f.id}.${client} is ${level} without a note`);
     }
+  }
+});
+
+test('a feature names a wireframe that exists', () => {
+  for (const f of data.areas.flatMap((a) => a.features)) {
+    if (f.wireframe) assert.ok(existsSync(new URL(`../wireframes/${f.wireframe}.excalidraw`, import.meta.url)), `${f.id}: no wireframes/${f.wireframe}.excalidraw`);
   }
 });

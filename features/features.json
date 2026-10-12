@@ -137,7 +137,8 @@
           },
           "notes": {
             "quest": "Also nests orchestrator workers and counts what waits per project."
-          }
+          },
+          "wireframe": "conversation"
         },
         {
           "id": "bulk-select",
@@ -209,7 +210,8 @@
             "ios": "full",
             "quest": "full"
           },
-          "notes": {}
+          "notes": {},
+          "wireframe": "conversation"
         },
         {
           "id": "markdown-render",
@@ -257,7 +259,8 @@
           "notes": {
             "ios": "As a sheet rather than a side panel.",
             "quest": "Opens the PR in a browser panel; no details side panel."
-          }
+          },
+          "wireframe": "conversation"
         },
         {
           "id": "task-history",
@@ -293,7 +296,8 @@
             "ios": "full",
             "quest": "full"
           },
-          "notes": {}
+          "notes": {},
+          "wireframe": "conversation"
         },
         {
           "id": "attachments",
@@ -416,7 +420,8 @@
             "ios": "full",
             "quest": "full"
           },
-          "notes": {}
+          "notes": {},
+          "wireframe": "conversation"
         },
         {
           "id": "close-reopen-delete",
@@ -1604,7 +1609,8 @@
           },
           "notes": {
             "ios": "iPad only; iPhone is single-column."
-          }
+          },
+          "wireframe": "conversation"
         },
         {
           "id": "detached-windows",

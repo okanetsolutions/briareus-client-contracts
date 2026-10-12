@@ -27,7 +27,7 @@ What each Briareus client offers, feature by feature, against the server API (/a
 
 | Feature | Windows | Mac | iPhone/iPad | Quest | Notes |
 | --- | :---: | :---: | :---: | :---: | --- |
-| **Projects and conversations**<br>Browse the token's projects and their conversations with state, provider, branch and age. | ● | ● | ● | ● | **Quest:** Also nests orchestrator workers and counts what waits per project. |
+| **Projects and conversations**<br>Browse the token's projects and their conversations with state, provider, branch and age. [wireframe](wireframes/conversation.excalidraw) | ● | ● | ● | ● | **Quest:** Also nests orchestrator workers and counts what waits per project. |
 | **Bulk close/delete**<br>Tick several conversations and close or delete them at once. | ● | ● | ● | · |  |
 | **Start a conversation**<br>Start a session on a chosen branch, provider, model and effort, or the project default, optionally with the review loop. | ● | ● | ● | ● |  |
 | **Worktree / Local / Orchestrator**<br>Choose the workspace mode, including a local checkout or an orchestrator that runs workers. | ● | ● | · | · | **iPhone/iPad:** No workspace picker; README says epics/orchestrators are started from the Mac. |
@@ -36,17 +36,17 @@ What each Briareus client offers, feature by feature, against the server API (/a
 
 | Feature | Windows | Mac | iPhone/iPad | Quest | Notes |
 | --- | :---: | :---: | :---: | :---: | --- |
-| **Incremental transcript**<br>Read the transcript with message times, agent questions and queued messages, appended incrementally. | ● | ● | ● | ● |  |
+| **Incremental transcript**<br>Read the transcript with message times, agent questions and queued messages, appended incrementally. [wireframe](wireframes/conversation.excalidraw) | ● | ● | ● | ● |  |
 | **Markdown replies**<br>Agent replies render as Markdown (headings, lists, tables, code with copy, links); text is selectable. | ● | ● | ● | ● | **iPhone/iPad:** Tables also copy whole as Markdown. **Mac:** Tables also copy whole as Markdown. |
 | **Collapsible tool activity**<br>Tool calls, commands and git steps fold into expandable clusters between messages. | ● | ● | ● | ● |  |
-| **Session details panel**<br>See the conversation's pull request, checks, reviews, findings and context use beside it. | ● | ● | ● | ◐ | **iPhone/iPad:** As a sheet rather than a side panel. **Quest:** Opens the PR in a browser panel; no details side panel. |
+| **Session details panel**<br>See the conversation's pull request, checks, reviews, findings and context use beside it. [wireframe](wireframes/conversation.excalidraw) | ● | ● | ● | ◐ | **iPhone/iPad:** As a sheet rather than a side panel. **Quest:** Opens the PR in a browser panel; no details side panel. |
 | **Task cost history**<br>Open a task's history: every session filed under it and their combined cost. | · | ● | · | · |  |
 
 ## Composer
 
 | Feature | Windows | Mac | iPhone/iPad | Quest | Notes |
 | --- | :---: | :---: | :---: | :---: | --- |
-| **Send follow-ups**<br>Send a message into the running turn or the queue. | ● | ● | ● | ● |  |
+| **Send follow-ups**<br>Send a message into the running turn or the queue. [wireframe](wireframes/conversation.excalidraw) | ● | ● | ● | ● |  |
 | **Attach files**<br>Paste, drop or pick files/images that upload and go with the message. | ● | ● | ● | ● | **Quest:** System file picker only. |
 | **Voice notes**<br>Record audio and have the server transcribe it into the message box. | ● | ● | ● | ● | **Quest:** Primary input (no keyboard); read-only text area to check before sending. |
 | **Take back queued messages**<br>Remove a queued message before the agent receives it. | ● | ● | ● | ● |  |
@@ -58,7 +58,7 @@ What each Briareus client offers, feature by feature, against the server API (/a
 
 | Feature | Windows | Mac | iPhone/iPad | Quest | Notes |
 | --- | :---: | :---: | :---: | :---: | --- |
-| **Stop a turn**<br>Cancel the running turn. | ● | ● | ● | ● |  |
+| **Stop a turn**<br>Cancel the running turn. [wireframe](wireframes/conversation.excalidraw) | ● | ● | ● | ● |  |
 | **Close, reopen, delete**<br>Close a session, reopen it later, or delete it. | ● | ● | ● | ● |  |
 | **Rename**<br>Rename a session. | ● | ● | ● | · | **Quest:** No PATCH /sessions route in the client. |
 | **Compact and clear**<br>Compact a session's context or clear its transcript. | ● | ● | ● | · |  |
@@ -180,7 +180,7 @@ What each Briareus client offers, feature by feature, against the server API (/a
 
 | Feature | Windows | Mac | iPhone/iPad | Quest | Notes |
 | --- | :---: | :---: | :---: | :---: | --- |
-| **List beside conversation**<br>Projects/conversations column beside the chosen conversation, collapsing to one column when narrow. | ● | ● | ● | ● | **iPhone/iPad:** iPad only; iPhone is single-column. |
+| **List beside conversation**<br>Projects/conversations column beside the chosen conversation, collapsing to one column when narrow. [wireframe](wireframes/conversation.excalidraw) | ● | ● | ● | ● | **iPhone/iPad:** iPad only; iPhone is single-column. |
 | **Detached windows / panels**<br>Pop a conversation, findings, dashboard or browser into its own window/panel. | ● | ● | ◐ | ● | **iPhone/iPad:** iPad supports multiple app scenes, but no per-conversation pop-out. **Quest:** Conversations, preview and status as separate panels. |
 
 ## Search & find
