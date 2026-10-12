@@ -29,8 +29,14 @@ test('a partial or n/a mark says why', () => {
   }
 });
 
-test('a feature names a wireframe that exists', () => {
+test('every feature Windows offers names its screens, and each has a scene and a preview', () => {
   for (const f of data.areas.flatMap((a) => a.features)) {
-    if (f.wireframe) assert.ok(existsSync(new URL(`../wireframes/${f.wireframe}.excalidraw`, import.meta.url)), `${f.id}: no wireframes/${f.wireframe}.excalidraw`);
+    // Windows is the reference the wireframes are drawn from, so whatever it offers is on a screen.
+    if (['full', 'partial'].includes(f.support.windows)) assert.ok(f.wireframes?.length, `${f.id}: no wireframes`);
+    for (const w of f.wireframes ?? []) {
+      for (const ext of ['excalidraw', 'svg']) {
+        assert.ok(existsSync(new URL(`../wireframes/${w}.${ext}`, import.meta.url)), `${f.id}: no wireframes/${w}.${ext}`);
+      }
+    }
   }
 });
