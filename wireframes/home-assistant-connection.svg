@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1900" height="1440" viewBox="0 0 1900 1440" role="img" aria-labelledby="title"><title id="title">home-assistant-connection: proposed wide and narrow wireframes</title><rect width="100%" height="100%" fill="white"/><text x="40" y="16" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="22" fill="#303030"><tspan x="40" dy="22">Connection and setup / proposed client screen</tspan></text>
+<text x="40" y="64" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="14" fill="#303030"><tspan x="40" dy="14">Wide / at least layout.narrowWidth (1024px)</tspan></text>
+<rect x="40" y="90" width="1400" height="820" fill="#ffffff" stroke="#303030"/>
+<rect x="40" y="90" width="268" height="820" fill="#eeeeee" stroke="#303030"/>
+<text x="54" y="108" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="16" fill="#303030"><tspan x="54" dy="16">+ New session</tspan></text>
+<text x="54" y="145" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="13" fill="#303030"><tspan x="54" dy="13">WhatsApp  Mail  📊  ⚑</tspan></text>
+<text x="54" y="201" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="16" fill="#303030"><tspan x="54" dy="16">Projects</tspan></text>
+<text x="64" y="239" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="16" fill="#303030"><tspan x="64" dy="16">briareus</tspan></text>
+<text x="64" y="275" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="16" fill="#303030"><tspan x="64" dy="16">briareus-contracts</tspan></text>
+<rect x="50" y="335" width="248" height="55" fill="#dddddd" stroke="#303030"/>
+<text x="64" y="350" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="16" fill="#303030"><tspan x="64" dy="16">Home Assistant</tspan></text>
+<text x="54" y="408" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="13" fill="#303030"><tspan x="54" dy="13">Proposed global entry</tspan></text>
+<rect x="50" y="594" width="248" height="144" fill="#f5f5f5" stroke="#303030"/>
+<text x="62" y="606" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="14" fill="#303030"><tspan x="62" dy="14">This computer          v</tspan></text>
+<text x="62" y="640" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="14" fill="#303030"><tspan x="62" dy="14">CPU                 18%</tspan></text>
+<text x="62" y="668" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="14" fill="#303030"><tspan x="62" dy="14">Memory     12.4 / 32 GB</tspan></text>
+<text x="62" y="696" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="14" fill="#303030"><tspan x="62" dy="14">Battery   72% charging</tspan></text>
+<text x="54" y="771" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="13" fill="#303030"><tspan x="54" dy="13">Media player when active</tspan></text>
+<text x="54" y="824" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="13" fill="#303030"><tspan x="54" dy="13">Select  Settings  Sign out</tspan></text>
+<text x="54" y="868" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="13" fill="#303030"><tspan x="54" dy="13">theme.sidebar / 268px</tspan></text>
+<text x="326" y="112" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="24" fill="#303030"><tspan x="326" dy="24">Home Assistant</tspan></text>
+<text x="326" y="153" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="14" fill="#303030"><tspan x="326" dy="14">Connected to Home Assistant</tspan></text>
+<text x="326" y="194" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="16" fill="#303030"><tspan x="326" dy="16">Entities   Actions   Events   [Connection]</tspan></text>
+<text x="326" y="872" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="13" fill="#303030"><tspan x="326" dy="13">theme.canvas / layout.paneMargin = 18px</tspan></text>
+<rect x="326" y="245" width="1096" height="95" fill="#f5f5f5" stroke="#303030"/>
+<text x="340" y="258" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="16" fill="#303030"><tspan x="340" dy="16">Connection</tspan></text>
+<text x="340" y="287" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="14" fill="#303030"><tspan x="340" dy="14">Configured on the Briareus server. Home Assistant credentials stay on the server.</tspan></text>
+<rect x="326" y="361" width="190" height="36" fill="#eeeeee" stroke="#303030"/>
+<text x="338" y="369" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="14" fill="#303030"><tspan x="338" dy="14">Check connection</tspan></text>
+<rect x="326" y="423" width="1096" height="116" fill="#f5f5f5" stroke="#303030"/>
+<text x="340" y="436" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="16" fill="#303030"><tspan x="340" dy="16">Not configured</tspan></text>
+<text x="340" y="465" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="14" fill="#303030"><tspan x="340" dy="14">Ask the server administrator to connect Home Assistant, then check again.</tspan><tspan x="340" dy="17.5">Add devices and integrations in Home Assistant.</tspan></text>
+<rect x="326" y="563" width="530" height="110" fill="#f5f5f5" stroke="#303030"/>
+<text x="340" y="576" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="16" fill="#303030"><tspan x="340" dy="16">Cannot connect</tspan></text>
+<text x="340" y="605" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="14" fill="#303030"><tspan x="340" dy="14">Check the server connection or saved credentials.</tspan><tspan x="340" dy="17.5">Your Briareus login is still active.</tspan></text>
+<rect x="878" y="563" width="544" height="110" fill="#f5f5f5" stroke="#303030"/>
+<text x="892" y="576" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="16" fill="#303030"><tspan x="892" dy="16">Admin access required</tspan></text>
+<text x="892" y="605" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="14" fill="#303030"><tspan x="892" dy="14">Use a Briareus admin connection.</tspan><tspan x="892" dy="17.5">Read and manage tokens cannot access this screen.</tspan></text>
+<text x="326" y="707" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="14" fill="#303030"><tspan x="326" dy="14">Alternative states shown together for review.</tspan></text>
+<text x="326" y="742" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="16" fill="#303030"><tspan x="326" dy="16">No URL, token, pairing, or integration editor in the client.</tspan></text>
+<text x="1480" y="64" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="14" fill="#303030"><tspan x="1480" dy="14">Narrow / one column below 1024px</tspan></text>
+<rect x="1480" y="90" width="390" height="1000" fill="#ffffff" stroke="#303030"/>
+<text x="1498" y="110" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="14" fill="#303030"><tspan x="1498" dy="14">&lt; Back to sessions</tspan></text>
+<text x="1498" y="150" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="22" fill="#303030"><tspan x="1498" dy="22">Home Assistant</tspan></text>
+<text x="1498" y="191" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="16" fill="#303030"><tspan x="1498" dy="16">[Connection v]</tspan></text>
+<rect x="1498" y="245" width="354" height="110" fill="#f5f5f5" stroke="#303030"/>
+<text x="1512" y="258" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="16" fill="#303030"><tspan x="1512" dy="16">Connected</tspan></text>
+<text x="1512" y="287" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="14" fill="#303030"><tspan x="1512" dy="14">Configured on the server.</tspan><tspan x="1512" dy="17.5">Credentials stay there.</tspan></text>
+<rect x="1498" y="381" width="190" height="36" fill="#eeeeee" stroke="#303030"/>
+<text x="1510" y="389" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="14" fill="#303030"><tspan x="1510" dy="14">Check connection</tspan></text>
+<rect x="1498" y="450" width="354" height="130" fill="#f5f5f5" stroke="#303030"/>
+<text x="1512" y="463" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="16" fill="#303030"><tspan x="1512" dy="16">Not configured</tspan></text>
+<text x="1512" y="492" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="14" fill="#303030"><tspan x="1512" dy="14">Ask your server administrator</tspan><tspan x="1512" dy="17.5">to connect Home Assistant.</tspan><tspan x="1512" dy="17.5">Then check again.</tspan></text>
+<rect x="1498" y="607" width="354" height="130" fill="#f5f5f5" stroke="#303030"/>
+<text x="1512" y="620" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="16" fill="#303030"><tspan x="1512" dy="16">Cannot connect</tspan></text>
+<text x="1512" y="649" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="14" fill="#303030"><tspan x="1512" dy="14">Check server connection</tspan><tspan x="1512" dy="17.5">or saved credentials.</tspan><tspan x="1512" dy="17.5">Briareus login stays active.</tspan></text>
+<rect x="1498" y="764" width="354" height="100" fill="#f5f5f5" stroke="#303030"/>
+<text x="1512" y="777" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="16" fill="#303030"><tspan x="1512" dy="16">Admin access required</tspan></text>
+<text x="1512" y="806" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="14" fill="#303030"><tspan x="1512" dy="14">Use an admin connection.</tspan></text>
+<text x="40" y="1130" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="20" fill="#303030"><tspan x="40" dy="20">Behavior and platform notes</tspan></text>
+<text x="40" y="1173" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="15" fill="#303030"><tspan x="40" dy="15">GET /api/v1/home-assistant: configured:false is setup needed; 502 is a connection or upstream credentials error.</tspan></text>
+<text x="40" y="1202" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="15" fill="#303030"><tspan x="40" dy="15">Hide the entry when the API catalog omits it or the token lacks admin access; handle 403 if access changes.</tspan></text>
+<text x="40" y="1231" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="15" fill="#303030"><tspan x="40" dy="15">The selected Home Assistant row is a proposed addition to the existing Windows sidebar, independent of projects.</tspan></text>
+<text x="40" y="1260" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="15" fill="#303030"><tspan x="40" dy="15">Windows and Mac use the wide shell. iPhone uses one pane with Back; iPad switches at layout.narrowWidth.</tspan></text>
+<text x="40" y="1289" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="15" fill="#303030"><tspan x="40" dy="15">Quest keeps this structure with headset.type sizing. All four clients are unimplemented at the cited revisions.</tspan></text>
+<text x="40" y="1318" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="15" fill="#303030"><tspan x="40" dy="15">Server setup instructions belong in documentation. There is no bridge endpoint to save or remove credentials.</tspan></text>
+<text x="40" y="1390" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="14" fill="#303030"><tspan x="40" dy="14">Proposal based on Core #147. API and source revisions: home-assistant.md. Example entities and values only.</tspan></text></svg>

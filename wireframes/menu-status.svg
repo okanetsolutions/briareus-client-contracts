@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1900" height="1440" viewBox="0 0 1900 1440" role="img" aria-labelledby="title"><title id="title">menu-status: proposed wide and narrow wireframes</title><rect width="100%" height="100%" fill="white"/><text x="40" y="16" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="22" fill="#303030"><tspan x="40" dy="22">Menu status widgets / proposed client screen</tspan></text>
+<text x="40" y="64" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="14" fill="#303030"><tspan x="40" dy="14">Wide / at least layout.narrowWidth (1024px)</tspan></text>
+<rect x="40" y="90" width="1400" height="820" fill="#ffffff" stroke="#303030"/>
+<rect x="40" y="90" width="268" height="820" fill="#eeeeee" stroke="#303030"/>
+<text x="54" y="108" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="16" fill="#303030"><tspan x="54" dy="16">+ New session</tspan></text>
+<text x="54" y="145" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="13" fill="#303030"><tspan x="54" dy="13">WhatsApp  Mail  📊  ⚑</tspan></text>
+<text x="54" y="201" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="16" fill="#303030"><tspan x="54" dy="16">Projects</tspan></text>
+<text x="64" y="239" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="16" fill="#303030"><tspan x="64" dy="16">briareus</tspan></text>
+<text x="64" y="275" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="16" fill="#303030"><tspan x="64" dy="16">briareus-contracts</tspan></text>
+<rect x="50" y="335" width="248" height="55" fill="#dddddd" stroke="#303030"/>
+<text x="64" y="350" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="16" fill="#303030"><tspan x="64" dy="16">Home Assistant</tspan></text>
+<text x="54" y="408" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="13" fill="#303030"><tspan x="54" dy="13">Proposed global entry</tspan></text>
+<rect x="50" y="594" width="248" height="144" fill="#f5f5f5" stroke="#303030"/>
+<text x="62" y="606" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="14" fill="#303030"><tspan x="62" dy="14">This computer          v</tspan></text>
+<text x="62" y="640" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="14" fill="#303030"><tspan x="62" dy="14">CPU                 18%</tspan></text>
+<text x="62" y="668" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="14" fill="#303030"><tspan x="62" dy="14">Memory     12.4 / 32 GB</tspan></text>
+<text x="62" y="696" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="14" fill="#303030"><tspan x="62" dy="14">Battery   72% charging</tspan></text>
+<text x="54" y="771" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="13" fill="#303030"><tspan x="54" dy="13">Media player when active</tspan></text>
+<text x="54" y="824" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="13" fill="#303030"><tspan x="54" dy="13">Select  Settings  Sign out</tspan></text>
+<text x="54" y="868" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="13" fill="#303030"><tspan x="54" dy="13">theme.sidebar / 268px</tspan></text>
+<text x="326" y="112" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="24" fill="#303030"><tspan x="326" dy="24">Menu status widgets</tspan></text>
+<text x="326" y="153" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="14" fill="#303030"><tspan x="326" dy="14">Local device / sample values / proposed UI</tspan></text>
+<text x="326" y="872" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="13" fill="#303030"><tspan x="326" dy="13">theme.canvas / layout.paneMargin = 18px</tspan></text>
+<text x="326" y="224" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="22" fill="#303030"><tspan x="326" dy="22">Small numbers in the menu</tspan></text>
+<text x="326" y="274" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="16" fill="#303030"><tspan x="326" dy="16">CPU usage, memory used / total, and battery charge at a glance.</tspan></text>
+<text x="326" y="310" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="16" fill="#303030"><tspan x="326" dy="16">These describe the device running the client, not the Briareus server.</tspan></text>
+<rect x="326" y="365" width="530" height="110" fill="#f5f5f5" stroke="#303030"/>
+<text x="340" y="378" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="16" fill="#303030"><tspan x="340" dy="16">CPU / 18%</tspan></text>
+<text x="340" y="407" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="14" fill="#303030"><tspan x="340" dy="14">Total system utilization over the last sample.</tspan><tspan x="340" dy="17.5">A short spike is normal; keep the text neutral.</tspan></text>
+<rect x="878" y="365" width="544" height="110" fill="#f5f5f5" stroke="#303030"/>
+<text x="892" y="378" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="16" fill="#303030"><tspan x="892" dy="16">Memory / 12.4 of 32 GB</tspan></text>
+<text x="892" y="407" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="14" fill="#303030"><tspan x="892" dy="14">System memory used and total physical memory.</tspan><tspan x="892" dy="17.5">Label the OS memory definition in a tooltip.</tspan></text>
+<rect x="326" y="501" width="530" height="110" fill="#f5f5f5" stroke="#303030"/>
+<text x="340" y="514" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="16" fill="#303030"><tspan x="340" dy="16">Battery / 72% charging</tspan></text>
+<text x="340" y="543" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="14" fill="#303030"><tspan x="340" dy="14">Show charge and charging or on-battery status.</tspan><tspan x="340" dy="17.5">Hide this row on a device without a battery.</tspan></text>
+<rect x="878" y="501" width="544" height="110" fill="#f5f5f5" stroke="#303030"/>
+<text x="892" y="514" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="16" fill="#303030"><tspan x="892" dy="16">Unavailable or stale</tspan></text>
+<text x="892" y="543" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="14" fill="#303030"><tspan x="892" dy="14">CPU: Unavailable / never substitute zero.</tspan><tspan x="892" dy="17.5">After a missed refresh, mark old values stale.</tspan></text>
+<rect x="326" y="645" width="530" height="110" fill="#f5f5f5" stroke="#303030"/>
+<text x="340" y="658" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="16" fill="#303030"><tspan x="340" dy="16">Collapsed / This computer &gt;</tspan></text>
+<text x="340" y="687" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="14" fill="#303030"><tspan x="340" dy="14">One click hides the numbers and saves space.</tspan><tspan x="340" dy="17.5">Remember this preference on this device.</tspan></text>
+<rect x="878" y="645" width="544" height="110" fill="#f5f5f5" stroke="#303030"/>
+<text x="892" y="658" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="16" fill="#303030"><tspan x="892" dy="16">Keep the menu quiet</tspan></text>
+<text x="892" y="687" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="14" fill="#303030"><tspan x="892" dy="14">No charts, alarms, or battery-time guesses.</tspan><tspan x="892" dy="17.5">Sample only while the menu is visible.</tspan></text>
+<text x="1480" y="64" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="14" fill="#303030"><tspan x="1480" dy="14">Narrow / menu pane below 1024px</tspan></text>
+<rect x="1480" y="90" width="390" height="1000" fill="#ffffff" stroke="#303030"/>
+<text x="1498" y="110" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="20" fill="#303030"><tspan x="1498" dy="20">+ New session</tspan></text>
+<text x="1498" y="156" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="14" fill="#303030"><tspan x="1498" dy="14">WhatsApp  Mail  Dashboard  Findings</tspan></text>
+<text x="1498" y="225" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="18" fill="#303030"><tspan x="1498" dy="18">Projects</tspan></text>
+<text x="1510" y="276" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="16" fill="#303030"><tspan x="1510" dy="16">briareus</tspan></text>
+<text x="1510" y="322" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="16" fill="#303030"><tspan x="1510" dy="16">briareus-contracts</tspan></text>
+<rect x="1498" y="387" width="220" height="36" fill="#eeeeee" stroke="#303030"/>
+<text x="1510" y="395" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="14" fill="#303030"><tspan x="1510" dy="14">Home Assistant</tspan></text>
+<text x="1498" y="465" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="14" fill="#303030"><tspan x="1498" dy="14">Projects scroll above the footer.</tspan></text>
+<rect x="1498" y="597" width="354" height="100" fill="#f5f5f5" stroke="#303030"/>
+<text x="1512" y="610" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="16" fill="#303030"><tspan x="1512" dy="16">This device              v</tspan></text>
+<text x="1512" y="639" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="14" fill="#303030"><tspan x="1512" dy="14">Battery   72% charging</tspan></text>
+<text x="1498" y="726" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="14" fill="#303030"><tspan x="1498" dy="14">Phone / tablet example.</tspan><tspan x="1498" dy="17.5">Only show supported local metrics.</tspan><tspan x="1498" dy="17.5">Desktop narrow mode keeps CPU</tspan><tspan x="1498" dy="17.5">and memory when available.</tspan></text>
+<text x="1498" y="883" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="14" fill="#303030"><tspan x="1498" dy="14">Media player when active</tspan></text>
+<text x="1498" y="965" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="14" fill="#303030"><tspan x="1498" dy="14">Select  Settings  Sign out</tspan></text>
+<text x="1498" y="1020" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="14" fill="#303030"><tspan x="1498" dy="14">Open a screen to hide this menu.</tspan></text>
+<text x="40" y="1130" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="20" fill="#303030"><tspan x="40" dy="20">Behavior and platform notes</tspan></text>
+<text x="40" y="1173" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="15" fill="#303030"><tspan x="40" dy="15">Place the collapsible block above the media player and footer. Keep projects scrollable when vertical space is limited.</tspan></text>
+<text x="40" y="1202" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="15" fill="#303030"><tspan x="40" dy="15">Desktop default: CPU percentage, memory used / total, and battery percentage with charging status when a battery exists.</tspan></text>
+<text x="40" y="1231" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="15" fill="#303030"><tspan x="40" dy="15">Use local OS readings. Start with a 5-second visible refresh; pause when hidden. No Core or Home Assistant API is involved.</tspan></text>
+<text x="40" y="1260" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="15" fill="#303030"><tspan x="40" dy="15">A missing reading is Unavailable. Retained readings show Stale and their last sample time; never show a missing value as zero.</tspan></text>
+<text x="40" y="1289" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="15" fill="#303030"><tspan x="40" dy="15">Windows/Mac: This computer. iPhone/iPad/Quest: This device, battery first; hide metrics the platform cannot supply.</tspan></text>
+<text x="40" y="1318" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="15" fill="#303030"><tspan x="40" dy="15">Use theme.sidebar, theme.sunken, theme.ink, and theme.muted. Keep numbers stable-width; explain labels with accessible text.</tspan></text>
+<text x="40" y="1390" xml:space="preserve" style="white-space:pre" font-family="monospace" font-size="14" fill="#303030"><tspan x="40" dy="14">Menu widget proposal / example readings, not live telemetry. See menu-status.md for scope and platform behavior.</tspan></text></svg>
