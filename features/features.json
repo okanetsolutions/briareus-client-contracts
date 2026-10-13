@@ -1504,13 +1504,13 @@
           "support": {
             "windows": "partial",
             "mac": "full",
-            "ios": "partial",
+            "ios": "full",
             "quest": "full"
           },
           "notes": {
             "windows": "Only a findings count in the sidebar.",
             "mac": "◉ Status in the sidebar strip, its badge the count needing you; answers questions in place.",
-            "ios": "Findings tab badge only.",
+            "ios": "◉ Status at the top of the Findings tab, whose badge is the count needing you; answers questions in place.",
             "quest": "Dedicated status panel."
           },
           "wireframes": [

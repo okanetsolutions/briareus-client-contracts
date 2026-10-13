@@ -7,8 +7,8 @@ What each Briareus client offers, feature by feature, against the server API (/a
 
 | | Windows | Mac | iPhone/iPad | Quest |
 | --- | --- | --- | --- | --- |
-| ● full | 62 | 77 | 57 | 30 |
-| ◐ partial | 4 | 1 | 1 | 8 |
+| ● full | 62 | 77 | 58 | 30 |
+| ◐ partial | 4 | 1 | 0 | 8 |
 | · none | 27 | 15 | 34 | 54 |
 | – n/a | 1 | 1 | 2 | 2 |
 
@@ -143,7 +143,7 @@ What each Briareus client offers, feature by feature, against the server API (/a
 | --- | :---: | :---: | :---: | :---: | --- |
 | **Background notifications**<br>Get OS notifications when an agent asks, a turn finishes, findings are held or a session fails. | · | · | · | ● | **iPhone/iPad:** No push in the API (would need APNs); iOS can't hold /events open in the background. **Quest:** Foreground service keeps /events open. |
 | **Reply from notification**<br>Answer with one tap on the agent's options or Continue without opening the app. | · | · | · | ● |  |
-| **Waiting/working overview**<br>See counts of waiting, working and ready sessions and answer waiting ones in place. Wireframe: [findings](wireframes/findings.svg) | ◐ | ● | ◐ | ● | **Windows:** Only a findings count in the sidebar. **Mac:** ◉ Status in the sidebar strip, its badge the count needing you; answers questions in place. **iPhone/iPad:** Findings tab badge only. **Quest:** Dedicated status panel. |
+| **Waiting/working overview**<br>See counts of waiting, working and ready sessions and answer waiting ones in place. Wireframe: [findings](wireframes/findings.svg) | ◐ | ● | ● | ● | **Windows:** Only a findings count in the sidebar. **Mac:** ◉ Status in the sidebar strip, its badge the count needing you; answers questions in place. **iPhone/iPad:** ◉ Status at the top of the Findings tab, whose badge is the count needing you; answers questions in place. **Quest:** Dedicated status panel. |
 
 ## Voice assistants
 
