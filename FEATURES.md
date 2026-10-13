@@ -7,9 +7,9 @@ What each Briareus client offers, feature by feature, against the server API (/a
 
 | | Windows | Mac | iPhone/iPad | Quest |
 | --- | --- | --- | --- | --- |
-| ● full | 62 | 73 | 53 | 30 |
-| ◐ partial | 4 | 4 | 5 | 8 |
-| · none | 27 | 16 | 34 | 54 |
+| ● full | 62 | 77 | 58 | 30 |
+| ◐ partial | 4 | 1 | 0 | 8 |
+| · none | 27 | 15 | 34 | 54 |
 | – n/a | 1 | 1 | 2 | 2 |
 
 ## Connection & pairing
@@ -20,7 +20,7 @@ What each Briareus client offers, feature by feature, against the server API (/a
 | **Adapt to server and token**<br>Controls the server lacks, or the token may not call, are hidden or disabled (Read-only tokens can't write). Wireframe: [pairing](wireframes/pairing.svg), [project-pulls](wireframes/project-pulls.svg), [settings-projects](wireframes/settings-projects.svg) | ● | ● | ● | ● |  |
 | **Revoke token from the app**<br>Revoke this device's token on the server, not just forget it locally. | · | · | ● | ● | **Windows:** Sign-out forgets the token locally without revoking it on the server. **Mac:** Sign-out (Store.forget) is local only; revoke_token is in the core table but unused by the Mac UI. |
 | **Saved state and incremental resume**<br>Screens open on cached projects, conversations and transcripts, then fetch only what changed. Wireframe: [project-pulls](wireframes/project-pulls.svg) | ● | ● | ● | ● | **Quest:** Encrypted on the headset. |
-| **Live session updates**<br>Session lists and transcripts update in real time over server-sent events. Wireframe: [project-pulls](wireframes/project-pulls.svg) | ◐ | ● | ◐ | ● | **Windows:** Polls with backoff; never opens /events or /sessions/{id}/events. **iPhone/iPad:** Polls GET /sessions/{id}; no SSE except the shared browser stream. |
+| **Live session updates**<br>Session lists and transcripts update in real time over server-sent events. Wireframe: [project-pulls](wireframes/project-pulls.svg) | ◐ | ● | ● | ● | **Windows:** Polls with backoff; never opens /events or /sessions/{id}/events. **iPhone/iPad:** Foreground only: iOS closes the streams in the background and they catch up on return; polling carries on where the server lacks them. |
 | **Self-update**<br>Checks GitHub releases, verifies and installs updates. Wireframe: [conversation](wireframes/conversation.svg) | ● | ● | – | · | **iPhone/iPad:** Distributed via App Store/TestFlight. **Quest:** Sideloaded APK with no updater; Android could install updates. |
 
 ## Projects & conversation list
@@ -51,8 +51,8 @@ What each Briareus client offers, feature by feature, against the server API (/a
 | **Voice notes**<br>Record audio and have the server transcribe it into the message box. Wireframe: [conversation](wireframes/conversation.svg) | ● | ● | ● | ● | **Quest:** Primary input (no keyboard); read-only text area to check before sending. |
 | **Take back queued messages**<br>Remove a queued message before the agent receives it. Wireframe: [conversation](wireframes/conversation.svg) | ● | ● | ● | ● |  |
 | **Answer agent questions**<br>Answer an agent's question with one of its offered options. Wireframe: [conversation](wireframes/conversation.svg) | ● | ● | ● | ● | **Quest:** Also from notifications and the status panel. |
-| **Saved prompt library**<br>Insert, save and delete prompts from the project's prompt library. | · | ◐ | · | · | **Mac:** List, create and delete; PUT /prompts/{id} (edit) is never called. |
-| **Side question (/btw)**<br>Ask a side question about a session the agent never sees. | · | · | · | · |  |
+| **Saved prompt library**<br>Insert, save and delete prompts from the project's prompt library. | · | ● | · | · |  |
+| **Side question (/btw)**<br>Ask a side question about a session the agent never sees. | · | ● | · | · | **Mac:** Sends a message starting with /btw (the server answers it the same way) rather than POST /sessions/{id}/btw; the question and answer show in the transcript. |
 
 ## Session controls
 
@@ -75,7 +75,7 @@ What each Briareus client offers, feature by feature, against the server API (/a
 | **Pull request list**<br>List open PRs with checks, conflicts, labels, people, linked issues and stack, filtered by author/reviewer/label. Wireframe: [project-pulls](wireframes/project-pulls.svg) | ● | ● | ● | ● | **Quest:** Filters by author or label only. |
 | **PR overview**<br>Open a PR on its description, checks, reviews, commits, linked issues and prior conversations. Wireframe: [pull-request](wireframes/pull-request.svg) | ● | ● | ● | ● |  |
 | **Files changed and diffs**<br>Browse a PR's changed files with diffs. Wireframe: [pull-request](wireframes/pull-request.svg) | ● | ● | ● | · | **Quest:** pull_files is only used by the voice assistant to summarize changes; no diff UI. |
-| **PR comments and review threads**<br>Read the PR's comments, reviews and inline review comments as a timeline. Wireframe: [pull-request](wireframes/pull-request.svg) | ● | ● | ◐ | ◐ | **iPhone/iPad:** Only the review summary from the PR overview; the comment feeds (ConvFeed) are Mac-only. **Quest:** Review summary from the overview only. |
+| **PR comments and review threads**<br>Read the PR's comments, reviews and inline review comments as a timeline. Wireframe: [pull-request](wireframes/pull-request.svg) | ● | ● | ● | ◐ | **Quest:** Review summary from the overview only. |
 | **Run preview**<br>Serve a PR's branch and view the running app in an embedded browser, with Cloudflare Access handled. Wireframe: [pull-request](wireframes/pull-request.svg), [project-pulls](wireframes/project-pulls.svg) | ● | ● | ● | ● | **Quest:** Preview opens in its own panel. |
 | **Run default branch**<br>Serve the project's default branch (with a run profile) from the project screen. Wireframe: [project-run](wireframes/project-run.svg) | ● | ● | ● | · |  |
 | **Annotated preview feedback**<br>Mark a point on a preview screenshot and send it to the agent as feedback. | · | ● | · | · |  |
@@ -120,7 +120,7 @@ What each Briareus client offers, feature by feature, against the server API (/a
 | Feature | Windows | Mac | iPhone/iPad | Quest | Notes |
 | --- | :---: | :---: | :---: | :---: | --- |
 | **Spend dashboard**<br>See spend over a window by project, activity, provider and model, with costliest sessions and filters. Wireframe: [dashboard](wireframes/dashboard.svg) | ● | ● | ● | · | **Windows:** Needs an Admin token (/usage/all only); others are told so. **iPhone/iPad:** Non-admin tokens see this month's own spend. |
-| **Provider quotas**<br>See each provider account's login state and quota windows. Wireframe: [settings-providers](wireframes/settings-providers.svg) | ◐ | ● | ◐ | · | **Windows:** Per provider on its Settings Status tab only. **iPhone/iPad:** Per provider in Settings only. |
+| **Provider quotas**<br>See each provider account's login state and quota windows. Wireframe: [settings-providers](wireframes/settings-providers.svg) | ◐ | ● | ● | · | **Windows:** Per provider on its Settings Status tab only. **iPhone/iPad:** On the Usage tab, and per provider in Settings. |
 
 ## Settings
 
@@ -143,7 +143,7 @@ What each Briareus client offers, feature by feature, against the server API (/a
 | --- | :---: | :---: | :---: | :---: | --- |
 | **Background notifications**<br>Get OS notifications when an agent asks, a turn finishes, findings are held or a session fails. | · | · | · | ● | **iPhone/iPad:** No push in the API (would need APNs); iOS can't hold /events open in the background. **Quest:** Foreground service keeps /events open. |
 | **Reply from notification**<br>Answer with one tap on the agent's options or Continue without opening the app. | · | · | · | ● |  |
-| **Waiting/working overview**<br>See counts of waiting, working and ready sessions and answer waiting ones in place. Wireframe: [findings](wireframes/findings.svg) | ◐ | ◐ | ◐ | ● | **Windows:** Only a findings count in the sidebar. **Mac:** Sidebar badge counts held findings + approvals. **iPhone/iPad:** Findings tab badge only. **Quest:** Dedicated status panel. |
+| **Waiting/working overview**<br>See counts of waiting, working and ready sessions and answer waiting ones in place. Wireframe: [findings](wireframes/findings.svg) | ◐ | ● | ● | ● | **Windows:** Only a findings count in the sidebar. **Mac:** ◉ Status in the sidebar strip, its badge the count needing you; answers questions in place. **iPhone/iPad:** ◉ Status at the top of the Findings tab, whose badge is the count needing you; answers questions in place. **Quest:** Dedicated status panel. |
 
 ## Voice assistants
 
@@ -172,7 +172,7 @@ What each Briareus client offers, feature by feature, against the server API (/a
 
 | Feature | Windows | Mac | iPhone/iPad | Quest | Notes |
 | --- | :---: | :---: | :---: | :---: | --- |
-| **Mail inbox**<br>Read synced mail across accounts with filters, search and threads, and delete a message to provider trash. Wireframe: [mail](wireframes/mail.svg) | ● | ◐ | · | · | **Mac:** Read-only: no delete (DELETE route not in the Swift table). |
+| **Mail inbox**<br>Read synced mail across accounts with filters, search and threads, and delete a message to provider trash. Wireframe: [mail](wireframes/mail.svg) | ● | ● | · | · |  |
 | **WhatsApp**<br>Read and send WhatsApp chats. Wireframe: [whatsapp](wireframes/whatsapp.svg) | ◐ | ◐ | · | · | **Windows:** Embeds web.whatsapp.com in WebView2; the server's /whatsapp API is not used. **Mac:** Embeds WhatsApp Web; /whatsapp API not used. |
 | **Slack inbox**<br>Read Slack conversations and threads, open DMs and send messages. | · | · | · | · |  |
 
@@ -181,7 +181,7 @@ What each Briareus client offers, feature by feature, against the server API (/a
 | Feature | Windows | Mac | iPhone/iPad | Quest | Notes |
 | --- | :---: | :---: | :---: | :---: | --- |
 | **List beside conversation**<br>Projects/conversations column beside the chosen conversation, collapsing to one column when narrow. Wireframe: [conversation](wireframes/conversation.svg) | ● | ● | ● | ● | **iPhone/iPad:** iPad only; iPhone is single-column. |
-| **Detached windows / panels**<br>Pop a conversation, findings, dashboard or browser into its own window/panel. Wireframe: [conversation](wireframes/conversation.svg), [browser](wireframes/browser.svg), [dashboard](wireframes/dashboard.svg), [findings](wireframes/findings.svg), [pull-request](wireframes/pull-request.svg), [whatsapp](wireframes/whatsapp.svg) | ● | ● | ◐ | ● | **iPhone/iPad:** iPad supports multiple app scenes, but no per-conversation pop-out. **Quest:** Conversations, preview and status as separate panels. |
+| **Detached windows / panels**<br>Pop a conversation, findings, dashboard or browser into its own window/panel. Wireframe: [conversation](wireframes/conversation.svg), [browser](wireframes/browser.svg), [dashboard](wireframes/dashboard.svg), [findings](wireframes/findings.svg), [pull-request](wireframes/pull-request.svg), [whatsapp](wireframes/whatsapp.svg) | ● | ● | ● | ● | **iPhone/iPad:** iPad only (Open in New Window); an iPhone has one window. **Quest:** Conversations, preview and status as separate panels. |
 
 ## Search & find
 
@@ -217,5 +217,4 @@ What each Briareus client offers, feature by feature, against the server API (/a
 - **ssh.requests:** `GET /ssh/requests`
 - **envoyer (single items):** `GET /envoyer/accounts/{id}/projects/{project}`, `GET /envoyer/accounts/{id}/projects/{project}/deployments/{deployment}`
 - **deployments.config (read):** `GET /deployments/config`
-- **prompts.update:** `PUT /prompts/{id}`
 - **home-assistant:** `GET /home-assistant`, `GET /home-assistant/entities`, `GET /home-assistant/entities/{id}`, `GET /home-assistant/services`, `POST /home-assistant/services/{domain}/{service}`, `POST /home-assistant/events/{type}` — Admin-only bridge merged in Core #147; proposed client wireframes, support checked on 2026-10-12.
