@@ -102,12 +102,12 @@
           "support": {
             "windows": "partial",
             "mac": "full",
-            "ios": "partial",
+            "ios": "full",
             "quest": "full"
           },
           "notes": {
             "windows": "Polls with backoff; never opens /events or /sessions/{id}/events.",
-            "ios": "Polls GET /sessions/{id}; no SSE except the shared browser stream."
+            "ios": "Foreground only: iOS closes the streams in the background and they catch up on return; polling carries on where the server lacks them."
           },
           "wireframes": [
             "project-pulls"
@@ -430,13 +430,11 @@
           ],
           "support": {
             "windows": "none",
-            "mac": "partial",
+            "mac": "full",
             "ios": "none",
             "quest": "none"
           },
-          "notes": {
-            "mac": "List, create and delete; PUT /prompts/{id} (edit) is never called."
-          }
+          "notes": {}
         },
         {
           "id": "btw-side-question",
@@ -447,11 +445,13 @@
           ],
           "support": {
             "windows": "none",
-            "mac": "none",
+            "mac": "full",
             "ios": "none",
             "quest": "none"
           },
-          "notes": {}
+          "notes": {
+            "mac": "Sends a message starting with /btw (the server answers it the same way) rather than POST /sessions/{id}/btw; the question and answer show in the transcript."
+          }
         }
       ]
     },
@@ -701,11 +701,10 @@
           "support": {
             "windows": "full",
             "mac": "full",
-            "ios": "partial",
+            "ios": "full",
             "quest": "partial"
           },
           "notes": {
-            "ios": "Only the review summary from the PR overview; the comment feeds (ConvFeed) are Mac-only.",
             "quest": "Review summary from the overview only."
           },
           "wireframes": [
@@ -1233,12 +1232,12 @@
           "support": {
             "windows": "partial",
             "mac": "full",
-            "ios": "partial",
+            "ios": "full",
             "quest": "none"
           },
           "notes": {
             "windows": "Per provider on its Settings Status tab only.",
-            "ios": "Per provider in Settings only."
+            "ios": "On the Usage tab, and per provider in Settings."
           },
           "wireframes": [
             "settings-providers"
@@ -1504,13 +1503,13 @@
           ],
           "support": {
             "windows": "partial",
-            "mac": "partial",
+            "mac": "full",
             "ios": "partial",
             "quest": "full"
           },
           "notes": {
             "windows": "Only a findings count in the sidebar.",
-            "mac": "Sidebar badge counts held findings + approvals.",
+            "mac": "◉ Status in the sidebar strip, its badge the count needing you; answers questions in place.",
             "ios": "Findings tab badge only.",
             "quest": "Dedicated status panel."
           },
@@ -1732,13 +1731,11 @@
           ],
           "support": {
             "windows": "full",
-            "mac": "partial",
+            "mac": "full",
             "ios": "none",
             "quest": "none"
           },
-          "notes": {
-            "mac": "Read-only: no delete (DELETE route not in the Swift table)."
-          },
+          "notes": {},
           "wireframes": [
             "mail"
           ]
@@ -1815,11 +1812,11 @@
           "support": {
             "windows": "full",
             "mac": "full",
-            "ios": "partial",
+            "ios": "full",
             "quest": "full"
           },
           "notes": {
-            "ios": "iPad supports multiple app scenes, but no per-conversation pop-out.",
+            "ios": "iPad only (Open in New Window); an iPhone has one window.",
             "quest": "Conversations, preview and status as separate panels."
           },
           "wireframes": [
@@ -2071,12 +2068,6 @@
       "group": "deployments.config (read)",
       "routes": [
         "GET /deployments/config"
-      ]
-    },
-    {
-      "group": "prompts.update",
-      "routes": [
-        "PUT /prompts/{id}"
       ]
     },
     {
