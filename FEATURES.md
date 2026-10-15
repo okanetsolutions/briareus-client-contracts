@@ -7,9 +7,9 @@ What each Briareus client offers, feature by feature, against the server API (/a
 
 | | Windows | Mac | iPhone/iPad | Quest |
 | --- | --- | --- | --- | --- |
-| ● full | 60 | 77 | 58 | 30 |
+| ● full | 60 | 78 | 58 | 30 |
 | ◐ partial | 6 | 1 | 0 | 8 |
-| · none | 27 | 15 | 34 | 54 |
+| · none | 28 | 15 | 35 | 55 |
 | – n/a | 1 | 1 | 2 | 2 |
 
 ## Connection & pairing
@@ -67,6 +67,7 @@ What each Briareus client offers, feature by feature, against the server API (/a
 | **Link a pull request**<br>Attach a PR to a session after the server checks the branch. | · | · | · | · | **Windows:** Route is in the table but unused by the UI. |
 | **Recover interrupted session**<br>Inspect what an interrupted session left in its workspace and resume from it. | · | ● | · | · |  |
 | **Session webhook**<br>Arm a session's webhook, set caps (Turns in a row 0 for no limit), copy URLs/keys and rotate keys (Admin). Wireframe: [webhook](wireframes/webhook.svg) | ◐ | ● | ● | · | **Windows:** Turns in a row still takes 1 to 1000; the server takes 0 for no limit since core #158. |
+| **Session mail wake**<br>Set the rules under which new inbox mail in a connected mailbox wakes a session (mailbox, To/Cc, From, Subject), with Wakes an hour and Turns in a row caps (Admin, projects with mail tools on). | · | ● | · | · | **iPhone/iPad:** The iPhone app has no mail features to pick a rule's mailbox from. |
 
 ## Pull requests
 
@@ -219,5 +220,4 @@ What each Briareus client offers, feature by feature, against the server API (/a
 - **deployments.config (read):** `GET /deployments/config`
 - **home-assistant:** `GET /home-assistant`, `GET /home-assistant/entities`, `GET /home-assistant/entities/{id}`, `GET /home-assistant/services`, `POST /home-assistant/services/{domain}/{service}`, `POST /home-assistant/events/{type}` — Admin-only bridge merged in Core #147; proposed client wireframes, support checked on 2026-10-12.
 - **sessions.files:** `POST /sessions/{id}/files` — Publish a downloadable session file (core #149); assistant links to workspace files already arrive as download URLs.
-- **sessions.mailWake:** `GET /sessions/{id}/mail-wake`, `PUT /sessions/{id}/mail-wake` — Per-session email wake rules (core #159), Admin.
 - **stats:** `GET /sessions/{id}/stats`, `GET /stats/sessions`, `GET /stats/server` — CPU, memory, process and disk figures per session and for the server, with an hour of history (core #160).
