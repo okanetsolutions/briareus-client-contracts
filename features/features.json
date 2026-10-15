@@ -1,6 +1,6 @@
 {
-  "$description": "What each Briareus client offers, feature by feature, against the server API (/api/v1). Support is full, partial, none, or n/a (the platform cannot, not merely does not). Audited from each client's code on 2026-10-11; update it in the same pull request that adds or removes a feature in a client.",
-  "audited": "2026-10-11",
+  "$description": "What each Briareus client offers, feature by feature, against the server API (/api/v1). Support is full, partial, none, or n/a (the platform cannot, not merely does not). Audited from each client's code on 2026-10-11, and against the server's /api/v1 through core #162 on 2026-10-15; update it in the same pull request that adds or removes a feature in a client.",
+  "audited": "2026-10-15",
   "clients": [
     "windows",
     "mac",
@@ -607,22 +607,42 @@
         {
           "id": "session-webhook",
           "title": "Session webhook",
-          "description": "Arm a session's webhook, set caps, copy URLs/keys and rotate keys (Admin).",
+          "description": "Arm a session's webhook, set caps (Turns in a row 0 for no limit), copy URLs/keys and rotate keys (Admin).",
           "api": [
             "GET /sessions/{id}/webhook",
             "PUT /sessions/{id}/webhook",
             "POST /sessions/{id}/webhook/rotate"
           ],
           "support": {
-            "windows": "full",
+            "windows": "partial",
             "mac": "full",
             "ios": "full",
             "quest": "none"
           },
-          "notes": {},
+          "notes": {
+            "windows": "Turns in a row still takes 1 to 1000; the server takes 0 for no limit since core #158."
+          },
           "wireframes": [
             "webhook"
           ]
+        },
+        {
+          "id": "session-mail-wake",
+          "title": "Session mail wake",
+          "description": "Set the rules under which new inbox mail in a connected mailbox wakes a session (mailbox, To/Cc, From, Subject), with Wakes an hour and Turns in a row caps (Admin, projects with mail tools on).",
+          "api": [
+            "GET /sessions/{id}/mail-wake",
+            "PUT /sessions/{id}/mail-wake"
+          ],
+          "support": {
+            "windows": "none",
+            "mac": "full",
+            "ios": "none",
+            "quest": "none"
+          },
+          "notes": {
+            "ios": "The iPhone app has no mail features to pick a rule's mailbox from."
+          }
         }
       ]
     },
@@ -1722,20 +1742,23 @@
         {
           "id": "mail-inbox",
           "title": "Mail inbox",
-          "description": "Read synced mail across accounts with filters, search and threads, and delete a message to provider trash.",
+          "description": "Read synced mail across accounts with filters, search and threads, reply in plain text in the thread, and delete a message to provider trash.",
           "api": [
             "GET /settings/mail/accounts",
             "GET /mail/messages",
             "GET /mail/accounts/{account}/messages/{id}",
-            "DELETE /mail/accounts/{account}/messages/{id}"
+            "DELETE /mail/accounts/{account}/messages/{id}",
+            "POST /mail/accounts/{account}/messages/{id}/reply"
           ],
           "support": {
-            "windows": "full",
+            "windows": "partial",
             "mac": "full",
             "ios": "none",
             "quest": "none"
           },
-          "notes": {},
+          "notes": {
+            "windows": "Reply at provider opens the provider's website; it does not call the reply route (core #152)."
+          },
           "wireframes": [
             "mail"
           ]
@@ -1855,7 +1878,7 @@
         {
           "id": "find-in-transcript",
           "title": "Find in conversation",
-          "description": "Ctrl/\u2318+F highlights matches in a transcript and steps through them.",
+          "description": "Ctrl/⌘+F highlights matches in a transcript and steps through them.",
           "api": [],
           "support": {
             "windows": "full",
@@ -2081,6 +2104,22 @@
         "POST /home-assistant/events/{type}"
       ],
       "note": "Admin-only bridge merged in Core #147; proposed client wireframes, support checked on 2026-10-12."
+    },
+    {
+      "group": "sessions.files",
+      "routes": [
+        "POST /sessions/{id}/files"
+      ],
+      "note": "Publish a downloadable session file (core #149); assistant links to workspace files already arrive as download URLs."
+    },
+    {
+      "group": "stats",
+      "routes": [
+        "GET /sessions/{id}/stats",
+        "GET /stats/sessions",
+        "GET /stats/server"
+      ],
+      "note": "CPU, memory, process and disk figures per session and for the server, with an hour of history (core #160)."
     }
   ]
 }
