@@ -1244,6 +1244,26 @@
           "wireframes": [
             "settings-providers"
           ]
+        },
+        {
+          "id": "resource-stats",
+          "title": "Resource stats",
+          "description": "See what each open session costs the machine (CPU, memory, processes, workspace disk, the last hour) and a server dashboard of the machine, the Briareus process, its disks and every open session.",
+          "api": [
+            "GET /sessions/{id}/stats",
+            "GET /stats/sessions",
+            "GET /stats/server"
+          ],
+          "support": {
+            "windows": "none",
+            "mac": "full",
+            "ios": "full",
+            "quest": "none"
+          },
+          "notes": {
+            "mac": "Resources from the conversation header; the Server dashboard from ◉ Status.",
+            "ios": "Resources from the conversation's menu; the Server dashboard from the Findings tab's status."
+          }
         }
       ]
     },
@@ -2101,15 +2121,6 @@
         "PUT /sessions/{id}/mail-wake"
       ],
       "note": "Per-session email wake rules (core #159), Admin."
-    },
-    {
-      "group": "stats",
-      "routes": [
-        "GET /sessions/{id}/stats",
-        "GET /stats/sessions",
-        "GET /stats/server"
-      ],
-      "note": "CPU, memory, process and disk figures per session and for the server, with an hour of history (core #160)."
     }
   ]
 }

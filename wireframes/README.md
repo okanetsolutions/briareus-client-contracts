@@ -45,7 +45,7 @@ Core's Home Assistant bridge is merged, but no client implements it yet. These p
 
 These four scenes, the menu status proposal, and their previews can be regenerated together with `node scripts/home-assistant-wireframes.mjs`.
 
-Not drawn, because Windows does not offer them (23): Revoke token from the app, Task cost history, Saved prompt library, Side question (/btw), QA loop toggle, Link a pull request, Recover interrupted session, Annotated preview feedback, QA recordings, SSH and Slack approvals, GitHub deployments, Envoyer accounts & deployments, Agent memories, Slack workspaces, Server administration, Devices & tokens, Background notifications, Reply from notification, GPT-Realtime voice assistant, Hands-free conversation line, CarPlay, Slack inbox, Search conversations. When one is built, draw it from the client that has it.
+Not drawn, because Windows does not offer them (24): Revoke token from the app, Task cost history, Saved prompt library, Side question (/btw), QA loop toggle, Link a pull request, Recover interrupted session, Annotated preview feedback, QA recordings, SSH and Slack approvals, GitHub deployments, Envoyer accounts & deployments, Agent memories, Slack workspaces, Server administration, Devices & tokens, Background notifications, Reply from notification, GPT-Realtime voice assistant, Hands-free conversation line, CarPlay, Slack inbox, Search conversations, Resource stats. When one is built, draw it from the client that has it.
 
 ## Menu status proposal
 
