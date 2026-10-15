@@ -625,6 +625,24 @@
           "wireframes": [
             "webhook"
           ]
+        },
+        {
+          "id": "session-mail-wake",
+          "title": "Session mail wake",
+          "description": "Set the rules under which new inbox mail in a connected mailbox wakes a session (mailbox, To/Cc, From, Subject), with Wakes an hour and Turns in a row caps (Admin, projects with mail tools on).",
+          "api": [
+            "GET /sessions/{id}/mail-wake",
+            "PUT /sessions/{id}/mail-wake"
+          ],
+          "support": {
+            "windows": "none",
+            "mac": "full",
+            "ios": "none",
+            "quest": "none"
+          },
+          "notes": {
+            "ios": "The iPhone app has no mail features to pick a rule's mailbox from."
+          }
         }
       ]
     },
@@ -2093,14 +2111,6 @@
         "POST /sessions/{id}/files"
       ],
       "note": "Publish a downloadable session file (core #149); assistant links to workspace files already arrive as download URLs."
-    },
-    {
-      "group": "sessions.mailWake",
-      "routes": [
-        "GET /sessions/{id}/mail-wake",
-        "PUT /sessions/{id}/mail-wake"
-      ],
-      "note": "Per-session email wake rules (core #159), Admin."
     },
     {
       "group": "stats",
